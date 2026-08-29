@@ -1,0 +1,154 @@
+{
+  "dataset": "mendeley",
+  "channel_set": "primary",
+  "task": {
+    "name": "D1-M",
+    "group": "cross_machine_dual",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6"
+    ],
+    "test_sequences": [
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "train_domains": [
+      "M1",
+      "M2"
+    ],
+    "test_domains": [
+      "M3"
+    ],
+    "notes": "M1+M2 -> M3"
+  },
+  "seed": 52,
+  "split": {
+    "task": "D1-M",
+    "group": "cross_machine_dual",
+    "train_domains": [
+      "M1",
+      "M2"
+    ],
+    "test_domains": [
+      "M3"
+    ],
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T4",
+      "T6"
+    ],
+    "validation_sequences": [
+      "T3",
+      "T5"
+    ],
+    "test_sequences": [
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "validation_mode": "tool_holdout",
+    "n_train": 3074,
+    "n_val": 1566,
+    "n_test": 1778
+  },
+  "n_features_candidate": 1584,
+  "n_features_selected": 45,
+  "selected_features": [
+    "position_control_deviation_axis_y__dominant_freq__rel",
+    "force_sensor_y__shape_factor__rel",
+    "force_sensor_x__spectral_rolloff95__rank",
+    "force_sensor_z__spectral_rolloff95__rel",
+    "position_control_deviation_axis_y__dominant_freq__rank",
+    "force_sensor_z__dominant_freq__rel",
+    "position_control_deviation_axis_x__dominant_freq__rel",
+    "force_sensor_y__spectral_rolloff95__rel",
+    "force_sensor_x__spectral_rolloff95__rel",
+    "position_control_deviation_axis_x__spectral_rolloff95__rel",
+    "force_sensor_y__dominant_freq__rel",
+    "position_control_deviation_axis_x__spectral_rolloff95__rank",
+    "force_sensor_y__zero_crossing_rate__rel",
+    "position_control_deviation_axis_y__variance__rel",
+    "force_sensor_y__energy__rel",
+    "force_sensor_z__mean__rel",
+    "position_control_deviation_axis_x__dominant_freq__rank",
+    "torque_axis_z__dominant_freq__rel",
+    "force_sensor_y__mean__rel",
+    "position_control_deviation_axis_y__crest_factor__rel",
+    "force_sensor_z__spectral_kurtosis__rank",
+    "position_control_deviation_axis_y__kurtosis__rel",
+    "position_control_deviation_axis_y__crest_factor__rank",
+    "force_sensor_y__dominant_freq__rank",
+    "force_sensor_z__dominant_freq__rank",
+    "force_sensor_x__dominant_freq__rel",
+    "position_control_deviation_axis_y__spectral_rolloff95__rel",
+    "force_sensor_x__energy__rel",
+    "force_sensor_y__zero_crossing_rate__rank",
+    "force_sensor_x__kurtosis__rank",
+    "force_sensor_x__mean__rel",
+    "position_control_deviation_axis_y__shape_factor__rank",
+    "position_control_deviation_axis_y__energy__rank",
+    "position_control_deviation_axis_y__impulse_factor__rank",
+    "force_sensor_y__peak__rel",
+    "position_control_deviation_axis_y__abs_mean__rel",
+    "torque_axis_y__spectral_rolloff95__rel",
+    "position_control_deviation_axis_y__dominant_amp__rank",
+    "force_sensor_z__spectral_skewness__rank",
+    "force_sensor_x__abs_mean__rel",
+    "force_sensor_z__spectral_entropy__rel",
+    "position_control_deviation_axis_y__dominant_amp__rel",
+    "position_control_deviation_axis_y__total_power__rel",
+    "force_sensor_z__dominant_amp__rank",
+    "position_control_deviation_axis_y__spectral_rolloff95__rank"
+  ],
+  "window_length": 12,
+  "dropout": 0.2,
+  "learning_rate": 0.0005,
+  "tcn_channels": [
+    32,
+    64,
+    64
+  ],
+  "gru_hidden": 64,
+  "batch_size": 32,
+  "epochs": 120,
+  "patience": 18,
+  "loss_weights": {
+    "stage": 1.0,
+    "fine": 0.25,
+    "q": 0.3,
+    "mono": 0.03
+  },
+  "monotonic_loss": "sequence_aware (same sequence, consecutive order_key)",
+  "gmm": {
+    "n_states": 5,
+    "fitted_on": "train split only"
+  },
+  "stage_thresholds": {
+    "Q_E": 0.3,
+    "Q_L": 0.72,
+    "Q_nu": 0.78,
+    "normalised_within": "sequence_id"
+  },
+  "fusion_parameters": {
+    "eta": 0.75,
+    "fine_weight": 0.3,
+    "temperature": 1.2,
+    "mid_floor": 0.12,
+    "late_tau": 0.66,
+    "early_tau": 0.38,
+    "order_blend": 0.25
+  },
+  "fusion_tuned_on": "internal validation split",
+  "code_hash": "sha256:9612fbb470355ccb",
+  "device": "cuda",
+  "python": "3.11.15",
+  "start_time": "2026-08-18T20:45:01",
+  "end_time": "2026-08-18T20:57:06",
+  "runtime_sec": 725.27
+}

@@ -1,0 +1,9 @@
+﻿Split_type,Task,Seed,Strategy,theta_E,theta_L,theta_v,label_selection_score,vb_E,vb_L,vb_E_quantile,vb_L_quantile
+original,N1,2026,A_q_global,0.3,0.6,0.85,0.6476809954751132,,,,
+original,N2,2026,A_q_global,0.4,0.6,0.9,0.43940351315351306,,,,
+original,N3,2026,A_q_global,0.4,0.8,0.85,0.5611396658896659,,,,
+original,N4,2026,A_q_global,0.35,0.7,0.85,0.630810606060606,,,,
+stagebalanced,N1b,2026,A_q_global,0.25,0.7,0.9,0.5956707086017431,,,,
+stagebalanced,N2b,2026,B_vb_engineering,,,,0.7389565955562118,0.1475,0.4491666666666667,0.25,0.75
+stagebalanced,N3b,2026,A_q_global,0.4,0.8,0.85,0.6986989795918368,,,,
+stagebalanced,N4b,2026,B_vb_engineering,,,,0.540952380952381,0.16,0.41,0.3,0.7

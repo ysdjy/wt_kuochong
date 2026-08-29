@@ -1,0 +1,6 @@
+method: multi_source_attention
+task: D2
+train_conditions: ['C1', 'C6']
+test_condition: C4
+PROTO_B_CFG: {'max_epochs': 100, 'patience': 15, 'batch_size': 64, 'lr': 0.001, 'weight_decay': 0.0001, 'seed': 42}
+train_seconds: 87.75

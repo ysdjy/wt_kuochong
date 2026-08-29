@@ -1,0 +1,8 @@
+method: rf
+task: D3
+train_conditions: ['C4', 'C6']
+test_condition: C1
+train_seed: 42
+n_estimators: 400
+class_weight: balanced_subsample
+train_seconds: 0.92

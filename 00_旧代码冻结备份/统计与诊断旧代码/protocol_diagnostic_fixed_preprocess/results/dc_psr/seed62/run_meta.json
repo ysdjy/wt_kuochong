@@ -1,0 +1,29 @@
+{
+  "method": "DC-PSR",
+  "preprocess_seed": 42,
+  "train_seed": 62,
+  "git_commit": "916cdd6bb810820eded603ed81fd065065d3cc08",
+  "feature_hash": "3a7fedb02d2dffa9e9cd4397e11b7446c7c7c15741942208649b14d1b95cf7d0",
+  "split_hash": "a7197a8e6d33f85075c451dd10fa6233200d642f1ddfad6279e170eea49b5231",
+  "gmm_hash": "4708f67f14b043b2ec1c79e6b45de1a934f9aa232b61aa5de369e443f242311c",
+  "window_hash": "a1ec6910e449653fd322a39a0db5b5dcd7b700e79f1801aef1a95d7f095e58c5",
+  "config": {
+    "B12_PARAMS": {
+      "eta": 0.75,
+      "fine_weight": 0.3,
+      "temperature": 1.2,
+      "mid_floor": 0.12,
+      "late_tau": 0.66,
+      "early_tau": 0.38,
+      "order_blend": 0.25
+    },
+    "checkpoint": "shared with Multi-task TCN-GRU (same training run)"
+  },
+  "start_time": 1787216169.615978,
+  "end_time": 1787216209.5614066,
+  "training_seconds": 39.94542860984802,
+  "best_epoch": 7,
+  "best_val_acc": 1.0,
+  "best_val_macro_f1": 1.0,
+  "best_val_MRec": 1.0
+}

@@ -1,0 +1,27 @@
+{
+  "tasks": {
+    "D2": {
+      "rf": "DONE",
+      "tcn_gru": "DONE",
+      "multitask_tcn_gru": "DONE",
+      "dc_psr": "DONE",
+      "htt_net": "DONE",
+      "multi_source_attention": "DONE",
+      "mtf_avitk": "DONE",
+      "dynamic_gin_tgp": "DONE",
+      "dp2net_adapted": "DONE"
+    },
+    "D3": {
+      "rf": "DONE",
+      "tcn_gru": "DONE",
+      "multitask_tcn_gru": "DONE",
+      "dc_psr": "DONE",
+      "htt_net": "DONE",
+      "multi_source_attention": "DONE",
+      "mtf_avitk": "DONE",
+      "dynamic_gin_tgp": "DONE",
+      "dp2net_adapted": "DONE"
+    }
+  },
+  "last_update": 1787241225.5784094
+}

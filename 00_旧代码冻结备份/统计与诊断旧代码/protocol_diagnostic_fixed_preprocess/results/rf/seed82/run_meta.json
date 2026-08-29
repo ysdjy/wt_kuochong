@@ -1,0 +1,19 @@
+{
+  "method": "RF",
+  "preprocess_seed": 42,
+  "train_seed": 82,
+  "git_commit": "916cdd6bb810820eded603ed81fd065065d3cc08",
+  "feature_hash": "3a7fedb02d2dffa9e9cd4397e11b7446c7c7c15741942208649b14d1b95cf7d0",
+  "split_hash": "a7197a8e6d33f85075c451dd10fa6233200d642f1ddfad6279e170eea49b5231",
+  "gmm_hash": "4708f67f14b043b2ec1c79e6b45de1a934f9aa232b61aa5de369e443f242311c",
+  "window_hash": "a1ec6910e449653fd322a39a0db5b5dcd7b700e79f1801aef1a95d7f095e58c5",
+  "config": {
+    "n_estimators": 400,
+    "class_weight": "balanced_subsample",
+    "random_state": 82
+  },
+  "start_time": 1787215697.0862553,
+  "end_time": 1787215697.9315026,
+  "training_seconds": 0.8452472686767578,
+  "best_epoch": null
+}

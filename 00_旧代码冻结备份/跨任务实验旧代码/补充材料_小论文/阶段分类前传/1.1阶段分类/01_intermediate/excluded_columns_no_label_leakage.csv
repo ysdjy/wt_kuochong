@@ -1,0 +1,17 @@
+﻿excluded_column
+condition
+run_id
+file_name
+signal_len
+n_channels
+flute_1
+flute_2
+flute_3
+VB
+VB_mean
+dominant_flute
+VB_smooth
+q_deg
+rate_norm
+stage
+stage_id

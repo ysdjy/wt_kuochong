@@ -1,0 +1,21 @@
+﻿channel,group,status,present_on_tools,tools_affected,tools_primary,reason,evidence,used_in_primary_experiment,used_for_every_tool_with_this_channel,retained_in_raw_data
+cumulated_tool_contact_time,labels,primary,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,True,True,True
+machine,labels,primary,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,True,True,True
+run,labels,primary,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,True,True,True
+tool,labels,primary,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,True,True,True
+wear,labels,primary,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,True,True,True
+torque_axis_x,signals_machine,primary,"T1,T2,T3",,"T1,T2,T3",,,True,True,True
+torque_axis_y,signals_machine,primary,"T1,T2,T3",,"T1,T2,T3",,,True,True,True
+torque_axis_z,signals_machine,primary,"T1,T2,T3",,"T1,T2,T3",,,True,True,True
+force_sensor_x,signals_sensor,primary,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,True,True,True
+force_sensor_y,signals_sensor,primary,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,True,True,True
+force_sensor_z,signals_sensor,primary,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,True,True,True
+force_axis_x,signals_machine,restricted,"T4,T5,T6,T7,T8,T9","T4,T5,T6,T7,T8",T9,aliasing (T4-T6) / machine-workpiece coordinate mismatch (T7-T8),"channel name matches the documented 'force_axis' exactly. Present on M2 and M3 files only (M1 instead carries torque_axis_*, a separate, undocumented channel kept primary). Restricted for T4-T6 (M2 aliasing) and T7-T8 (M3 coordinate mismatch); T9 is not named in the documentation and stays primary.",True,False,True
+force_axis_y,signals_machine,restricted,"T4,T5,T6,T7,T8,T9","T4,T5,T6,T7,T8",T9,aliasing (T4-T6) / machine-workpiece coordinate mismatch (T7-T8),"channel name matches the documented 'force_axis' exactly. Present on M2 and M3 files only (M1 instead carries torque_axis_*, a separate, undocumented channel kept primary). Restricted for T4-T6 (M2 aliasing) and T7-T8 (M3 coordinate mismatch); T9 is not named in the documentation and stays primary.",True,False,True
+force_axis_z,signals_machine,restricted,"T4,T5,T6,T7,T8,T9","T4,T5,T6,T7,T8",T9,aliasing (T4-T6) / machine-workpiece coordinate mismatch (T7-T8),"channel name matches the documented 'force_axis' exactly. Present on M2 and M3 files only (M1 instead carries torque_axis_*, a separate, undocumented channel kept primary). Restricted for T4-T6 (M2 aliasing) and T7-T8 (M3 coordinate mismatch); T9 is not named in the documentation and stays primary.",True,False,True
+position_control_deviation_axis_x,signals_machine,restricted,"T1,T2,T3,T4,T5,T6,T7,T8,T9","T7,T8","T1,T2,T3,T4,T5,T6,T9",machine/workpiece coordinate mismatch,channel name matches the documented 'position_control_deviation_axis' exactly (M3 coordinate mismatch),True,False,True
+position_control_deviation_axis_y,signals_machine,restricted,"T1,T2,T3,T4,T5,T6,T7,T8,T9","T7,T8","T1,T2,T3,T4,T5,T6,T9",machine/workpiece coordinate mismatch,channel name matches the documented 'position_control_deviation_axis' exactly (M3 coordinate mismatch),True,False,True
+torque_spindle,signals_machine,restricted,"T1,T2,T3,T4,T5,T6,T7,T8,T9","T4,T5,T6","T1,T2,T3,T7,T8,T9",aliasing (feed-drive spindle torque),channel name matches the documented 'torque_spindle' exactly (M2 aliasing),True,False,True
+tool_position_x,signals_machine,unresolved,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,UNRESOLVED,possible match for documented name(s) ['position_axis']; not confirmed,False,False,True
+tool_position_y,signals_machine,unresolved,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,UNRESOLVED,possible match for documented name(s) ['position_axis']; not confirmed,False,False,True
+tool_position_z,signals_machine,unresolved,"T1,T2,T3,T4,T5,T6,T7,T8,T9",,,UNRESOLVED,possible match for documented name(s) ['position_axis']; not confirmed,False,False,True

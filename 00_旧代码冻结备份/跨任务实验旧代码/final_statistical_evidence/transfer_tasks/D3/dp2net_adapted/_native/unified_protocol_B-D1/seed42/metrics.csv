@@ -1,0 +1,2 @@
+﻿Split,Method,Output,Acc,Macro-F1,E-F1,M-F1,L-F1,M-Pre,M-Rec,M→E,M→L,Rev,Jump,Smooth,q-MAE,q-RMSE,q-R2,n_params_total_SGF,protocol,seed,leakage_audit
+test_C6,"DP2Net-adapted (pooled source) (Protocol B-D1, C1+C4->C6)",raw,0.8920634920634921,0.8976704559140981,0.845771144278607,0.864,0.9832402234636871,0.7769784172661871,0.972972972972973,0.0,0.027027027027026786,1,0,0.02359311990262264,,,,60956,B-D1_run_level_aggregated,42,C6 used only for this single final evaluation; model selection used only the source-domain internal validation split

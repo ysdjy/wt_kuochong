@@ -1,0 +1,5 @@
+﻿Split_type,Task,Seed,Strategy,vb_E,vb_L,vb_E_quantile,vb_L_quantile,label_selection_score
+case_split,CSP1,2026,B_vb_engineering,0.158,0.42266666666666663,0.3,0.7,0.5757575757575758
+case_split,CSP2,2026,B_vb_engineering,0.15,0.47,0.25,0.75,0.5425447101917691
+case_split,CSP3,2026,B_vb_engineering,0.15083333333333332,0.4766666666666667,0.25,0.75,0.601269876594234
+case_split,CSP4,2026,B_vb_engineering,0.15,0.4716666666666667,0.25,0.75,0.5651619680130118

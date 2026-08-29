@@ -1,0 +1,13 @@
+﻿Method,Method_name,Stage_definition,Model_type,Acc,Macro-F1,E-F1,M-F1,L-F1,M-Pre,M-Rec,M→E,M→L,Rev,Jump,Smooth
+B1,Fixed-stage Rule,Fixed-stage,wear-threshold reference,0.6447,0.6145,0.4587,0.597,0.7879,0.5755,0.6202,0.0,0.3798,0,0,0.0132
+B2,Relative-stage Proxy Rule,Relative-stage,sensor-derived q_proxy rule,0.5757,0.4872,0.7336,0.0,0.728,0.0,0.0,0.4729,0.5271,6,13,0.0858
+B3,Fixed-stage RF,Fixed-stage,RF,0.9638,0.9648,0.9545,0.9565,0.9832,0.9758,0.938,0.062,0.0,6,0,0.1111
+B4,Relative-stage SVM,Relative-stage,SVM,0.8651,0.8695,0.8723,0.8392,0.897,0.8492,0.8295,0.1705,0.0,10,0,0.1576
+B5,Relative-stage RF,Relative-stage,RF,0.9737,0.9743,0.9708,0.9688,0.9834,0.9764,0.9612,0.031,0.0078,7,0,0.1086
+B6,Relative-stage XGBoost,Relative-stage,xgboost,0.8783,0.8765,0.8054,0.8702,0.954,0.7949,0.9612,0.0388,0.0,9,0,0.1448
+B7,Relative-stage MLP,Relative-stage,MLP,0.8322,0.8309,0.7943,0.8061,0.8922,0.791,0.8217,0.0078,0.1705,7,0,0.1314
+B8,Relative-stage TCN,Relative-stage,TCN,0.8487,0.85,0.866,0.783,0.901,1.0,0.6434,0.2016,0.155,6,9,0.1004
+B9,Relative-stage GRU,Relative-stage,GRU,0.8849,0.8868,0.8936,0.843,0.9239,1.0,0.7287,0.155,0.1163,3,0,0.0503
+B10,Relative-stage TCN-GRU,Relative-stage,TCN-GRU,0.8059,0.8067,0.8235,0.7122,0.8844,0.9605,0.5659,0.2791,0.155,1,0,0.0268
+B11,Multi-task TCN-GRU,Relative-stage,TCN-GRU + auxiliary heads,0.8059,0.8049,0.8485,0.7035,0.8626,1.0,0.5426,0.2326,0.2248,2,1,0.0388
+B12,FGDS-PSI,Relative-stage,Proposed,0.7993,0.7989,0.8485,0.6965,0.8517,0.9722,0.5426,0.2326,0.2248,2,1,0.0319

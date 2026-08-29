@@ -1,0 +1,15 @@
+{
+  "method": "multitask_tcn_gru",
+  "display_name": "Multi-task TCN-GRU",
+  "block_length": 12,
+  "n_bootstrap": 5000,
+  "random_seed": 20260820,
+  "n_test_runs": 304,
+  "source_prediction_file": "final_statistical_evidence\\predictions_common_universe\\D1_multitask_tcn_gru_304runs.csv",
+  "point_estimate_sequence_metrics": {
+    "Rev": 0,
+    "Jump": 0,
+    "Smooth": 0.023590099009900993
+  },
+  "note": "Rev/Jump/Smooth are point estimates only (no bootstrap CI) -- block resampling injects artificial sequence-boundary discontinuities into these order-dependent metrics; see PROTOCOL.md."
+}

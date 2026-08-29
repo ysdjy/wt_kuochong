@@ -1,0 +1,5767 @@
+{
+  "dataset": "mendeley_machine_tool_wear",
+  "files": {
+    "M1T1R1C11VB3.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M1T1R305C1734VB81.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M1T1R578C3285VB141.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M1T2R1C12VB3.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2205
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2205
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2205
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2205
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2205
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2205
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_axis_x": {
+          "shape": [
+            1,
+            2205
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_y": {
+          "shape": [
+            1,
+            2205
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_z": {
+          "shape": [
+            1,
+            2205
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2205
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0018,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M1T2R305C1714VB75.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M1T2R578C3247VB126.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M1T3R1C12VB3.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M1T3R319C1816VB76.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M1T3R606C3468VB139.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_axis_x": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_y": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_axis_z": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2206
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            110250
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M2T4R1C11VB3.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M2T4R464C2572VB82.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M2T4R881C4923VB141.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M2T5R1C11VB3.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2257
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2257
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2257
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2257
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2257
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2257
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2257
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2257
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2257
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2257
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M2T5R464C2573VB79.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M2T5R881C4923VB135.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M2T6R1C11VB3.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M2T6R464C2584VB80.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M2T6R881C4933VB135.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2258
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            112850
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M3T7R1C11VB3.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M3T7R305C1726VB75.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M3T7R578C3267VB145.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M3T8R1C177VB34.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2220
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2220
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2220
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2220
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2220
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2220
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2220
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2220
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2220
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2220
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            111000
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            111000
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            111000
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            111000
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M3T8R280C1890VB83.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M3T8R532C3330VB146.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M3T9R1C12VB3.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2223
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M3T9R305C1730VB74.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    },
+    "M3T9R578C3277VB146.h5": {
+      "root_attrs": {},
+      "datasets": {
+        "labels/cumulated_tool_contact_time": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "min"
+          }
+        },
+        "labels/machine": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/run": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/tool": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {}
+        },
+        "labels/wear": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int32",
+          "compression": null,
+          "attrs": {
+            "unit": "micrometer"
+          }
+        },
+        "signals_machine/force_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/force_axis_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/position_control_deviation_axis_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/time_machine": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "s"
+          }
+        },
+        "signals_machine/tool_position_x": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_y": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/tool_position_z": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "mm"
+          }
+        },
+        "signals_machine/torque_spindle": {
+          "shape": [
+            1,
+            2224
+          ],
+          "dtype": "float32",
+          "compression": null,
+          "attrs": {
+            "unit": "Nm"
+          }
+        },
+        "signals_sensor/force_sensor_x": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_y": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/force_sensor_z": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "N"
+          }
+        },
+        "signals_sensor/time_sensor": {
+          "shape": [
+            1,
+            111150
+          ],
+          "dtype": "float32",
+          "compression": "gzip",
+          "attrs": {
+            "unit": "s"
+          }
+        }
+      },
+      "fs_measured": {
+        "signals_machine": 500.0027,
+        "signals_sensor": 24966.0952
+      }
+    }
+  },
+  "unresolved_documented_names": {
+    "position_axis": {
+      "documented_scope_coordinate": [
+        "T7",
+        "T8"
+      ],
+      "candidates_in_file": [
+        "tool_position_x",
+        "tool_position_y",
+        "tool_position_z"
+      ],
+      "note": "No channel named 'position_axis' exists. tool_position_* is the only plausible candidate. NOT confirmed -- excluded from the primary set for every tool."
+    }
+  },
+  "channels": [
+    "cumulated_tool_contact_time",
+    "force_axis_x",
+    "force_axis_y",
+    "force_axis_z",
+    "force_sensor_x",
+    "force_sensor_y",
+    "force_sensor_z",
+    "machine",
+    "position_control_deviation_axis_x",
+    "position_control_deviation_axis_y",
+    "run",
+    "time_machine",
+    "time_sensor",
+    "tool",
+    "tool_position_x",
+    "tool_position_y",
+    "tool_position_z",
+    "torque_axis_x",
+    "torque_axis_y",
+    "torque_axis_z",
+    "torque_spindle",
+    "wear"
+  ]
+}

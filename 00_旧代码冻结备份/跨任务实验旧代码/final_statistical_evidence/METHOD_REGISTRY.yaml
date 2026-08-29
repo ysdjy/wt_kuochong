@@ -1,0 +1,141 @@
+# METHOD_REGISTRY.yaml -- final_statistical_evidence
+# 9 methods, fixed, no additions/removals. D1 fields verified by direct
+# file audit (see PROTOCOL.md); D2/D3 fields describe the resumable
+# runner's plan, updated to REUSE/DONE as jobs complete (see STATUS.json
+# for live per-task-per-method state). Keys match the lowercase method_id
+# used throughout scripts/ and predictions_common_universe/ filenames.
+
+rf:
+  display_name: "RF"
+  category: "generic_internal_baseline"
+  code_path: "代码/main_experiment_3_fgds_psi_optimized.py"
+  train_script: "代码/7.4对比实验.py (main(); RandomForestClassifier, B5)"
+  frozen_config: "n_estimators=400, class_weight=balanced_subsample, random_state=42; 45 train-only-selected features; L=12 window"
+  D1_prediction_file: "补充材料/小论文/4_comparison_experiment_recheck/1_results/FINAL_comparison_predictions.csv (pred_B5/prob_*_B5)"
+  D1_metrics_file: "补充材料/小论文/4_comparison_experiment_recheck/1_results/FINAL_comparison_results.csv (row B5)"
+  D2_existing: "NOT FOUND -- 代码/7.7跨工况实验.py does not cover RF (only B8-B12); fresh D2 run required"
+  D3_existing: "NOT FOUND -- same as D2"
+  native_preprocessing: "windowed L=12, authoritative feature file"
+  test_universe: "windowed, 304 common runs (run_id 12-315)"
+  notes: "no training-seed randomness of consequence beyond sklearn RandomForestClassifier(random_state=42); fastest job in the runner, run first"
+
+tcn_gru:
+  display_name: "TCN-GRU"
+  category: "generic_internal_baseline"
+  code_path: "代码/main_experiment_3_fgds_psi_optimized.py (TCNGRUStageOnly)"
+  train_script: "final_statistical_evidence/scripts/methods/run_tcn_family_transfer_task.py (adapted from 代码/7.7跨工况实验.py)"
+  frozen_config: "base.BEST_ARCH (channels=(32,64,64), gru_hidden=64, dropout=0.2, lr), EPOCHS=120, PATIENCE=18, TRAIN_SEED=42"
+  D1_prediction_file: "补充材料/小论文/4_comparison_experiment_recheck/1_results/FINAL_comparison_predictions.csv (pred_B10/prob_*_B10)"
+  D1_metrics_file: "补充材料/小论文/4_comparison_experiment_recheck/1_results/FINAL_comparison_results.csv (row B10)"
+  D2_existing: "STALE -- 代码/7.7跨工况实验.py / 补充材料/小论文/7_cross_condition_generalization/ has a D2 run for B10, but its own D1 (C1+C4->C6) row for B12 does not match the authoritative frozen-model D1 number (see PROTOCOL.md) -- whole legacy run not verified, not reused"
+  D3_existing: "STALE -- same reasoning"
+  native_preprocessing: "windowed L=12, authoritative feature file"
+  test_universe: "windowed, 304 common runs (run_id 12-315)"
+  notes: "trained as its own single-task model (not shared with multitask_tcn_gru/dc_psr checkpoint)"
+
+multitask_tcn_gru:
+  display_name: "Multi-task TCN-GRU"
+  category: "generic_internal_baseline"
+  code_path: "代码/main_experiment_3_fgds_psi_optimized.py (train_model/TCNGRUMultiTask)"
+  train_script: "final_statistical_evidence/scripts/methods/run_tcn_family_transfer_task.py (same job as dc_psr -- shared checkpoint)"
+  frozen_config: "base.BEST_ARCH, WEIGHT_DECAY, LAMBDA_STAGE/LAMBDA_FINE/LAMBDA_Q/LAMBDA_MONO, EPOCHS=120, patience=18, TRAIN_SEED=42"
+  D1_prediction_file: "补充材料/小论文/4_comparison_experiment_recheck/1_results/FINAL_comparison_predictions.csv (pred_B11/prob_*_B11)"
+  D1_metrics_file: "补充材料/小论文/4_comparison_experiment_recheck/1_results/FINAL_comparison_results.csv (row B11)"
+  D2_existing: "STALE -- see tcn_gru entry"
+  D3_existing: "STALE -- see tcn_gru entry"
+  native_preprocessing: "windowed L=12, authoritative feature file"
+  test_universe: "windowed, 304 common runs (run_id 12-315)"
+  notes: "DC-PSR directly reuses this network's raw probability outputs -- see dc_psr entry; only ONE training job needed per transfer task for this pair"
+
+dc_psr:
+  display_name: "DC-PSR"
+  category: "proposed"
+  code_path: "代码/main_experiment_3_fgds_psi_optimized.py (apply_probability_inference, line 862)"
+  train_script: "final_statistical_evidence/scripts/methods/run_tcn_family_transfer_task.py (post-processes multitask_tcn_gru's raw probabilities with frozen B12_PARAMS -- no separate backbone training)"
+  frozen_config: 'B12_PARAMS = {eta: 0.75, fine_weight: 0.30, temperature: 1.20, mid_floor: 0.12, late_tau: 0.66, early_tau: 0.38, order_blend: 0.25} (hardcoded, unchanged)'
+  D1_prediction_file: "补充材料/小论文/4_comparison_experiment_recheck/1_results/FINAL_comparison_predictions.csv (pred_B12/prob_*_B12)"
+  D1_metrics_file: "补充材料/小论文/4_comparison_experiment_recheck/1_results/FINAL_comparison_results.csv (row B12) -- Acc=0.9868, matches task's canonical numbers exactly"
+  D2_existing: "STALE -- 补充材料/小论文/7_cross_condition_generalization/Table12...csv row B12 D1 Acc=0.9836 != authoritative 0.9868, fails verification; not reused"
+  D3_existing: "STALE -- same reasoning"
+  native_preprocessing: "windowed L=12, authoritative feature file"
+  test_universe: "windowed, 304 common runs (run_id 12-315)"
+  notes: "must run AFTER multitask_tcn_gru in the same job (same script, same checkpoint) -- never retrain the backbone twice"
+
+htt_net:
+  display_name: "HTT-Net (adapted)"
+  category: "published_method"
+  code_path: "baselines/htt_net"
+  train_script: "baselines/htt_net/train_final_tuned.py -- needs a train/test-condition CLI arg added (frozen hyperparameters unchanged) for final_statistical_evidence/scripts/methods/run_htt_net_transfer_task.py to call"
+  frozen_config: "baselines/htt_net/best_source_only_config.yaml (embed_dim=64, depths=[2,2,2,2], num_heads=4, window_size=3, dropout=0.2, lr=5e-4, weight_decay=1e-5, epochs=120, patience=18, batch=32), TRAIN_SEED=42"
+  D1_prediction_file: "outputs/htt_net/D1_C1C4_to_C6_SOURCE_ONLY_TUNED/test_predictions.csv"
+  D1_metrics_file: "outputs/htt_net/D1_C1C4_to_C6_SOURCE_ONLY_TUNED/config.json + baselines/htt_net/FINAL_HTT_NET_REPORT.md"
+  D2_existing: "NOT FOUND"
+  D3_existing: "NOT FOUND"
+  native_preprocessing: "windowed L=12, authoritative feature file"
+  test_universe: "windowed, 304 common runs (run_id 12-315)"
+  notes: "never covered by any prior cross-condition script; fully fresh D2/D3 runs; must keep SOURCE_ONLY_TUNED config, never INITIAL_UNTUNED"
+
+multi_source_attention:
+  display_name: "Multi-source Attention"
+  category: "published_method"
+  code_path: "baselines/multi_source_attention"
+  train_script: "baselines/multi_source_attention/train.py -- needs train/test-condition CLI arg added (PROTO_B_CFG unchanged) for final_statistical_evidence/scripts/methods/run_multi_source_attention_transfer_task.py"
+  frozen_config: "PROTO_B_CFG in train.py: max_epochs=100, patience=15, batch_size=64, lr=0.001, weight_decay=1e-4, TRAIN_SEED=42; CWT dual-CNN + channel-spatial attention unchanged"
+  D1_prediction_file: "outputs/multi_source_attention/unified_protocol/test_predictions.csv"
+  D1_metrics_file: "outputs/multi_source_attention/unified_protocol/metrics.json"
+  D2_existing: "NOT FOUND"
+  D3_existing: "NOT FOUND"
+  native_preprocessing: "native raw-signal CWT, condition-relative E/M/L labels"
+  test_universe: "native 315 -> filtered to 304 common runs (run_id 12-315)"
+  notes: "run after HTT-Net per GPU schedule; do not touch CWT wavelet/scale/window parameters"
+
+dp2net_adapted:
+  display_name: "DP2Net-adapted"
+  category: "published_method"
+  code_path: "baselines/dp2net"
+  train_script: "baselines/dp2net/train.py -- currently only --protocol {A,B-S,B-D1,smoke}; needs B-D2/B-D3 protocol choices added (pooled-source, condition lists only, S/G/F architecture unchanged) for final_statistical_evidence/scripts/methods/run_dp2net_transfer_task.py"
+  frozen_config: "S/G/F architecture, alpha=20, MMD gamma=median heuristic, kpool=4, PHM2010 k=25, batch=64, two-stage Algorithm 1 (100+100 epochs), TRAIN_SEED=42"
+  D1_prediction_file: "outputs/dp2net/unified_protocol_B-D1/seed42/predictions.csv"
+  D1_metrics_file: "outputs/dp2net/unified_protocol_B-D1/seed42/metrics.json"
+  D2_existing: "NOT FOUND"
+  D3_existing: "NOT FOUND"
+  native_preprocessing: "native raw-signal, pooled-source adapted protocol"
+  test_universe: "native 315 -> filtered to 304 common runs (run_id 12-315)"
+  notes: "D2/D3 continue to use pooled-source protocol per task spec (D2: C1+C6 pooled -> C4; D3: C4+C6 pooled -> C1); manuscript name stays 'DP2Net-adapted' in all tables"
+
+dynamic_gin_tgp:
+  display_name: "Dynamic GIN + TGP"
+  category: "published_method"
+  code_path: "baselines/dynamic_gin_tgp"
+  train_script: "baselines/dynamic_gin_tgp/train.py --protocol B --seed <N> -- already supports --seed, needs train/test-condition CLI arg added for D2/D3, for final_statistical_evidence/scripts/methods/run_dynamic_gin_tgp_transfer_task.py"
+  frozen_config: "topk=144, lr=1e-4, batch=4, weight_decay(L2)=0.1, epochs=50, LR-halving patience=10, TRAIN_SEED=42"
+  D1_prediction_file: "outputs/dynamic_gin_tgp/unified_protocol/seed42/run_predictions.csv"
+  D1_metrics_file: "outputs/dynamic_gin_tgp/unified_protocol/seed42/metrics.csv"
+  D2_existing: "NOT FOUND"
+  D3_existing: "NOT FOUND"
+  native_preprocessing: "native raw-signal (multi-source signals, GASF, dynamic/static graph, GIN, TGP)"
+  test_universe: "native 315 -> filtered to 304 common runs (run_id 12-315)"
+  notes: "post label-leakage-fix version only (each Dataset shuffled once at construction, see final_five_seed_sweep/AUDIT.md sec 5a) -- run this fixed code path for D2/D3 too; must not reintroduce the eval-batch label leakage when building D2/D3 datasets"
+
+mtf_avitk:
+  display_name: "MTF-AViTK"
+  category: "published_method"
+  code_path: "baselines/mtf_avitk"
+  train_script: "baselines/mtf_avitk/train.py --protocol B -- needs train/test-condition CLI arg added for final_statistical_evidence/scripts/methods/run_mtf_avitk_transfer_task.py"
+  frozen_config: "ViT-L/32 (32x32 patch, 1024 dim, 24 blocks, 16 heads), MTF, AdaptMLP, KAN per PAPER_SPEC.md; max_epochs=50, patience=10, batch_size=8, lr=0.0006, weight_decay=2e-4, momentum=0.9, TRAIN_SEED=42"
+  D1_prediction_file: "outputs/mtf_avitk/seed_sweep/seed42/unified_protocol/test_predictions.csv (confirmed-seed42 rerun; supersedes the original outputs/mtf_avitk/unified_protocol/ run, whose seed identity was ambiguous per final_five_seed_sweep/AUDIT.md sec 5e -- Acc=0.9683 here vs 0.9016 there, and 0.9683 sits far closer to the 5-seed mean 0.9556+-0.044)"
+  D1_metrics_file: "outputs/mtf_avitk/seed_sweep/seed42/unified_protocol/metrics.json"
+  D2_existing: "NOT FOUND"
+  D3_existing: "NOT FOUND"
+  native_preprocessing: "native raw-signal (resultant force, wavelet denoising, MTF images)"
+  test_universe: "native 315 -> filtered to 304 common runs (run_id 12-315)"
+  notes: "largest model (309M params), runs last/alone on GPU per task instructions; 8GB card, prior peak VRAM 5-8GB observed -- use AMP/gradient checkpointing/batch adaptation if needed, never change ViT/MTF/AdaptMLP/KAN architecture; avoid --resume mid-run where possible to keep checkpoints unambiguous, but the runner's own checkpoint/resume mechanism (last.pt) is fine and expected for surviving interruptions"
+
+shared_infra:
+  authoritative_feature_file: "baselines/htt_net/data/run_level_features_all.csv"
+  split_choke_point: "代码/main_experiment_3_fgds_psi_optimized.py :: split_grouped_lifecycle(df) -- hardcoded train={C1,C4}, test={C6}. Generalized for D2/D3 via 代码/7.7跨工况实验.py's split_train_val_by_conditions/prepare_task_data functions (read-only reference, reused not modified)."
+  stage_labels: "define_condition_relative_stages() -- per-condition quantile thresholds, computed independently per condition before any split; unchanged for D2/D3, not target-blindness-sensitive"
+  train_seed_for_D2_D3: 42
+  common_test_universe: "304 runs (run_id/run_id_end 12-315) for all main-table comparisons; native 315-run results kept as supplementary audit only"
+  gpu: "RTX 3070 Ti Laptop 8GB"
+  run_order_fast_to_slow: ["rf", "tcn_gru", "multitask_tcn_gru + dc_psr", "htt_net", "multi_source_attention", "dp2net_adapted", "dynamic_gin_tgp", "mtf_avitk"]

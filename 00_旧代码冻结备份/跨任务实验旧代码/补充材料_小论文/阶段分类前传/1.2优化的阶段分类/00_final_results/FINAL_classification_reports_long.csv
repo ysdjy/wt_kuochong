@@ -1,0 +1,61 @@
+﻿split,method,label,precision,recall,f1-score,support,value
+final_internal_val,raw,early,1.0,1.0,1.0,42.0,
+final_internal_val,raw,middle,1.0,1.0,1.0,50.0,
+final_internal_val,raw,late,1.0,1.0,1.0,34.0,
+final_internal_val,raw,accuracy,,,,,1.0
+final_internal_val,raw,macro avg,1.0,1.0,1.0,126.0,
+final_internal_val,raw,weighted avg,1.0,1.0,1.0,126.0,
+final_internal_val,prior,early,0.0,0.0,0.0,42.0,
+final_internal_val,prior,middle,0.3968253968253968,1.0,0.5681818181818182,50.0,
+final_internal_val,prior,late,0.0,0.0,0.0,34.0,
+final_internal_val,prior,accuracy,,,,,0.3968253968253968
+final_internal_val,prior,macro avg,0.13227513227513227,0.3333333333333333,0.18939393939393942,126.0,
+final_internal_val,prior,weighted avg,0.15747039556563366,0.3968253968253968,0.22546897546897549,126.0,
+final_internal_val,mix,early,1.0,1.0,1.0,42.0,
+final_internal_val,mix,middle,1.0,1.0,1.0,50.0,
+final_internal_val,mix,late,1.0,1.0,1.0,34.0,
+final_internal_val,mix,accuracy,,,,,1.0
+final_internal_val,mix,macro avg,1.0,1.0,1.0,126.0,
+final_internal_val,mix,weighted avg,1.0,1.0,1.0,126.0,
+final_internal_val,ordered,early,1.0,1.0,1.0,42.0,
+final_internal_val,ordered,middle,0.8928571428571429,1.0,0.9433962264150944,50.0,
+final_internal_val,ordered,late,1.0,0.8235294117647058,0.9032258064516129,34.0,
+final_internal_val,ordered,accuracy,,,,,0.9523809523809523
+final_internal_val,ordered,macro avg,0.9642857142857143,0.9411764705882352,0.948874010955569,126.0,
+final_internal_val,ordered,weighted avg,0.9574829931972789,0.9523809523809523,0.9514245138103933,126.0,
+final_internal_val,final,early,1.0,1.0,1.0,42.0,
+final_internal_val,final,middle,1.0,1.0,1.0,50.0,
+final_internal_val,final,late,1.0,1.0,1.0,34.0,
+final_internal_val,final,accuracy,,,,,1.0
+final_internal_val,final,macro avg,1.0,1.0,1.0,126.0,
+final_internal_val,final,weighted avg,1.0,1.0,1.0,126.0,
+test_C6,raw,early,0.7431192660550459,1.0,0.8526315789473684,81.0,
+test_C6,raw,middle,1.0,0.7835820895522388,0.8786610878661087,134.0,
+test_C6,raw,late,0.9885057471264368,1.0,0.9942196531791907,86.0,
+test_C6,raw,accuracy,,,,,0.9036544850498339
+test_C6,raw,macro avg,0.9105416710604942,0.927860696517413,0.9085041066642227,301.0,
+test_C6,raw,weighted avg,0.9275885541638945,0.9036544850498339,0.9046732021335742,301.0,
+test_C6,prior,early,0.0,0.0,0.0,81.0,
+test_C6,prior,middle,0.44518272425249167,1.0,0.6160919540229886,134.0,
+test_C6,prior,late,0.0,0.0,0.0,86.0,
+test_C6,prior,accuracy,,,,,0.44518272425249167
+test_C6,prior,macro avg,0.1483942414174972,0.3333333333333333,0.2053639846743295,301.0,
+test_C6,prior,weighted avg,0.19818765797287002,0.44518272425249167,0.2742734944819949,301.0,
+test_C6,mix,early,0.7788461538461539,1.0,0.8756756756756757,81.0,
+test_C6,mix,middle,0.9823008849557522,0.8283582089552238,0.8987854251012146,134.0,
+test_C6,mix,late,1.0,0.9767441860465116,0.9882352941176471,86.0,
+test_C6,mix,accuracy,,,,,0.9169435215946844
+test_C6,mix,macro avg,0.920382346267302,0.9350341316672451,0.9208987982981792,301.0,
+test_C6,mix,weighted avg,0.9326074984903963,0.9169435215946844,0.91812362786515,301.0,
+test_C6,ordered,early,0.8181818181818182,1.0,0.9,81.0,
+test_C6,ordered,middle,0.9508196721311475,0.8656716417910447,0.90625,134.0,
+test_C6,ordered,late,1.0,0.9302325581395349,0.963855421686747,86.0,
+test_C6,ordered,accuracy,,,,,0.920265780730897
+test_C6,ordered,macro avg,0.9230004967709885,0.9319680666435265,0.9233684738955823,301.0,
+test_C6,ordered,weighted avg,0.9291779512900368,0.920265780730897,0.9210267982227914,301.0,
+test_C6,final,early,0.7788461538461539,1.0,0.8756756756756757,81.0,
+test_C6,final,middle,0.9823008849557522,0.8283582089552238,0.8987854251012146,134.0,
+test_C6,final,late,1.0,0.9767441860465116,0.9882352941176471,86.0,
+test_C6,final,accuracy,,,,,0.9169435215946844
+test_C6,final,macro avg,0.920382346267302,0.9350341316672451,0.9208987982981792,301.0,
+test_C6,final,weighted avg,0.9326074984903963,0.9169435215946844,0.91812362786515,301.0,

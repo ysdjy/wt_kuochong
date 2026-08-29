@@ -1,0 +1,9 @@
+{
+  "eta": 0.55,
+  "fine_weight": 0.2,
+  "temperature": 1.0,
+  "mid_floor": 0.08,
+  "late_tau": 0.66,
+  "early_tau": 0.34,
+  "order_blend": 0.5
+}

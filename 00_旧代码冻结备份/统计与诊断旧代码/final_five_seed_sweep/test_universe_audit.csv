@@ -1,0 +1,3 @@
+universe_group,n_runs,run_id_field,run_id_range,methods,source_file_example
+windowed_L12,304,run_id_end,12-315,"RF (G1), TCN-GRU (G2), Multi-task TCN-GRU (G3), DC-PSR, HTT-Net (adapted)","outputs/htt_net/D1_C1C4_to_C6_SOURCE_ONLY_TUNED/test_predictions.csv"
+native_run_level,315,run_id,1-315,"Multi-source Attention, MTF-AViTK, Dynamic GIN + TGP, DP2Net-adapted","outputs/dynamic_gin_tgp/unified_protocol/seed42/run_predictions.csv"

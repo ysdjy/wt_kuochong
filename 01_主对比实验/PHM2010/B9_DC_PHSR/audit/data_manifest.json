@@ -1,0 +1,20 @@
+{
+  "dataset": "PHM2010",
+  "task": "D1",
+  "raw_source": {
+    "path": "baselines/htt_net/data/run_level_features_all.csv",
+    "sha256": "6e8affeb681d0b386e453421a0df7a66932138199eb236403d27b797c11eeb88",
+    "shape": "945 rows x 345 cols (C1=315, C4=315, C6=315 raw rows before split)",
+    "note": "Not copied into 扩充实验代码/ (raw/derived dataset, kept manifest-only per policy); referenced read-only from its original location."
+  },
+  "train_conditions": ["C1", "C4"],
+  "test_condition": ["C6"],
+  "test_universe": {
+    "n_test": 304,
+    "run_id_range": [12, 315],
+    "window_length_L": 12,
+    "manifest_file": "shared/reproducibility/PHM2010_D1_frozen_preprocess/window_manifest.csv"
+  },
+  "target_domain_used_for_tuning": false,
+  "target_domain_used_for_tuning_note": "C6 used only as the frozen held-out test set; feature selection, GMM, scaler, hyperparameters were all fit on C1+C4 only."
+}

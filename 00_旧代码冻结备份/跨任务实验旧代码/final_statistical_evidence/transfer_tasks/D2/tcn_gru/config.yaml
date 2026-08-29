@@ -1,0 +1,10 @@
+method: tcn_gru
+task: D2
+train_conditions: ['C1', 'C6']
+test_condition: C4
+train_seed: 42
+BEST_ARCH: {'L': 12, 'dropout': 0.2, 'lr': 0.0005, 'channels': (32, 64, 64), 'gru_hidden': 64}
+epochs: 120
+patience: 18
+train_seconds: 53.31
+best_info: {'best_epoch': 2, 'best_val_acc': 0.5333333333333333, 'best_val_macro_f1': 0.5037707390648567, 'best_val_MRec': np.float64(0.0)}

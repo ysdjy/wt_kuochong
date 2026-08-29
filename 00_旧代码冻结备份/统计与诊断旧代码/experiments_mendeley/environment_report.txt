@@ -1,0 +1,30 @@
+﻿DC-PSR environment report
+generated : 2026-08-18T12:54:21
+host OS   : Microsoft Windows 11 教育版 10.0.26200
+conda env : dcpsr
+GPU       : NVIDIA GeForce ... WDDM
+driver    : 527.58
+CUDA(smi) : 12.0
+wheel ch. : cu118
+
+{
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.7.1+cu118",
+  "torch_cuda_build": "11.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+  "modules": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.0",
+    "h5py": "3.16.0",
+    "pyarrow": "25.0.1",
+    "xgboost": "3.2.0",
+    "matplotlib": "3.11.1",
+    "joblib": "1.5.3",
+    "tqdm": "4.70.0"
+  }
+}
+

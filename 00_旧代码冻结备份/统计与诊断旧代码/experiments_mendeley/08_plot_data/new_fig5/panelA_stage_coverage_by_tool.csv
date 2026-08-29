@@ -1,0 +1,10 @@
+﻿sequence_id,domain_id,total,early_n,early_present,early_VB_range,middle_n,middle_present,middle_VB_range,late_n,late_present,late_VB_range,VB_first,early_truncated,VB_first_median_all_sequences
+T1,M1,609,183,True,3-64,255,True,64-101,171,True,101-158,3.0,False,3.0
+T2,M1,609,191,True,3-60,247,True,60-83,171,True,83-145,3.0,False,3.0
+T3,M1,638,192,True,3-62,267,True,62-99,179,True,99-152,3.0,False,3.0
+T4,M2,928,282,True,3-61,368,True,61-93,278,True,69-149,3.0,False,3.0
+T5,M2,928,286,True,3-62,381,True,62-93,261,True,93-148,3.0,False,3.0
+T6,M2,928,279,True,3-61,383,True,61-90,266,True,90-147,3.0,False,3.0
+T7,M3,609,183,True,3-56,240,True,56-99,186,True,59-153,3.0,False,3.0
+T8,M3,560,168,True,34-67,184,True,67-109,208,True,70-150,34.0,True,3.0
+T9,M3,609,183,True,3-60,233,True,61-103,193,True,86-160,3.0,False,3.0

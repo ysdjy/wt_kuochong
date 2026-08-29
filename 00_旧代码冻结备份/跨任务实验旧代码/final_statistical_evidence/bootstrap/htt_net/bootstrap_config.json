@@ -1,0 +1,15 @@
+{
+  "method": "htt_net",
+  "display_name": "HTT-Net (adapted)",
+  "block_length": 12,
+  "n_bootstrap": 5000,
+  "random_seed": 20260820,
+  "n_test_runs": 304,
+  "source_prediction_file": "final_statistical_evidence\\predictions_common_universe\\D1_htt_net_304runs.csv",
+  "point_estimate_sequence_metrics": {
+    "Rev": 4,
+    "Jump": 3,
+    "Smooth": 0.0649591132819632
+  },
+  "note": "Rev/Jump/Smooth are point estimates only (no bootstrap CI) -- block resampling injects artificial sequence-boundary discontinuities into these order-dependent metrics; see PROTOCOL.md."
+}

@@ -1,0 +1,5 @@
+﻿Method,Method_name,Stage_definition,Model_type,Acc,Macro-F1,E-F1,M-F1,L-F1,M-Pre,M-Rec,M→E,M→L,Rev,Jump,Smooth
+B5,Relative-stage RF,Relative-stage,RF,0.977,0.9773,0.9651,0.9723,0.9945,0.9919,0.9535,0.0388,0.0078,5,0,0.1105
+B8,Relative-stage TCN,Relative-stage,TCN,0.9539,0.955,0.9385,0.9426,0.9838,1.0,0.8915,0.0853,0.0233,10,0,0.1245
+B11,Multi-task TCN-GRU,Relative-stage,TCN-GRU + auxiliary heads,0.9901,0.9902,0.9825,0.9882,1.0,1.0,0.9767,0.0233,0.0,0,0,0.0236
+B12,FGDS-PSI,Relative-stage,Proposed,0.9868,0.9871,0.9825,0.9844,0.9945,0.9921,0.9767,0.0233,0.0,0,0,0.0188

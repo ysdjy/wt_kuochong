@@ -1,0 +1,12 @@
+FINAL rechecked comparison experiment summary
+B2 uses sensor-derived q_proxy rather than true wear-derived q: True
+XGBoost implementation: xgboost
+B10 has been rechecked with the same selected features, scaler, L=12 windows, class weights, optimizer, learning rate, dropout, epochs and early-stopping criterion as the deep baselines.
+Best method by Macro-F1: B5 (0.9806)
+Best method by M-F1: B5 (0.9766)
+Best method by M→L: B3 (0.0000)
+B12 vs B10 Macro-F1 change: 0.1237; M-F1 change: 0.2081
+B12 vs B11 Macro-F1 change: 0.0055; M-F1 change: 0.0105
+B12 keeps M→L=0: False
+B12 has lower Smooth than B11: True
+B10 remains relatively weak after recheck, indicating that the single-task TCN-GRU can be unstable for the middle stage in this split.

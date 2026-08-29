@@ -1,0 +1,6 @@
+﻿split,condition,n,early,middle,late
+final_train,C1,252,93,89,70
+final_train,C4,252,76,106,70
+final_internal_val,C1,63,23,22,18
+final_internal_val,C4,63,19,26,18
+test_C6,C6,315,95,129,91

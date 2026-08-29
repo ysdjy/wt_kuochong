@@ -1,0 +1,33 @@
+{
+  "method": "B3_Multitask_TCN_GRU",
+  "preprocess_seed": 42,
+  "train_seed": 62,
+  "git_commit": "811da096ee47bea4f65db193aa49e793dba6f47d",
+  "feature_hash": "3a7fedb02d2dffa9e9cd4397e11b7446c7c7c15741942208649b14d1b95cf7d0",
+  "split_hash": "a7197a8e6d33f85075c451dd10fa6233200d642f1ddfad6279e170eea49b5231",
+  "gmm_hash": "4708f67f14b043b2ec1c79e6b45de1a934f9aa232b61aa5de369e443f242311c",
+  "window_hash": "a1ec6910e449653fd322a39a0db5b5dcd7b700e79f1801aef1a95d7f095e58c5",
+  "config": {
+    "channels": [
+      32,
+      64,
+      64
+    ],
+    "gru_hidden": 64,
+    "dropout": 0.2,
+    "lr": 0.0005,
+    "epochs": 120,
+    "patience": 18,
+    "LAMBDA_STAGE": 1.0,
+    "LAMBDA_FINE": 0.25,
+    "LAMBDA_Q": 0.3,
+    "LAMBDA_MONO": 0.03
+  },
+  "start_time": 1788019366.8916388,
+  "end_time": 1788019526.2470691,
+  "training_seconds": 159.35543036460876,
+  "best_epoch": 7,
+  "best_val_acc": 1.0,
+  "best_val_macro_f1": 1.0,
+  "best_val_MRec": 1.0
+}

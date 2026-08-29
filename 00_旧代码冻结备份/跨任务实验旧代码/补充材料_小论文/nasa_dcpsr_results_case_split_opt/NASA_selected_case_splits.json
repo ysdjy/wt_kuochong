@@ -1,0 +1,175 @@
+[
+  {
+    "Split_type": "case_split",
+    "Task": "CSP1",
+    "Source_split_id": "CAND1661",
+    "Original_train_cases": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13,
+      14,
+      9,
+      10,
+      11
+    ],
+    "Train_cases": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13,
+      14
+    ],
+    "Validation_cases": [
+      9,
+      10,
+      11
+    ],
+    "Test_cases": [
+      3,
+      12,
+      15,
+      16
+    ],
+    "Similarity_distance": 0.043470624270635666,
+    "Split_quality_score": 0.9831536064452274
+  },
+  {
+    "Split_type": "case_split",
+    "Task": "CSP2",
+    "Source_split_id": "CAND1439",
+    "Original_train_cases": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      13,
+      14,
+      15,
+      9,
+      10,
+      11
+    ],
+    "Train_cases": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      13,
+      14,
+      15
+    ],
+    "Validation_cases": [
+      9,
+      10,
+      11
+    ],
+    "Test_cases": [
+      3,
+      4,
+      12,
+      16
+    ],
+    "Similarity_distance": 0.045207616295025045,
+    "Split_quality_score": 0.9829209743247637
+  },
+  {
+    "Split_type": "case_split",
+    "Task": "CSP3",
+    "Source_split_id": "CAND055",
+    "Original_train_cases": [
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      13,
+      14,
+      15,
+      16,
+      3,
+      10,
+      12
+    ],
+    "Train_cases": [
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      13,
+      14,
+      15,
+      16
+    ],
+    "Validation_cases": [
+      3,
+      10,
+      12
+    ],
+    "Test_cases": [
+      1,
+      6,
+      11
+    ],
+    "Similarity_distance": 0.043547116114868084,
+    "Split_quality_score": 0.9815430430457447
+  },
+  {
+    "Split_type": "case_split",
+    "Task": "CSP4",
+    "Source_split_id": "CAND1057",
+    "Original_train_cases": [
+      1,
+      4,
+      5,
+      6,
+      8,
+      12,
+      13,
+      14,
+      15,
+      9,
+      10,
+      11
+    ],
+    "Train_cases": [
+      1,
+      4,
+      5,
+      6,
+      8,
+      12,
+      13,
+      14,
+      15
+    ],
+    "Validation_cases": [
+      9,
+      10,
+      11
+    ],
+    "Test_cases": [
+      2,
+      3,
+      7,
+      16
+    ],
+    "Similarity_distance": 0.056983963062188066,
+    "Split_quality_score": 0.9813544017793218
+  }
+]

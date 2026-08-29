@@ -1,0 +1,20 @@
+[
+  {
+    "Method":"B3",
+    "Method_name":"Multi-task TCN-GRU (B9 backbone)",
+    "Stage_definition":"Relative-stage",
+    "Model_type":"TCN-GRU + auxiliary heads",
+    "Acc":0.9868421053,
+    "Macro-F1":0.9871020928,
+    "E-F1":0.9824561404,
+    "M-F1":0.984375,
+    "L-F1":0.9944751381,
+    "M-Pre":0.9921259843,
+    "M-Rec":0.976744186,
+    "M→E":0.023255814,
+    "M→L":0.0,
+    "Rev":0,
+    "Jump":0,
+    "Smooth":0.0214653555
+  }
+]

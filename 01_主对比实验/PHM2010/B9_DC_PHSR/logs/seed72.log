@@ -1,0 +1,5 @@
+[protocol] frozen artifacts verified OK (preprocess_seed=42)
+[protocol] method=B3+B9 train_seed=72
+[save_run] wrote C:\Users\banghai\Documents\BaiduSyncdisk\西工大\王婷\论文\扩充实验代码\01_主对比实验\PHM2010\B3_Multitask_TCN_GRU\results\seed72
+[save_run] wrote C:\Users\banghai\Documents\BaiduSyncdisk\西工大\王婷\论文\扩充实验代码\01_主对比实验\PHM2010\B9_DC_PHSR\results\seed72
+[protocol] DONE: method=B3+B9 train_seed=72

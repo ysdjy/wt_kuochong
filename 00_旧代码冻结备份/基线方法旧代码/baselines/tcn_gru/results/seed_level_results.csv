@@ -1,0 +1,6 @@
+﻿Category,Method,seed,source_file,Acc,Macro-F1,E-F1,M-F1,L-F1,M-Precision,M-Recall,M_to_E,M_to_L,Rev,Jump,Smooth,q-MAE,q-RMSE,q-R2
+generic_internal_baseline,TCN-GRU,42,补充材料\小论文\4_comparison_experiment_recheck\1_results\FINAL_comparison_results.csv,0.8684,0.8746,0.8317,0.8261,0.9659,0.9406,0.7364,0.2636,0.0,0,0,0.0219,,,
+generic_internal_baseline,TCN-GRU,52,final_five_seed_sweep\results\generic_baselines\seed52\1_results\FINAL_comparison_results.csv,0.8914,0.8947,0.9385,0.8533,0.8922,1.0,0.7442,0.0853,0.1705,8,0,0.083,,,
+generic_internal_baseline,TCN-GRU,62,final_five_seed_sweep\results\generic_baselines\seed62\1_results\FINAL_comparison_results.csv,0.8059,0.8067,0.8235,0.7122,0.8844,0.9605,0.5659,0.2791,0.155,1,0,0.0268,,,
+generic_internal_baseline,TCN-GRU,72,final_five_seed_sweep\results\generic_baselines\seed72\1_results\FINAL_comparison_results.csv,0.773,0.7683,0.8155,0.6349,0.8545,1.0,0.4651,0.2946,0.2403,2,0,0.0381,,,
+generic_internal_baseline,TCN-GRU,82,final_five_seed_sweep\results\generic_baselines\seed82\1_results\FINAL_comparison_results.csv,0.8289,0.8378,0.9711,0.7476,0.7948,1.0,0.5969,0.0388,0.3643,4,2,0.0719,,,

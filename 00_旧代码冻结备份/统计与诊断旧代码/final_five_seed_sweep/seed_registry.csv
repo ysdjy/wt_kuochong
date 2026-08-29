@@ -1,0 +1,10 @@
+method_id,display_name,seed_42,seed_52,seed_62,seed_72,seed_82,status
+G1_rf,RF,DONE,DONE,DONE,DONE,DONE,5/5
+G2_tcn_gru,TCN-GRU,DONE,DONE,DONE,DONE,DONE,5/5
+G3_multitask_tcn_gru,Multi-task TCN-GRU,DONE,DONE,DONE,DONE,DONE,5/5
+DC_PSR,DC-PSR,DONE,DONE,DONE,DONE,DONE,5/5
+P1_htt_net,HTT-Net (adapted),DONE,DONE,DONE,DONE,DONE,5/5
+P2_multi_source_attention,Multi-source Attention,DONE,DONE,DONE,DONE,DONE,5/5
+P3_mtf_avitk,MTF-AViTK,DONE (fresh rerun),DONE,DONE,DONE (rerun after 2 external kills; fresh run completed by user),DONE (run by user),5/5
+P4_dynamic_gin_tgp,Dynamic GIN + TGP,REUSE_OK,REUSE_OK,REUSE_OK,REUSE_OK,REUSE_OK,5/5
+P5_dp2net,DP2Net-adapted,REUSE_OK,REUSE_OK,REUSE_OK,REUSE_OK,REUSE_OK,5/5

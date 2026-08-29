@@ -1,0 +1,12 @@
+# ===== Actively running / in-progress work: not yet ready to publish =====
+# B9 seed-landscape diagnostic sweep is being actively extended (background
+# training in progress as of this push). Excluded until it completes and
+# its README/CHANGELOG are updated to reflect final scope.
+/05_统计检验/seed_statistics/B9_PHM2010_D1_seed_landscape/
+
+# ===== Python / OS cruft =====
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db

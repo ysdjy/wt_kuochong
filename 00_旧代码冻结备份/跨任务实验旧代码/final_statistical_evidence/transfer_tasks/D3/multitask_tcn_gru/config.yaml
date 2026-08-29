@@ -1,0 +1,8 @@
+method: multitask_tcn_gru
+task: D3
+train_conditions: ['C4', 'C6']
+test_condition: C1
+train_seed: 42
+BEST_ARCH: {'L': 12, 'dropout': 0.2, 'lr': 0.0005, 'channels': (32, 64, 64), 'gru_hidden': 64}
+train_seconds: 77.25
+best_epoch: 29

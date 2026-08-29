@@ -1,0 +1,16 @@
+{
+  "preprocess_seed": 42,
+  "verified_identical_across_all_5_seeds": true,
+  "feature_hash": "3a7fedb02d2dffa9e9cd4397e11b7446c7c7c15741942208649b14d1b95cf7d0",
+  "split_hash": "a7197a8e6d33f85075c451dd10fa6233200d642f1ddfad6279e170eea49b5231",
+  "gmm_hash": "4708f67f14b043b2ec1c79e6b45de1a934f9aa232b61aa5de369e443f242311c",
+  "window_hash": "a1ec6910e449653fd322a39a0db5b5dcd7b700e79f1801aef1a95d7f095e58c5",
+  "raw_feature_file_sha256": "6e8affeb681d0b386e453421a0df7a66932138199eb236403d27b797c11eeb88",
+  "raw_feature_file_path": "baselines/htt_net/data/run_level_features_all.csv",
+  "frozen_preprocess_source": "protocol_diagnostic_fixed_preprocess/frozen_preprocess/ (built 2026-08-20 by build_frozen_preprocess.py, PREPROCESS_SEED=42)",
+  "frozen_preprocess_mirror": "扩充实验代码/shared/reproducibility/PHM2010_D1_frozen_preprocess/",
+  "mirror_verification": "gmm_seed42.pkl sha256 checked byte-identical between source and mirror before any training was launched",
+  "runtime_self_check": "code/run_seed_d1.py::assert_frozen_artifacts_unchanged() re-hashed every frozen_preprocess file against manifest_hashes.json before each of the 5 seed runs; all 5 passed with zero mismatches",
+  "inference_params_hash_note": "B12_PARAMS read live from 代码/7.4对比实验.py at run time for every seed (not hardcoded/copied): eta=0.75, fine_weight=0.30, temperature=1.20, mid_floor=0.12, late_tau=0.66, early_tau=0.38, order_blend=0.25 -- identical for all 5 seeds",
+  "git_commit_at_run_time": "811da096ee47bea4f65db193aa49e793dba6f47d"
+}

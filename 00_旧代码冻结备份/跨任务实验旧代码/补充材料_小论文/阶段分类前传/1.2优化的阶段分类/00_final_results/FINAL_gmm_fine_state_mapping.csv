@@ -1,0 +1,6 @@
+﻿raw_component,ordered_fine_state,mean_q_train,mapped_stage_id,mapped_stage
+3,0,0.2512251367783363,0,early
+0,1,0.34863418611742775,1,middle
+4,2,0.47751988943859336,1,middle
+1,3,0.5981300608262274,1,middle
+2,4,0.9065039176052601,2,late

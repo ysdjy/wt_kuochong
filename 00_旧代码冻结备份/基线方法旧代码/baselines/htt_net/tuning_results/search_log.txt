@@ -1,0 +1,79 @@
+====================================================================================================
+HTT-Net source-only hyperparameter validation (C6 NEVER used)
+Device: cuda
+====================================================================================================
+Preparing Fold A (train=C1, val=C4)...
+  Fold A: 304 train windows, 304 val windows, 45 features
+Preparing Fold B (train=C4, val=C1)...
+  Fold B: 304 train windows, 304 val windows, 45 features
+
+[1/12] lr0.0001_do0.1_ed32
+  Fold A: Macro-F1=0.9062 M-F1=0.9158 best_epoch=2
+  Fold B: Macro-F1=0.9184 M-F1=0.8889 best_epoch=2
+  Avg Macro-F1=0.9123  Avg M-F1=0.9023
+
+[2/12] lr0.0001_do0.1_ed64
+  Fold A: Macro-F1=0.9322 M-F1=0.9263 best_epoch=10
+  Fold B: Macro-F1=0.9157 M-F1=0.8841 best_epoch=1
+  Avg Macro-F1=0.9239  Avg M-F1=0.9052
+
+[3/12] lr0.0001_do0.2_ed32
+  Fold A: Macro-F1=0.8302 M-F1=0.8408 best_epoch=3
+  Fold B: Macro-F1=0.9184 M-F1=0.8889 best_epoch=2
+  Avg Macro-F1=0.8743  Avg M-F1=0.8648
+
+[4/12] lr0.0001_do0.2_ed64
+  Fold A: Macro-F1=0.9354 M-F1=0.9296 best_epoch=10
+  Fold B: Macro-F1=0.9131 M-F1=0.8793 best_epoch=1
+  Avg Macro-F1=0.9243  Avg M-F1=0.9044
+
+[5/12] lr0.0003_do0.1_ed32
+  Fold A: Macro-F1=0.8214 M-F1=0.8684 best_epoch=1
+  Fold B: Macro-F1=0.9114 M-F1=0.8880 best_epoch=1
+  Avg Macro-F1=0.8664  Avg M-F1=0.8782
+
+[6/12] lr0.0003_do0.1_ed64
+  Fold A: Macro-F1=0.9514 M-F1=0.9462 best_epoch=3
+  Fold B: Macro-F1=0.8876 M-F1=0.8485 best_epoch=9
+  Avg Macro-F1=0.9195  Avg M-F1=0.8974
+
+[7/12] lr0.0003_do0.2_ed32
+  Fold A: Macro-F1=0.8092 M-F1=0.8590 best_epoch=1
+  Fold B: Macro-F1=0.9048 M-F1=0.8810 best_epoch=1
+  Avg Macro-F1=0.8570  Avg M-F1=0.8700
+
+[8/12] lr0.0003_do0.2_ed64
+  Fold A: Macro-F1=0.9466 M-F1=0.9420 best_epoch=3
+  Fold B: Macro-F1=0.8813 M-F1=0.8439 best_epoch=12
+  Avg Macro-F1=0.9139  Avg M-F1=0.8930
+
+[9/12] lr0.0005_do0.1_ed32
+  Fold A: Macro-F1=0.9544 M-F1=0.9496 best_epoch=4
+  Fold B: Macro-F1=0.8383 M-F1=0.9008 best_epoch=5
+  Avg Macro-F1=0.8964  Avg M-F1=0.9252
+
+[10/12] lr0.0005_do0.1_ed64
+  Fold A: Macro-F1=0.9742 M-F1=0.9706 best_epoch=4
+  Fold B: Macro-F1=0.8200 M-F1=0.8000 best_epoch=21
+  Avg Macro-F1=0.8971  Avg M-F1=0.8853
+
+[11/12] lr0.0005_do0.2_ed32
+  Fold A: Macro-F1=0.9410 M-F1=0.9362 best_epoch=4
+  Fold B: Macro-F1=0.8332 M-F1=0.8871 best_epoch=2
+  Avg Macro-F1=0.8871  Avg M-F1=0.9116
+
+[12/12] lr0.0005_do0.2_ed64
+  Fold A: Macro-F1=0.9615 M-F1=0.9565 best_epoch=6
+  Fold B: Macro-F1=0.8880 M-F1=0.8606 best_epoch=10
+  Avg Macro-F1=0.9247  Avg M-F1=0.9085
+
+====================================================================================================
+Search finished in 521.8s, 12 configs x 2 folds = 24 trainings
+Top 3 configs by avg Macro-F1:
+          config_id  avg_macro_f1  avg_m_f1  foldA_macro_f1  foldB_macro_f1
+lr0.0005_do0.2_ed64      0.924742  0.908540        0.961476        0.888008
+lr0.0001_do0.2_ed64      0.924270  0.904444        0.935436        0.913103
+lr0.0001_do0.1_ed64      0.923950  0.905218        0.932180        0.915719
+
+Selected: lr0.0005_do0.2_ed64  avg_macro_f1=0.9247
+C6 used during this search: NO

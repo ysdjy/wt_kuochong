@@ -1,0 +1,49 @@
+# HTT-Net baseline configuration (reference / documentation copy).
+#
+# This file documents the hyperparameters actually used by train.py; it is
+# not parsed by train.py at runtime (the values live in train.py's
+# HTT_ARCH / TRAIN_CFG dicts as the single source of truth, to avoid a
+# config file silently drifting out of sync with the code). See
+# PAPER_SPEC.md for which of these are paper-explicit vs. paper-missing
+# implementation choices.
+
+method_id: B13
+method_name: HTT-Net
+paper: "Xue et al. (2023), Advanced Engineering Informatics 58, 102218"
+
+# --- Architecture (see PAPER_SPEC.md component table) ---
+architecture:
+  num_stages: 4                 # A: Table 1 (Stage 1-4)
+  depths: [2, 2, 2, 2]           # C: Missing in paper -- 1 W-MSA + 1 SW-MSA block per stage
+  embed_dim: 32                  # C: Missing in paper -- matches BEST_ARCH["channels"][0] in the shared unified protocol
+  num_heads: 4                   # C: Missing in paper (only comparison models' heads=3 is stated, not HTT-Net's own)
+  window_size: 3                 # C: Missing in paper, also constrained by L=12 (must divide 12 evenly)
+  shift_size: window_size // 2   # A: paper states shift = floor(T/2)
+  mlp_ratio: 4                   # A: paper states Linear1 shrinks by x4, Linear2 expands by x4 (inverted bottleneck)
+  dropout: 0.20                  # C: Missing in paper -- matches BEST_ARCH["dropout"] in the shared unified protocol
+  num_classes: 3                 # A: Early / Middle / Late (this project's unified protocol)
+
+# --- Training (unified-protocol values, NOT the original paper's T1 values) ---
+training:
+  optimizer: AdamW               # A: paper states AdamW
+  lr: 5.0e-4                     # Adapted: paper's own value is 1e-4 (Table 6), but this project's
+                                  #   unified protocol uses 5e-4 for every deep baseline (BEST_ARCH["lr"])
+                                  #   for a fair, consistent comparison. See PAPER_SPEC.md sec 5.
+  weight_decay: 1.0e-5           # Adapted: paper's own value is 0.05 (Table 6); unified protocol uses 1e-5
+  batch_size: 32                 # Adapted: paper's own value is 16 (Table 6); unified protocol uses 32
+  epochs: 120                    # C: Missing in paper (only "converged before Epoch 5" qualitatively);
+                                  #   unified protocol budget reused for fairness across all baselines
+  patience: 18                   # C: Missing in paper; unified protocol's early-stopping patience
+  grad_clip: 1.0                 # unified protocol's grad-clip norm
+  seed: 42                       # C: Missing in paper; unified protocol's fixed seed
+
+# --- Data protocol (this project's unified protocol, NOT the paper's own protocol) ---
+data:
+  task: "D1: train on C1+C4, test on C6 (this project's own held-out validation carved from C1+C4 only)"
+  input_shape: "[batch, L=12, d=~45 selected condition-relative online features]"
+  stage_labels: "condition-relative quantile thresholds (Q_EARLY=0.30, Q_LATE=0.72), NOT the paper's fixed pass-index thresholds"
+  feature_file_env_var: HTT_FEATURE_FILE   # must be set; the referenced file was not found on this machine
+
+output:
+  dir_env_var: HTT_OUTPUT_DIR
+  default_dir: "outputs/htt_net/D1_C1C4_to_C6"

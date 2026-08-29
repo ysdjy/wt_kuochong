@@ -1,0 +1,3 @@
+﻿method,train_windows,val_windows,test_windows,input_dim,selected_features,train_early,train_middle,train_late,best_epoch,best_val_acc,best_val_macro_f1,best_val_MRec,test_acc,test_macro_f1,test_MF1
+B10,416,60,304,45,45,125,173,118,103,1.0,1.0,1.0,0.773,0.7683,0.6349
+B11,416,60,304,45,45,125,173,118,18,1.0,1.0,1.0,0.8783,0.8865,0.8326

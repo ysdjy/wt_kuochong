@@ -1,0 +1,6 @@
+mean VB by predicted stage:
+predicted_stage
+early     55.872089
+late      94.736123
+middle    90.874240
+Early < Middle < Late : True

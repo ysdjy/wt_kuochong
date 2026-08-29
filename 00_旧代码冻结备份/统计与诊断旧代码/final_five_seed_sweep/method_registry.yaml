@@ -1,0 +1,165 @@
+# method_registry.yaml -- Final 9-method 5-seed sweep, PHM2010 D1 (C1+C4 -> C6)
+# Built by direct file audit (no numbers assumed from memory). See AUDIT.md for
+# full reasoning and file-level citations.
+
+G1_rf:
+  display_name: "RF"
+  internal_id: "B5"
+  paper_name: "Relative-stage RF"
+  category: "generic_internal_baseline"
+  code_path: "代码/main_experiment_3_fgds_psi_optimized.py"
+  train_script: "代码/7.4对比实验.py (main(); RandomForestClassifier at line ~359)"
+  final_report: "outputs/htt_net/FINAL_HTT_NET_REPORT.md sec G (cross-check); 补充材料/小论文/4_comparison_experiment_recheck/1_results/FINAL_comparison_results.csv"
+  frozen_config: "n_estimators=400, class_weight=balanced_subsample, random_state=<seed>; 45 train-only-selected features; L=12 window"
+  protocol: "C1+C4->C6 (D1), authoritative run_level_features_all.csv"
+  existing_seeds: [42]
+  missing_seeds: [52, 62, 72, 82]
+  test_universe: "windowed, run_id_end 12-315, 304 rows"
+  run_level_aggregation: "N/A -- already 1 row per windowed sample, no sub-run segments"
+  params: "N/A (tree ensemble, 400 trees)"
+  action: "rerun 代码/7.4对比实验.py::main() with base.RANDOM_SEED patched to each missing seed (feature file already overridden to authoritative baselines/htt_net/data/run_level_features_all.csv, following the exact monkey-patch pattern already used by baselines/htt_net/data/run_b1_b12_recheck.py); do NOT touch any hyperparameter"
+  notes: "seed42 verified to reproduce manuscript main.tex Table 8 exactly (FINAL_HTT_NET_REPORT.md sec A). split_grouped_lifecycle() is seed-INDEPENDENT (deterministic middle-window slice), so C1+C4 train/val split is identical across all 5 seeds by construction -- this matches every other baseline in the project, which all reuse this same function byte-for-byte."
+
+G2_tcn_gru:
+  display_name: "TCN-GRU"
+  internal_id: "B10"
+  paper_name: "Relative-stage TCN-GRU"
+  category: "generic_internal_baseline"
+  code_path: "代码/main_experiment_3_fgds_psi_optimized.py (TCNGRUStageOnly)"
+  train_script: "代码/7.4对比实验.py (main(); train_stage_model(TCNGRUStageOnly(...)) at line ~392)"
+  final_report: "outputs/htt_net/FINAL_HTT_NET_REPORT.md sec G (cross-check)"
+  frozen_config: "base.BEST_ARCH (channels, gru_hidden, dropout, lr), fixed model checkpoint 补充材料/.../3_models/B10_TCN_GRU.pth"
+  protocol: "C1+C4->C6 (D1), authoritative run_level_features_all.csv"
+  existing_seeds: [42]
+  missing_seeds: [52, 62, 72, 82]
+  test_universe: "windowed, run_id_end 12-315, 304 rows"
+  run_level_aggregation: "N/A"
+  params: 83619
+  action: "same rerun as G1_rf (single script produces B1-B12 together per run)"
+  notes: "param count = state_dict tensor sum from B10_TCN_GRU.pth, counted directly, not assumed"
+
+G3_multitask_tcn_gru:
+  display_name: "Multi-task TCN-GRU"
+  internal_id: "B11"
+  paper_name: "Multi-task TCN-GRU"
+  category: "generic_internal_baseline"
+  code_path: "代码/main_experiment_3_fgds_psi_optimized.py (train_model/TCNGRUMultiTask)"
+  train_script: "代码/7.4对比实验.py (main(); base.train_model(...) at line ~396)"
+  final_report: "outputs/htt_net/FINAL_HTT_NET_REPORT.md sec G (cross-check)"
+  frozen_config: "base.BEST_ARCH, WEIGHT_DECAY, EPOCHS; checkpoint shared with B12: 补充材料/.../3_models/B11_B12_multitask_tcn_gru.pth"
+  protocol: "C1+C4->C6 (D1), authoritative run_level_features_all.csv"
+  existing_seeds: [42]
+  missing_seeds: [52, 62, 72, 82]
+  test_universe: "windowed, run_id_end 12-315, 304 rows"
+  run_level_aggregation: "N/A"
+  params: 84009
+  action: "same rerun as G1_rf"
+  notes: "B11 = raw multi-task network output ('raw_prob_*'); B12/DC-PSR reuses the SAME trained network's output, then applies a separate frozen deterministic post-processing (see B12 entry) -- confirmed from source: only one checkpoint file is saved for both B11 and B12."
+
+DC_PSR:
+  display_name: "DC-PSR"
+  internal_id: "B12"
+  paper_name: "FGDS-PSI (proposed)"
+  category: "proposed"
+  code_path: "代码/main_experiment_3_fgds_psi_optimized.py (apply_probability_inference)"
+  train_script: "代码/7.4对比实验.py (main(); reuses B11's trained network, then applies apply_probability_inference() with frozen B12_PARAMS at line ~399)"
+  final_report: "outputs/htt_net/FINAL_HTT_NET_REPORT.md sec G (cross-check); this is the manuscript's headline result"
+  frozen_config: 'B12_PARAMS = {eta: 0.75, fine_weight: 0.30, temperature: 1.20, mid_floor: 0.12, late_tau: 0.66, early_tau: 0.38, order_blend: 0.25} (hardcoded in 代码/7.4对比实验.py, unchanged)'
+  protocol: "C1+C4->C6 (D1), authoritative run_level_features_all.csv"
+  existing_seeds: [42]
+  missing_seeds: [52, 62, 72, 82]
+  test_universe: "windowed, run_id_end 12-315, 304 rows"
+  run_level_aggregation: "N/A"
+  params: 84009
+  action: "same rerun as G1_rf -- DC-PSR seed variation is entirely inherited from B11's network (same set_seed(RANDOM_SEED) call before training); no extra randomness source of its own (post-processing is deterministic given B11's probabilities)"
+  notes: "seed42 result (Acc=0.9868) exactly matches main.tex per FINAL_HTT_NET_REPORT.md sec A -- authoritative and verified, not assumed"
+
+P1_htt_net:
+  display_name: "HTT-Net (adapted)"
+  internal_id: "B13"
+  category: "published_method"
+  code_path: "baselines/htt_net"
+  train_script: "baselines/htt_net/train_final_tuned.py (frozen SOURCE_ONLY_TUNED config)"
+  final_report: "baselines/htt_net/FINAL_HTT_NET_REPORT.md"
+  frozen_config: "baselines/htt_net/best_source_only_config.yaml == outputs/htt_net/D1_C1C4_to_C6_SOURCE_ONLY_TUNED/config.json (embed_dim=64, depths=[2,2,2,2], num_heads=4, window_size=3, dropout=0.2, lr=5e-4, weight_decay=1e-5, epochs=120, patience=18, batch=32)"
+  protocol: "C1+C4->C6 (D1), authoritative run_level_features_all.csv, L=12"
+  existing_seeds: [42]
+  missing_seeds: [52, 62, 72, 82]
+  test_universe: "windowed, run_id_end 12-315, 304 rows (outputs/htt_net/D1_C1C4_to_C6_SOURCE_ONLY_TUNED/test_predictions.csv, 304 data rows)"
+  run_level_aggregation: "N/A (feature-based, already 1 row per windowed sample)"
+  params: 3502723
+  action: "REUSE_OK seed42; add a --seed CLI/param to train_final_tuned.py (parameterizing the existing hardcoded seed=42, not retuning any hyperparameter) and run seeds 52/62/72/82"
+  notes: 'seed=42 explicitly confirmed in outputs/htt_net/D1_C1C4_to_C6_SOURCE_ONLY_TUNED/config.json ("train_cfg.seed": 42) -- not assumed. Must use SOURCE_ONLY_TUNED, never INITIAL_UNTUNED (outputs/htt_net/D1_C1C4_to_C6_INITIAL_UNTUNED/, excluded).'
+  caveat: "adapted from original long-sequence L~=2000 raw-force-window regime to this project's unified run-level protocol (45 selected online features, L=12); ranks 11/13 among all B1-B13 methods, see FINAL_HTT_NET_REPORT.md sec H for grounded (not speculative) failure-mode analysis"
+
+P2_multi_source_attention:
+  display_name: "Multi-source Attention"
+  internal_id: "B14 (project-internal slot, not in original B1-B13 numbering)"
+  category: "published_method"
+  code_path: "baselines/multi_source_attention"
+  train_script: "baselines/multi_source_attention/train.py --protocol B"
+  final_report: "baselines/multi_source_attention/FINAL_REPORT.md"
+  frozen_config: "PROTO_B_CFG in train.py: max_epochs=100, patience=15, batch_size=64, lr=0.001, weight_decay=1e-4, seed=42 (hardcoded, no --seed CLI arg currently exists)"
+  protocol: "C1+C4->C6 (D1), native raw-signal preprocessing (CWT), condition-relative E/M/L labels"
+  existing_seeds: [42]
+  missing_seeds: [52, 62, 72, 82]
+  test_universe: "native, 315 rows (outputs/multi_source_attention/unified_protocol/test_predictions.csv)"
+  run_level_aggregation: "already run-level in stored predictions (1 row per C6 run) -- confirm no further sub-run segment aggregation is needed before reuse"
+  params: 12939050
+  action: "REUSE_OK seed42; add --seed CLI arg to train.py's run_protocol_b (parameterizing PROTO_B_CFG['seed'], not retuning); run seeds 52/62/72/82. Do NOT touch CWT wavelet/scale/window parameters."
+  notes: "seed=42 confirmed from PROTO_B_CFG source default, cross-checked against metrics.json/leakage_audit text; no explicit 'seed' field is stored in metrics.json itself, so this is code-derived, not log-derived, evidence -- flagged in AUDIT.md."
+  caveat: "paper omitted key CWT parameters (wavelet family, scale count, frequency range) -- adapted reimplementation using literature-standard complex Morlet/224 scales; Protocol A sanity gap -15.7pp vs paper attributed primarily to this"
+
+P3_mtf_avitk:
+  display_name: "MTF-AViTK"
+  internal_id: "B15 (project-internal slot)"
+  category: "published_method"
+  code_path: "baselines/mtf_avitk"
+  train_script: "baselines/mtf_avitk/train.py --protocol B"
+  final_report: "baselines/mtf_avitk/FINAL_REPORT.md"
+  frozen_config: "PROTO_B_CFG in train.py: max_epochs=50, patience=10, batch_size=8, lr=0.0006, weight_decay=2e-4, momentum=0.9, seed=42 (hardcoded, no --seed CLI arg currently exists); ViT-L/32 (32x32 patch, 1024 dim, 24 blocks, 16 heads), MTF, AdaptMLP, KAN per PAPER_SPEC.md"
+  protocol: "C1+C4->C6 (D1), native raw-signal preprocessing (MTF images), condition-relative E/M/L labels, unified (unbalanced) dataset"
+  existing_seeds: []
+  missing_seeds: [42, 52, 62, 72, 82]
+  test_universe: "native, 315 rows (outputs/mtf_avitk/unified_protocol/test_predictions.csv) -- this existing run is NOT counted as a valid seed42, see notes"
+  run_level_aggregation: "already run-level aggregated in stored predictions (5 sub-window probabilities averaged -> 1 row per C6 run)"
+  params: 309371072
+  action: "RERUN ALL 5 SEEDS (42/52/62/72/82). Add --seed CLI arg to train.py's run_protocol_b (parameterizing PROTO_B_CFG['seed'], writing seed into metrics.json going forward). Do NOT shrink to ViT-B, do NOT switch to balanced-dataset protocol."
+  notes: "SEED UNCONFIRMED, overriding an earlier draft of this registry that had marked this REUSE_OK. Unlike P2 (clean single run), this run's training_log.csv shows a duplicated/restarted 'epoch 2' row, i.e. the run used --resume at least once; each resume re-invokes set_seed(cfg['seed']) from whatever was on disk at that moment, and no seed field is persisted in metrics.json to confirm it stayed 42 throughout. Per task rule (seed metadata unclear -> rerun all 5, not just 4), this run cannot be counted as a valid seed42 and must be redone alongside 52/62/72/82."
+  caveat: "close original-protocol reproduction (Protocol A gap only -2.6pp vs paper, from-scratch ViT-L/32); unified protocol adapted to authoritative E/M/L labels and unbalanced (not class-balanced) dataset; MTF field-size 2000->500 resampling is a documented, non-silent resolution of a genuine paper-internal conflict"
+
+P4_dynamic_gin_tgp:
+  display_name: "Dynamic GIN + TGP"
+  internal_id: "N/A (published-method slot)"
+  category: "published_method"
+  code_path: "baselines/dynamic_gin_tgp"
+  train_script: "baselines/dynamic_gin_tgp/train.py --protocol B --seed <N> (already supports per-seed CLI, already run for all 5)"
+  final_report: "baselines/dynamic_gin_tgp/FINAL_REPORT.md"
+  frozen_config: "topk=144, lr=1e-4, batch=4, weight_decay(L2)=0.1, epochs=50, LR-halving patience=10 (from PAPER_SPEC.md-derived values, fixed before any C6 contact)"
+  protocol: "C1+C4->C6 (D1), native raw-signal (GASF+graph), condition-relative E/M/L labels"
+  existing_seeds: [42, 52, 62, 72, 82]
+  missing_seeds: []
+  test_universe: "native, 315 rows per seed (outputs/dynamic_gin_tgp/unified_protocol/seed<N>/run_predictions.csv, 315 data rows each)"
+  run_level_aggregation: "each C6 run's 10 stable-region-portion segment predictions mean-probability-aggregated to 1 run-level prediction before metrics (FINAL_REPORT.md sec C)"
+  params: 321950
+  action: "REUSE_OK all 5 seeds -- do not rerun"
+  notes: "CRITICAL: an older pre-fix version had an evaluation batch-composition label-leakage bug (static graph built by concatenating an entire eval batch before cosine similarity -> homogeneous eval batches let true label leak via graph, inflating val acc to 100% by epoch 1). Fixed by shuffling each Dataset's rows once at construction. All 5 seeds in outputs/dynamic_gin_tgp/unified_protocol/seed<N>/ carry DONE.flag and were independently read: Acc mean=0.8844, std=0.0683 (ddof=1, computed directly from the 5 metrics.csv files, not copied from the report prose) -- matches FINAL_REPORT.md Sec D table exactly. Post-fix confirmed by the sane train_acc 54%->92%% / val curve described in FINAL_REPORT.md's opening note."
+  caveat: "high-fidelity reproduction; Protocol A (original protocol) D1 result 95.12% vs paper's 95.71% (-0.59pp), well inside project's 92-98% sanity band. Notable cross-seed variance on Protocol B (std 6.83pp) -- architecture is genuinely seed-sensitive on this task, not a reproduction defect."
+
+P5_dp2net:
+  display_name: "DP2Net-adapted"
+  internal_id: "N/A (published-method slot)"
+  category: "published_method"
+  code_path: "baselines/dp2net"
+  train_script: "baselines/dp2net/train.py --protocol B-D1 --seed <N> (already supports per-seed CLI, already run for all 5)"
+  final_report: "baselines/dp2net/FINAL_REPORT.md"
+  frozen_config: "S/G/F architecture, alpha=20, MMD gamma=median heuristic, kpool=4, PHM2010 k=25, batch=64, two-stage Algorithm 1 (100+100 epochs) -- from PAPER_SPEC.md-derived values"
+  protocol: "Protocol B-D1 (pooled source) C1+C4->C6 -- NOT Protocol B-S (single-source C1->C6) and NOT Protocol A -- explicitly disambiguated by directory name unified_protocol_B-D1/"
+  existing_seeds: [42, 52, 62, 72, 82]
+  missing_seeds: []
+  test_universe: "native, 315 rows per seed (outputs/dp2net/unified_protocol_B-D1/seed<N>/predictions.csv, 315 data rows each)"
+  run_level_aggregation: "8 windows/run mean-probability aggregated to 1 run-level prediction before metrics (FINAL_REPORT.md sec C)"
+  params: 60956
+  action: "REUSE_OK all 5 seeds -- do not rerun. Explicitly excluded from the main table: outputs/dp2net/unified_protocol_B-S/ (single-source, supplementary only) and outputs/dp2net/original_protocol/ (Protocol A, paper-comparison only)."
+  notes: "All 5 seeds carry DONE.flag; independently read: Acc mean=0.9073, std=0.0381 (ddof=1, computed directly from the 5 metrics.csv files) -- matches FINAL_REPORT.md Sec D B-D1 table exactly. No evaluation-methodology bug was found for this baseline (S/G/F operate on one sample at a time, no cross-sample batch dependence like dynamic_gin_tgp had)."
+  caveat: "pooled-source adaptation for D1 (DP2Net-adapted); original paper is single-source SSDG. Protocol A gaps (-6.5 to -8.2pp vs paper) driven by 3 unresolved physical/definitional gaps (tool D/beta assumed, ref-[41] stage-boundary rule proxied, Stage-IV empirically empty for these tools) that do NOT affect Protocol B-D1 (uses DC-PSR's own E/M/L labels throughout) -- B-D1 is this project's highest-confidence published-method result."

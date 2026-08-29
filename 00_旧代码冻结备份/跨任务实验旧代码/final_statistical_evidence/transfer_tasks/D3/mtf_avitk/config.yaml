@@ -1,0 +1,6 @@
+method: mtf_avitk
+task: D3
+train_conditions: ['C4', 'C6']
+test_condition: C1
+PROTO_B_CFG: {'max_epochs': 50, 'patience': 10, 'batch_size': 8, 'lr': 0.0006, 'weight_decay': 0.0002, 'momentum': 0.9, 'seed': 42}
+train_seconds: 1544.33

@@ -1,0 +1,8 @@
+method: dp2net_adapted
+task: D3
+train_conditions: ['C4', 'C6']
+test_condition: C1
+variant: B-D1
+CFG: {'pretrain_epochs': 100, 'gen_epochs': 100, 'batch_size': 64, 'lr_s': 0.001, 'lr_f': 0.001, 'lr_g': 1e-05, 'cosine_period': 20, 'alpha': 20.0, 'seed': 42}
+train_seed: 42
+train_seconds: 682.92

@@ -1,0 +1,32 @@
+﻿Stage-related bias analysis log
+Data root: D:\桌面\博士开题\公开数据\1PHM
+Output root: D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis
+Run-level feature file: D:\桌面\博士开题\公开数据\1PHM\PHM实验\1run_run_level_features\02_features\run_level_features_all.csv
+MICFS-TCN prediction file: D:\桌面\博士开题\公开数据\1PHM\PHM实验\3run_c1c4_to_c6_tcn\00_final_results\FINAL_best_by_valRMSE_test_C6_predictions.csv
+DC-PSR probability file: D:\桌面\博士开题\2专利\代码\小论文\6_ablation_experiment\ablation_probabilities_test_C6.csv
+Calibration source: Validation predictions from the best MICFS-TCN configuration selected by validation RMSE.
+Calibration file: D:\桌面\博士开题\公开数据\1PHM\PHM实验\3run_c1c4_to_c6_tcn\04_all_predictions\L20_drop0p1_lr0p001_ch32-64-64_val_predictions.csv
+Correction coefficients:
+ stage  n_calibration   b_stage  std_error_to_correct
+ early             26 -2.102166              3.320968
+middle             30 -3.967232              4.188248
+  late             32  4.358742             12.635072
+Overall metrics:
+                      Method       MAE      RMSE       R2      Bias     MaxAE  MedianAE  MeanNAPE
+                    Baseline  9.732023 11.026303 0.939452 -1.392719 20.634484 10.965325  7.225906
+       Hard-stage correction 12.678650 14.071764 0.901386 -2.330633 24.993226 14.227250  9.337710
+Probability-stage correction 12.250128 13.640019 0.907345 -2.380904 24.153976 14.071743  9.075137
+Output files:
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\1_results\stage_bias_summary_base.csv
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\1_results\correction_coefficients.csv
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\1_results\correction_overall_metrics.csv
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\1_results\correction_stagewise_metrics.csv
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\1_results\final_predictions_with_bias_correction.csv
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\2_predictions\final_predictions_with_bias_correction.csv
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\1_results\stage_bias_analysis_results.xlsx
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\3_figures\Fig_stagewise_bias_bar.png
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\3_figures\Fig_stagewise_mae_rmse.png
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\3_figures\Fig_residual_vs_q_stage.png
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\3_figures\Fig_wear_curve_prediction_comparison.png
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\3_figures\Fig_abs_error_distribution_by_stage.png
+D:\桌面\博士开题\2专利\代码\小论文\12_stage_bias_analysis\3_figures\Fig_stage_probability_and_correction_weight.png

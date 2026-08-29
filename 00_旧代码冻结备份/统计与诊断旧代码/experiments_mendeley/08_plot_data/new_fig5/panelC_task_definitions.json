@@ -1,0 +1,437 @@
+[
+  {
+    "name": "D1-M",
+    "group": "cross_machine_dual",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6"
+    ],
+    "test_sequences": [
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "train_domains": [
+      "M1",
+      "M2"
+    ],
+    "test_domains": [
+      "M3"
+    ],
+    "notes": "M1+M2 -> M3"
+  },
+  {
+    "name": "D2-M",
+    "group": "cross_machine_dual",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3",
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T4",
+      "T5",
+      "T6"
+    ],
+    "train_domains": [
+      "M1",
+      "M3"
+    ],
+    "test_domains": [
+      "M2"
+    ],
+    "notes": "M1+M3 -> M2"
+  },
+  {
+    "name": "D3-M",
+    "group": "cross_machine_dual",
+    "train_sequences": [
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "train_domains": [
+      "M2",
+      "M3"
+    ],
+    "test_domains": [
+      "M1"
+    ],
+    "notes": "M2+M3 -> M1"
+  },
+  {
+    "name": "MS1",
+    "group": "cross_machine_single",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "test_sequences": [
+      "T4",
+      "T5",
+      "T6"
+    ],
+    "train_domains": [
+      "M1"
+    ],
+    "test_domains": [
+      "M2"
+    ],
+    "notes": "M1 -> M2"
+  },
+  {
+    "name": "MS2",
+    "group": "cross_machine_single",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "test_sequences": [
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "train_domains": [
+      "M1"
+    ],
+    "test_domains": [
+      "M3"
+    ],
+    "notes": "M1 -> M3"
+  },
+  {
+    "name": "MS3",
+    "group": "cross_machine_single",
+    "train_sequences": [
+      "T4",
+      "T5",
+      "T6"
+    ],
+    "test_sequences": [
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "train_domains": [
+      "M2"
+    ],
+    "test_domains": [
+      "M1"
+    ],
+    "notes": "M2 -> M1"
+  },
+  {
+    "name": "MS4",
+    "group": "cross_machine_single",
+    "train_sequences": [
+      "T4",
+      "T5",
+      "T6"
+    ],
+    "test_sequences": [
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "train_domains": [
+      "M2"
+    ],
+    "test_domains": [
+      "M3"
+    ],
+    "notes": "M2 -> M3"
+  },
+  {
+    "name": "MS5",
+    "group": "cross_machine_single",
+    "train_sequences": [
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "train_domains": [
+      "M3"
+    ],
+    "test_domains": [
+      "M1"
+    ],
+    "notes": "M3 -> M1"
+  },
+  {
+    "name": "MS6",
+    "group": "cross_machine_single",
+    "train_sequences": [
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T4",
+      "T5",
+      "T6"
+    ],
+    "train_domains": [
+      "M3"
+    ],
+    "test_domains": [
+      "M2"
+    ],
+    "notes": "M3 -> M2"
+  },
+  {
+    "name": "LOTO_T1",
+    "group": "leave_one_tool_out",
+    "train_sequences": [
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T1"
+    ],
+    "train_domains": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "test_domains": [
+      "M1"
+    ],
+    "notes": "held-out tool T1 (machine M1); same-machine tools in train: ['T2', 'T3']"
+  },
+  {
+    "name": "LOTO_T2",
+    "group": "leave_one_tool_out",
+    "train_sequences": [
+      "T1",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T2"
+    ],
+    "train_domains": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "test_domains": [
+      "M1"
+    ],
+    "notes": "held-out tool T2 (machine M1); same-machine tools in train: ['T1', 'T3']"
+  },
+  {
+    "name": "LOTO_T3",
+    "group": "leave_one_tool_out",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T3"
+    ],
+    "train_domains": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "test_domains": [
+      "M1"
+    ],
+    "notes": "held-out tool T3 (machine M1); same-machine tools in train: ['T1', 'T2']"
+  },
+  {
+    "name": "LOTO_T4",
+    "group": "leave_one_tool_out",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3",
+      "T5",
+      "T6",
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T4"
+    ],
+    "train_domains": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "test_domains": [
+      "M2"
+    ],
+    "notes": "held-out tool T4 (machine M2); same-machine tools in train: ['T5', 'T6']"
+  },
+  {
+    "name": "LOTO_T5",
+    "group": "leave_one_tool_out",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T6",
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T5"
+    ],
+    "train_domains": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "test_domains": [
+      "M2"
+    ],
+    "notes": "held-out tool T5 (machine M2); same-machine tools in train: ['T4', 'T6']"
+  },
+  {
+    "name": "LOTO_T6",
+    "group": "leave_one_tool_out",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T7",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T6"
+    ],
+    "train_domains": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "test_domains": [
+      "M2"
+    ],
+    "notes": "held-out tool T6 (machine M2); same-machine tools in train: ['T4', 'T5']"
+  },
+  {
+    "name": "LOTO_T7",
+    "group": "leave_one_tool_out",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T8",
+      "T9"
+    ],
+    "test_sequences": [
+      "T7"
+    ],
+    "train_domains": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "test_domains": [
+      "M3"
+    ],
+    "notes": "held-out tool T7 (machine M3); same-machine tools in train: ['T8', 'T9']"
+  },
+  {
+    "name": "LOTO_T8",
+    "group": "leave_one_tool_out",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T9"
+    ],
+    "test_sequences": [
+      "T8"
+    ],
+    "train_domains": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "test_domains": [
+      "M3"
+    ],
+    "notes": "held-out tool T8 (machine M3); same-machine tools in train: ['T7', 'T9']; WARNING early stage truncated (first run already at VB=34um)"
+  },
+  {
+    "name": "LOTO_T9",
+    "group": "leave_one_tool_out",
+    "train_sequences": [
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8"
+    ],
+    "test_sequences": [
+      "T9"
+    ],
+    "train_domains": [
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "test_domains": [
+      "M3"
+    ],
+    "notes": "held-out tool T9 (machine M3); same-machine tools in train: ['T7', 'T8']"
+  }
+]

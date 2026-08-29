@@ -1,0 +1,11 @@
+method: htt_net
+task: D2
+train_conditions: ['C1', 'C6']
+test_condition: C4
+train_seed: 42
+HTT_ARCH: {'embed_dim': 64, 'depths': (2, 2, 2, 2), 'num_heads': 4, 'window_size': 3, 'dropout': 0.2}
+lr: 0.0005
+epochs: 120
+patience: 18
+train_seconds: 13.19
+n_parameters: 3502723

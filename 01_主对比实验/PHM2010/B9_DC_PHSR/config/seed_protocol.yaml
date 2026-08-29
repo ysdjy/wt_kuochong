@@ -1,0 +1,41 @@
+preprocess_seed: 42
+preprocess_seed_note: >
+  Frozen once by protocol_diagnostic_fixed_preprocess/scripts/build_frozen_preprocess.py
+  (2026-08-20). Never recomputed. Mirrored byte-identically (sha256-verified) into
+  扩充实验代码/shared/reproducibility/PHM2010_D1_frozen_preprocess/.
+train_seeds: [42, 52, 62, 72, 82]
+seed_isolation_rule: >
+  random/numpy/torch RNGs (incl. cuda) reset immediately before model
+  instantiation, once per seed, in a fresh Python process per seed
+  (never sharing RNG state with another model/seed in the same process).
+  torch.backends.cudnn.deterministic=True, benchmark=False,
+  use_deterministic_algorithms(True, warn_only=True).
+invariant_across_all_seeds:
+  - C1+C4 train universe
+  - source-side internal validation split
+  - C6 test universe (304 windows, run_id_end 12-315)
+  - selected features (45, MI + redundancy, train-only)
+  - StandardScaler
+  - GMM fine-state assignment
+  - stage labels / fine-state labels
+  - window manifest (L=12)
+  - architecture / hyperparameters
+  - B9 (DC-PHSR/DC-PSR/B12) inference params
+varying_by_train_seed_only:
+  - weight initialization
+  - dropout masks
+  - DataLoader shuffling
+  - optimizer stochasticity
+protocol_integrity_check: >
+  Every run asserts shared/reproducibility/PHM2010_D1_frozen_preprocess/manifest_hashes.json
+  is unchanged (re-hashes every frozen file) before touching any model; raises
+  RuntimeError on any mismatch. See code/run_seed_d1.py::assert_frozen_artifacts_unchanged.
+not_allowed_this_round:
+  - dropping seeds
+  - retuning hyperparameters per seed
+  - cherry-picking seeds after seeing C6
+  - re-selecting features / re-fitting GMM
+  - changing inference params
+  - changing the split or C6 test universe
+  - editing 代码/
+  - overwriting final_five_seed_sweep/ or protocol_diagnostic_fixed_preprocess/

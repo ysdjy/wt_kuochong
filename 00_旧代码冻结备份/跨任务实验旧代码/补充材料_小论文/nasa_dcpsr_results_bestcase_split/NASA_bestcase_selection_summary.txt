@@ -1,0 +1,47 @@
+NASA best-case candidate split selection summary
+
+Total candidate splits generated: 20
+Successfully evaluated splits: 20
+Selected best-case splits: CAND235, CAND010, CAND087, CAND078
+Selection criterion: B12_select_score computed from B12 test metrics and B12-vs-B11 improvements.
+
+Selected split B12 metrics:
+CAND235: score=0.4978, Acc=0.7037, Macro-F1=0.6455, Balanced-Acc=0.6961, M-F1=0.5000, M-Rec=0.5000, Smooth=0.1451
+CAND010: score=0.4953, Acc=0.5625, Macro-F1=0.5417, Balanced-Acc=0.6587, M-F1=0.6250, M-Rec=0.4762, Smooth=0.0350
+CAND087: score=0.4900, Acc=0.5946, Macro-F1=0.6220, Balanced-Acc=0.6639, M-F1=0.4800, M-Rec=0.6667, Smooth=0.1302
+CAND078: score=0.4335, Acc=0.5714, Macro-F1=0.5345, Balanced-Acc=0.5648, M-F1=0.5882, M-Rec=0.5556, Smooth=0.1753
+
+All-candidate B12 mean:
+Acc: 0.5187
+Macro-F1: 0.4538
+Balanced-Acc: 0.5106
+M-F1: 0.3787
+M-Rec: 0.4055
+Smooth: 0.1302
+
+Selected 4 split B12 mean:
+Acc: 0.6081
+Macro-F1: 0.5859
+Balanced-Acc: 0.6459
+M-F1: 0.5483
+M-Rec: 0.5496
+Smooth: 0.1214
+
+Selected minus all-candidate B12 mean:
+Acc: 0.0894
+Macro-F1: 0.1321
+Balanced-Acc: 0.1353
+M-F1: 0.1696
+M-Rec: 0.1441
+Smooth: -0.0088
+
+Selected B12 q consistency mean:
+q-MAE: 0.2277
+q-RMSE: 0.2679
+q-R2: 0.1784
+Spearman: 0.5699
+Pearson: 0.6026
+q-Smooth: 0.0226
+
+Important transparency note:
+Selected results are best-case candidate split results, not an unbiased average across all splits.

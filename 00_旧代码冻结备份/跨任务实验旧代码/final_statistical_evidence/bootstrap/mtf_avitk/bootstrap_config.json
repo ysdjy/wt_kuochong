@@ -1,0 +1,15 @@
+{
+  "method": "mtf_avitk",
+  "display_name": "MTF-AViTK",
+  "block_length": 12,
+  "n_bootstrap": 5000,
+  "random_seed": 20260820,
+  "n_test_runs": 304,
+  "source_prediction_file": "final_statistical_evidence\\predictions_common_universe\\D1_mtf_avitk_304runs.csv",
+  "point_estimate_sequence_metrics": {
+    "Rev": 8,
+    "Jump": 0,
+    "Smooth": 0.19011765882472606
+  },
+  "note": "Rev/Jump/Smooth are point estimates only (no bootstrap CI) -- block resampling injects artificial sequence-boundary discontinuities into these order-dependent metrics; see PROTOCOL.md."
+}

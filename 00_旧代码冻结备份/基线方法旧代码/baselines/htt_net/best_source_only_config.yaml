@@ -1,0 +1,60 @@
+# HTT-Net (B13) frozen configuration, selected via source-domain-only
+# validation. C6 was NOT used at any point during this selection.
+#
+# Selection protocol: PAPER_SPEC.md-listed "Missing in paper" hyperparameters
+# (embed_dim, dropout, lr) searched over a small grid; num_heads=4 and
+# window_size=3 held fixed (window_size=3 evenly divides every pre-merge
+# L=12 stage length -- 12,6,3 -- without requiring extra padding logic
+# inside HTTNetStage.forward; window_size=2 would leave stage 3 (L=3) with
+# 3%2!=0, which needs a code change, not a hyperparameter change, so was
+# out of scope for this pass). See source_only_tuning.py and
+# FINAL_HTT_NET_REPORT.md for full detail.
+
+selection:
+  method: "bidirectional source-only proxy validation"
+  fold_A: "train=C1, validate=C4"
+  fold_B: "train=C4, validate=C1"
+  selection_metric: "average(Macro-F1_A, Macro-F1_B)"
+  tie_break: "average(M-F1_A, M-F1_B), then smaller parameter count"
+  seed: 42
+  selection_date: "2026-08-18"
+  c6_used_for_selection: false
+
+search_space:
+  lr: [0.0001, 0.0003, 0.0005]
+  dropout: [0.10, 0.20]
+  embed_dim: [32, 64]
+  fixed_num_heads: 4
+  fixed_window_size: 3
+  fixed_depths: [2, 2, 2, 2]
+
+results:
+  foldA_C1_to_C4_macro_f1: 0.961476
+  foldA_C1_to_C4_m_f1: 0.956522
+  foldB_C4_to_C1_macro_f1: 0.888008
+  foldB_C4_to_C1_m_f1: 0.860558
+  average_macro_f1: 0.924742
+  average_m_f1: 0.908540
+  runner_up_config: "lr=0.0001, dropout=0.20, embed_dim=64 (avg_macro_f1=0.924270, essentially tied)"
+  all_candidates_csv: "tuning_results/source_only_search.csv"
+
+selected_hyperparameters:
+  lr: 0.0005
+  weight_decay: 1.0e-5     # unchanged from unified protocol, not searched
+  dropout: 0.20
+  embed_dim: 64
+  num_heads: 4
+  window_size: 3
+  depths: [2, 2, 2, 2]
+  batch_size: 32           # unchanged from unified protocol, not searched
+  epochs: 120
+  patience: 18
+  seed: 42
+
+note: >
+  The selected lr (5e-4) and dropout (0.20) are IDENTICAL to the initial
+  untuned defaults already used for every other deep baseline in this
+  project's unified protocol -- the search confirms those two choices were
+  already reasonable. The only real change is embed_dim: 32 -> 64, which
+  quadruples parameter count (882,067 -> 3,502,723) and was the dominant
+  factor separating the top 5 configs (all embed_dim=64) from the rest.

@@ -1,0 +1,32 @@
+method: B9_DC_PHSR
+paper_name: DC-PHSR
+legacy_code_identifiers: [DC-PSR, B12, FGDS-PSI]
+dataset: PHM2010
+task: D1
+train_conditions: [C1, C4]
+test_condition: [C6]
+n_test: 304
+c6_test_universe_run_id_range: [12, 315]
+window_length_L: 12
+backbone_method: B3_Multitask_TCN_GRU
+backbone_note: >
+  B9 does not train an independent backbone. Each seed trains one
+  B3 Multi-task TCN-GRU model; B9's deterministic probabilistic-stage
+  inference is applied on top of that same seed's B3 raw output.
+inference_params_legacy_name: B12_PARAMS
+inference_params:
+  eta: 0.75
+  fine_weight: 0.30
+  temperature: 1.20
+  mid_floor: 0.12
+  late_tau: 0.66
+  early_tau: 0.38
+  order_blend: 0.25
+inference_params_source: 代码/7.4对比实验.py (read live at run time, not copied/hardcoded elsewhere)
+inference_code: 代码/main_experiment_3_fgds_psi_optimized.py::apply_probability_inference
+backbone_train_code: 代码/main_experiment_3_fgds_psi_optimized.py::train_model
+architecture_hyperparams_source: 代码/main_experiment_3_fgds_psi_optimized.py::BEST_ARCH
+epochs: 120
+patience: 18
+weight_decay: 1e-5
+target_domain_used_for_tuning: false

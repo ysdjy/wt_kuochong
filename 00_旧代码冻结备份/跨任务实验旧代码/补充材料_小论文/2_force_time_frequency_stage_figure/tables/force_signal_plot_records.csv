@@ -1,0 +1,4 @@
+﻿stage,stage_display,run_id,signal_file,n_samples,segment_mode,segment_start_index,segment_points,fs,force_column,force_name
+early,Initial stage,59,C:\Users\wangting\Desktop\博士开题\公开数据\1PHM\c1\c1\c_1_059.csv,219248,center,108124,3000,50000.0,0,Fx
+middle,Stable stage,172,C:\Users\wangting\Desktop\博士开题\公开数据\1PHM\c1\c1\c_1_172.csv,219657,center,108328,3000,50000.0,0,Fx
+late,Acceleration stage,272,C:\Users\wangting\Desktop\博士开题\公开数据\1PHM\c1\c1\c_1_272.csv,220078,center,108539,3000,50000.0,0,Fx

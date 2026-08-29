@@ -1,0 +1,4 @@
+﻿train_conditions,test_condition,selected_features,best_epoch,best_validation_score,eta,fine_weight,temperature,mid_floor,late_tau,early_tau,order_blend,transition_matrix,probability_parameter_policy
+C1+C4 final_train blocks,C6,45,5,0.016307333286355606,0.75,0.3,1.2,0.12,0.66,0.38,0.25,"[[9.400e-01, 5.500e-02, 5.000e-03],
+ [5.000e-03, 9.550e-01, 4.000e-02],
+ [5.000e-04, 1.000e-02, 9.895e-01]]",Fixed to the final main-experiment parameters; no ablation-side search.

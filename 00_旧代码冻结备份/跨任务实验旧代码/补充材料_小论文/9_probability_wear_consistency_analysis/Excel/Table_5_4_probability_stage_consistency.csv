@@ -1,0 +1,5 @@
+﻿method,output,early_prob_correct,middle_prob_correct,late_prob_correct,prob_stage_consistency,middle_dominance_margin
+A1,raw,1,1,1,1,0.8173729866594684
+A4,mix,1,1,1,1,0.6469873941036386
+A5,ordered,1,1,1,1,0.930465471260586
+A6,final,1,1,1,1,0.7202623224391016
