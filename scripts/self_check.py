@@ -87,11 +87,22 @@ def check_methods_registry():
 
 
 def check_shared_unit_tests():
-    loader = unittest.TestLoader()
+    # A fresh TestLoader per discover() call: TestLoader caches top_level_dir
+    # from its FIRST discover() call, and reusing one loader for a second,
+    # sibling (not nested) test directory makes it compute a relative path
+    # containing ".." between the two -- which unittest's own loader asserts
+    # against ("Path must be within the project"). One loader per call avoids
+    # that entirely.
     suite = unittest.TestSuite()
-    suite.addTests(loader.discover(str(REPO_ROOT / "shared" / "metrics" / "tests")))
-    suite.addTests(loader.discover(str(REPO_ROOT / "shared" / "phm2010" / "tests")))
-    runner = unittest.TextTestRunner(verbosity=0, stream=open("nul" if platform.system() == "Windows" else "/dev/null", "w"))
+    suite.addTests(unittest.TestLoader().discover(str(REPO_ROOT / "shared" / "metrics" / "tests")))
+    suite.addTests(unittest.TestLoader().discover(str(REPO_ROOT / "shared" / "phm2010" / "tests")))
+    # io.StringIO instead of the OS null device: some sandboxed execution
+    # environments restrict opening device files like nul/dev-null even for
+    # writing, so avoid touching the filesystem at all to discard the runner's
+    # verbose output.
+    import io
+
+    runner = unittest.TextTestRunner(verbosity=0, stream=io.StringIO())
     result = runner.run(suite)
     if not result.wasSuccessful():
         raise RuntimeError(f"{len(result.failures)} failures, {len(result.errors)} errors")
