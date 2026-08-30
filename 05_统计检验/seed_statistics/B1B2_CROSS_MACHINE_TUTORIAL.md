@@ -145,17 +145,21 @@ task` 都跟当前冻结产物匹配，就会打印 `[resume] ... skipping` 直�
   段 `!/05_统计检验/seed_statistics/B1_*_seed_landscape/summary_*` 之类的规则
   （本教程不预先做这个决定，跟 B9/B3 系列一样，入不入库由你自己决定）。
 
-## 8. 已知限制 / 尚未验证的点
+## 8. 已知限制
 
-- 本机只验证了 B1（3 个数据集，真实跑通 D1/N1/D1-M 各 1 个 seed）和 B2（PHM2010/
-  NASA 真实跑通 1 个 seed；MTW 只验证了 import/模型实例化，没有跑完一个完整
-  seed 的真实训练——GPU 当时被另一并发会话占用，跑到很长时间还没结束，为免
-  过度占用 GPU 提前收尾）。**强烈建议在这台新电脑上，先老老实实跑一遍第 4 节
-  的冒烟测试（包括 B2 MTW 那一条），确认真的能跑完一整个 seed 再批量启动。**
-- B2 MTW 冒烟测试命令（第 4 节没有列出，这里补充）：
+- 本机已把 B1（RF）和 B2（TCN-GRU）在三个数据集上各真实跑通至少 1 个完整 seed
+  （B1：PHM2010 D1 / NASA N1 / MTW D1-M；B2：PHM2010 D1 / NASA N1 / MTW D1-M——
+  MTW 那次因为跟另一并发会话抢显存，单个 seed 跑了 ~26 分钟，属于显存争用导致
+  的慢，不是脚本本身的问题）。六个脚本全部真实验证过，不存在"只测了 import
+  没测完整训练"的方法了。
+- B2 MTW 冒烟测试命令（第 4 节没有单列，这里补充，建议在新电脑上仍然先跑一遍
+  确认环境没问题）：
   ```powershell
   python run_b2_mtw_seed_task.py --task D1-M --train_seed 0 --results_root ..\B2_MTW_D1M_seed_landscape\results --backbone_root ..\B2_MTW_D1M_seed_landscape\backbone_checkpoints
   ```
 - 没有做过多机合并/去重的实测（`scripts\merge_results.py` 是给
   `methods/`/`run_phm2010.py` 那一套新框架用的，跟这里的目录结构不兼容，本教程
   第 7 节给的是手动合并思路，不是现成脚本）。
+- 批量跑的真实耗时会因为 GPU 是否被其它任务共享而有很大差异（本机验证时
+  PHM2010/NASA 的 B2 单 seed 在共享 GPU 下要 10+ 分钟，MTW-CM 要 26 分钟；
+  独占 GPU 时预期会快很多）。
