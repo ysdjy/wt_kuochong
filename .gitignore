@@ -23,13 +23,15 @@
 # markdown, and the .py/.sh pipeline code are un-ignored below.
 !/OVERNIGHT_B9_EXTERNAL_STATUS.md
 !/05_统计检验/seed_statistics/
-# Re-exclude the large per-seed landscape trees (predictions/checkpoints/logs
-# for all 707+707(+303 MTW) runs) even though the parent dir above is un-ignored --
-# only the aggregated summary_*/ + _shared_code/ + top-level *.md below are meant
-# to be committed.
-/05_统计检验/seed_statistics/B9_*_seed_landscape/
-/05_统计检验/seed_statistics/B3_*_seed_landscape/
+# Re-exclude the large per-seed landscape trees (predictions/checkpoints/logs)
+# even though the parent dir above is un-ignored -- only the aggregated
+# summary_*/ + _shared_code/ + top-level *.md below are meant to be
+# committed. Generalized (B1/B2/B4/B5/... in addition to B9/B3) so every
+# method's per-seed landscape stays local regardless of which machine
+# produced it.
+/05_统计检验/seed_statistics/B*_seed_landscape/
 /05_统计检验/seed_statistics/_mtw_run_root/
+/05_统计检验/seed_statistics/_b5_image_cache/
 !/05_统计检验/seed_statistics/*.md
 !/05_统计检验/seed_statistics/summary_PHM2010/
 !/05_统计检验/seed_statistics/summary_PHM2010/**
@@ -39,6 +41,11 @@
 !/05_统计检验/seed_statistics/summary_MTW/**
 !/05_统计检验/seed_statistics/_shared_code/
 !/05_统计检验/seed_statistics/_shared_code/**
+# Re-exclude local-only driver logs / machine-specific scratch task lists
+# even though _shared_code/** above is un-ignored -- these are per-machine
+# run artifacts, not portable pipeline code.
+/05_统计检验/seed_statistics/_shared_code/*_batch_driver*.log
+/05_统计检验/seed_statistics/_shared_code/mtw_d1m_only_seed_list.txt
 # The new B1/B2 seed-task scripts + their vendored_legacy/ dependency copy
 # (this task's own work, git-clone-portable) also live under _shared_code/,
 # already covered by the recursive un-ignore above -- listed here only for
