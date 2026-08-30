@@ -1,8 +1,23 @@
-# ===== Actively running / in-progress work: not yet ready to publish =====
-# B9 seed-landscape diagnostic sweep is being actively extended (background
-# training in progress as of this push). Excluded until it completes and
-# its README/CHANGELOG are updated to reflect final scope.
-/05_统计检验/seed_statistics/B9_PHM2010_D1_seed_landscape/
+# ===== Separate concurrent session's work: not part of this commit =====
+# A different, concurrent Claude Code session (see OVERNIGHT_B9_EXTERNAL_STATUS.md
+# at repo root, written by that session) is running/has run a large B9/B3
+# seed-landscape sweep (PHM2010 D1/D2/D3 + NASA N1-N4, 700+ runs, still growing
+# as of this .gitignore edit) inside this Chinese-named diagnostic tree, under
+# its own separate user instructions -- deliberately kept out of this English-
+# named methods/ framework. That status doc itself asks for user confirmation
+# before committing/pushing. Whole directory excluded wholesale (rather than
+# per-subdirectory) since it is still actively being extended; the user should
+# review and decide what (if anything) to commit from it separately from this
+# task's own work.
+/05_统计检验/seed_statistics/
+/shared/reproducibility/build_phm_task_frozen_preprocess.py
+/shared/reproducibility/PHM2010_D2_frozen_preprocess/
+/shared/reproducibility/PHM2010_D3_frozen_preprocess/
+/shared/reproducibility/NASA_N*_frozen_preprocess/
+/shared/reproducibility/build_nasa_task_frozen_preprocess.py
+/OVERNIGHT_B9_EXTERNAL_STATUS.md
+/MTW_TASK_AUDIT.md
+/NASA_TASK_AUDIT.md
 
 # ===== Python / OS cruft =====
 __pycache__/
@@ -10,3 +25,41 @@ __pycache__/
 *.pyo
 .DS_Store
 Thumbs.db
+
+# ===== Raw PHM2010 dataset (18GB+, fetched via scripts/download_phm2010.py) =====
+# The small DERIVED feature file data/PHM2010/features/run_level_features_all.csv
+# (5.4MB, irreproducible from a lost original extraction script per
+# baselines/htt_net/README.md, no license issue) is deliberately NOT excluded here
+# and IS committed -- see data/README.md.
+/data/PHM2010/raw/
+
+# ===== Training checkpoints / large binaries (regenerable by rerunning a method) =====
+# Default --save-checkpoint is "none"; even when a user opts into saving them,
+# they must never be committed.
+**/*.pth
+**/*.pt
+**/*.pkl
+**/*.ckpt
+
+# ===== Smoke-test scratch output (never mixed into results/) =====
+/tmp/
+
+# ===== Formal per-seed run artifacts under results/ =====
+# Only small aggregated summary/*.csv files are committed -- see RESULTS_POLICY.md
+# "What gets committed to git". Per-seed predictions/logs/configs stay local.
+/results/PHM2010/*/*/seed*/
+
+# ===== Credentials =====
+.env
+*.kaggle.json
+kaggle.json
+.kaggle/
+
+# ===== Per-method preprocessing caches (regenerable, machine-local) =====
+# Several methods cache derived windows/images on first use (e.g.
+# methods/B5_MultiSource_Attention/_cache/, methods/data/PHM2010/cache/) --
+# never the raw dataset itself, always a regenerable intermediate.
+**/_cache/
+**/cache/
+**/*.npy
+**/*.npz
