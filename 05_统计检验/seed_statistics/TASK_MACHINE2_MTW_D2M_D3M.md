@@ -26,11 +26,15 @@
 如果还没 clone：
 ```bash
 git clone https://github.com/ysdjy/wt_kuochong.git
-cd wt_kuochong/扩充实验代码
+cd wt_kuochong
 ```
+（**注意**：`扩充实验代码` 只是这台开发机上的本地文件夹名，不是仓库里的一层目录——`wt_kuochong`
+这个仓库的根目录本身就等价于 `扩充实验代码/` 的内容，`git clone` 出来之后直接就能看到
+`05_统计检验/`、`shared/`、`methods/` 等，不需要再 `cd` 进一个叫"扩充实验代码"的子目录。）
+
 如果已经 clone 过（但可能是旧版本）：
 ```bash
-cd <你的wt_kuochong本地路径>/扩充实验代码
+cd <你的wt_kuochong本地路径>
 git pull origin main
 ```
 **必须确认能看到这些文件**（`git pull` 之后检查一下）：
@@ -81,7 +85,7 @@ python run_mtw_seed_task.py --task D2-M --train_seed 0 \
 用 Git Bash（Windows 自带 Git 会装 Git Bash）：
 
 ```bash
-cd <wt_kuochong本地路径>/扩充实验代码/05_统计检验/seed_statistics/_shared_code
+cd <wt_kuochong本地路径>/05_统计检验/seed_statistics/_shared_code
 export PYTHONIOENCODING=utf-8
 
 # 只挑出 D2-M / D3-M 的 (task,seed) 组合，跳过 D1-M（电脑A自己在跑）

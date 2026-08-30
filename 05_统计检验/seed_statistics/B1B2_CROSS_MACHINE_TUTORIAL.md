@@ -32,7 +32,7 @@ MTW_D3-M}_frozen_preprocess/`）也已随本次改动一并提交。**不需要*
 
 ```powershell
 git clone https://github.com/ysdjy/wt_kuochong.git
-cd wt_kuochong\扩充实验代码
+cd wt_kuochong
 ```
 
 ## 2. 环境
@@ -91,7 +91,7 @@ Git Bash 里跑（Windows 上装 Git 自带 Git Bash，driver 脚本是 `.sh`）
 ### B1（RF，CPU，建议先跑，快）
 
 ```bash
-cd /path/to/wt_kuochong/扩充实验代码/05_统计检验/seed_statistics/_shared_code
+cd /path/to/wt_kuochong/05_统计检验/seed_statistics/_shared_code
 export PYTHON_EXE="/c/Users/<你的用户名>/miniconda3/envs/wt_kuochong/python.exe"   # 按实际路径改
 
 cat b1_phm_task_seed_list.txt  | xargs -P 4 -I{} bash run_one_b1_task_seed.sh {}
