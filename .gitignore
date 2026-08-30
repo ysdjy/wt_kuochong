@@ -19,6 +19,32 @@
 /MTW_TASK_AUDIT.md
 /NASA_TASK_AUDIT.md
 
+# ---- User has now explicitly reviewed and authorized committing the
+# aggregated summary results, audit docs, and pipeline code from the
+# 05_统计检验/seed_statistics/ tree above (707 PHM2010+NASA B9 runs + 707
+# paired B3 runs, all complete). Per-seed raw artifacts (predictions,
+# checkpoints, training logs, frozen-preprocess derived feature tables)
+# stay excluded/local -- only small aggregated CSVs, audit/status
+# markdown, and the .py/.sh pipeline code are un-ignored below.
+!/OVERNIGHT_B9_EXTERNAL_STATUS.md
+!/05_统计检验/seed_statistics/
+# Re-exclude the large per-seed landscape trees (predictions/checkpoints/logs
+# for all 707+707(+303 MTW) runs) even though the parent dir above is un-ignored --
+# only the aggregated summary_*/ + _shared_code/ + top-level *.md below are meant
+# to be committed.
+/05_统计检验/seed_statistics/B9_*_seed_landscape/
+/05_统计检验/seed_statistics/B3_*_seed_landscape/
+/05_统计检验/seed_statistics/_mtw_run_root/
+!/05_统计检验/seed_statistics/*.md
+!/05_统计检验/seed_statistics/summary_PHM2010/
+!/05_统计检验/seed_statistics/summary_PHM2010/**
+!/05_统计检验/seed_statistics/summary_NASA/
+!/05_统计检验/seed_statistics/summary_NASA/**
+!/05_统计检验/seed_statistics/summary_MTW/
+!/05_统计检验/seed_statistics/summary_MTW/**
+!/05_统计检验/seed_statistics/_shared_code/
+!/05_统计检验/seed_statistics/_shared_code/**
+
 # ===== Python / OS cruft =====
 __pycache__/
 *.pyc

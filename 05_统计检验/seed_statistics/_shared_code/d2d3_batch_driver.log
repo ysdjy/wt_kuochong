@@ -1,0 +1,198 @@
+task=D2 seed=2 exit=0
+task=D2 seed=1 exit=0
+task=D2 seed=3 exit=0
+task=D2 seed=4 exit=0
+task=D2 seed=5 exit=0
+task=D2 seed=6 exit=0
+task=D2 seed=7 exit=0
+task=D2 seed=8 exit=0
+task=D2 seed=9 exit=0
+task=D2 seed=10 exit=0
+task=D2 seed=11 exit=0
+task=D2 seed=12 exit=0
+task=D2 seed=13 exit=0
+task=D2 seed=14 exit=0
+task=D2 seed=15 exit=0
+task=D2 seed=16 exit=0
+task=D2 seed=17 exit=0
+task=D2 seed=18 exit=0
+task=D2 seed=19 exit=0
+task=D2 seed=20 exit=0
+task=D2 seed=21 exit=0
+task=D2 seed=22 exit=0
+task=D2 seed=23 exit=0
+task=D2 seed=24 exit=0
+task=D2 seed=25 exit=0
+task=D2 seed=26 exit=0
+task=D2 seed=27 exit=0
+task=D2 seed=28 exit=0
+task=D2 seed=29 exit=0
+task=D2 seed=30 exit=127
+task=D2 seed=31 exit=127
+task=D2 seed=32 exit=0
+task=D2 seed=33 exit=0
+task=D2 seed=34 exit=0
+task=D2 seed=35 exit=0
+task=D2 seed=36 exit=0
+task=D2 seed=37 exit=0
+task=D2 seed=38 exit=0
+task=D2 seed=39 exit=0
+task=D2 seed=40 exit=0
+task=D2 seed=41 exit=1
+task=D2 seed=43 exit=0
+task=D2 seed=44 exit=0
+task=D2 seed=45 exit=0
+task=D2 seed=46 exit=0
+task=D2 seed=47 exit=1
+task=D2 seed=48 exit=0
+task=D2 seed=49 exit=0
+task=D2 seed=50 exit=0
+task=D2 seed=51 exit=0
+task=D2 seed=52 exit=0
+task=D2 seed=53 exit=0
+task=D2 seed=54 exit=0
+task=D2 seed=55 exit=0
+task=D2 seed=56 exit=0
+task=D2 seed=57 exit=0
+task=D2 seed=58 exit=0
+task=D2 seed=59 exit=0
+task=D2 seed=60 exit=0
+task=D2 seed=61 exit=0
+task=D2 seed=63 exit=0
+task=D2 seed=62 exit=0
+task=D2 seed=64 exit=0
+task=D2 seed=65 exit=1
+task=D2 seed=67 exit=0
+task=D2 seed=66 exit=0
+task=D2 seed=68 exit=0
+task=D2 seed=69 exit=0
+task=D2 seed=70 exit=0
+task=D2 seed=71 exit=0
+task=D2 seed=72 exit=0
+task=D2 seed=73 exit=0
+task=D2 seed=74 exit=0
+task=D2 seed=75 exit=0
+task=D2 seed=76 exit=0
+task=D2 seed=77 exit=0
+task=D2 seed=79 exit=0
+task=D2 seed=78 exit=0
+task=D2 seed=80 exit=0
+task=D2 seed=81 exit=0
+task=D2 seed=82 exit=0
+task=D2 seed=83 exit=0
+task=D2 seed=84 exit=0
+task=D2 seed=85 exit=0
+task=D2 seed=86 exit=0
+task=D2 seed=87 exit=0
+task=D2 seed=88 exit=0
+task=D2 seed=89 exit=0
+task=D2 seed=90 exit=0
+task=D2 seed=91 exit=0
+task=D2 seed=92 exit=0
+task=D2 seed=93 exit=0
+task=D2 seed=94 exit=0
+task=D2 seed=95 exit=0
+task=D2 seed=97 exit=0
+task=D2 seed=96 exit=0
+task=D2 seed=98 exit=0
+task=D2 seed=99 exit=0
+task=D2 seed=100 exit=0
+task=D3 seed=1 exit=0
+task=D3 seed=2 exit=0
+task=D3 seed=3 exit=0
+task=D3 seed=4 exit=0
+task=D3 seed=5 exit=0
+task=D3 seed=6 exit=0
+task=D3 seed=7 exit=0
+task=D3 seed=8 exit=0
+task=D3 seed=9 exit=0
+task=D3 seed=11 exit=0
+task=D3 seed=10 exit=0
+task=D3 seed=12 exit=0
+task=D3 seed=13 exit=0
+task=D3 seed=14 exit=0
+task=D3 seed=15 exit=0
+task=D3 seed=16 exit=0
+task=D3 seed=17 exit=0
+task=D3 seed=18 exit=0
+task=D3 seed=19 exit=0
+task=D3 seed=20 exit=0
+task=D3 seed=21 exit=0
+task=D3 seed=22 exit=0
+task=D3 seed=23 exit=0
+task=D3 seed=24 exit=0
+task=D3 seed=25 exit=0
+task=D3 seed=26 exit=0
+task=D3 seed=27 exit=0
+task=D3 seed=28 exit=0
+task=D3 seed=30 exit=0
+task=D3 seed=29 exit=0
+task=D3 seed=31 exit=0
+task=D3 seed=32 exit=0
+task=D3 seed=34 exit=0
+task=D3 seed=33 exit=0
+task=D3 seed=36 exit=0
+task=D3 seed=35 exit=0
+task=D3 seed=37 exit=0
+task=D3 seed=38 exit=0
+task=D3 seed=39 exit=0
+task=D3 seed=41 exit=0
+task=D3 seed=40 exit=0
+task=D3 seed=44 exit=0
+task=D3 seed=43 exit=0
+task=D3 seed=45 exit=0
+task=D3 seed=46 exit=0
+task=D3 seed=47 exit=0
+task=D3 seed=48 exit=0
+task=D3 seed=49 exit=0
+task=D3 seed=50 exit=0
+task=D3 seed=51 exit=0
+task=D3 seed=52 exit=0
+task=D3 seed=53 exit=0
+task=D3 seed=54 exit=0
+task=D3 seed=55 exit=0
+task=D3 seed=56 exit=0
+task=D3 seed=57 exit=0
+task=D3 seed=59 exit=0
+task=D3 seed=58 exit=0
+task=D3 seed=60 exit=0
+task=D3 seed=61 exit=0
+task=D3 seed=62 exit=0
+task=D3 seed=63 exit=0
+task=D3 seed=65 exit=0
+task=D3 seed=64 exit=0
+task=D3 seed=66 exit=0
+task=D3 seed=67 exit=0
+task=D3 seed=68 exit=0
+task=D3 seed=69 exit=0
+task=D3 seed=70 exit=0
+task=D3 seed=72 exit=0
+task=D3 seed=71 exit=0
+task=D3 seed=73 exit=0
+task=D3 seed=74 exit=0
+task=D3 seed=76 exit=0
+task=D3 seed=75 exit=0
+task=D3 seed=77 exit=0
+task=D3 seed=78 exit=0
+task=D3 seed=79 exit=0
+task=D3 seed=80 exit=0
+task=D3 seed=81 exit=0
+task=D3 seed=82 exit=0
+task=D3 seed=83 exit=0
+task=D3 seed=84 exit=0
+task=D3 seed=85 exit=0
+task=D3 seed=86 exit=0
+task=D3 seed=88 exit=0
+task=D3 seed=87 exit=0
+task=D3 seed=89 exit=0
+task=D3 seed=90 exit=0
+task=D3 seed=91 exit=0
+task=D3 seed=92 exit=0
+task=D3 seed=94 exit=0
+task=D3 seed=93 exit=0
+task=D3 seed=96 exit=0
+task=D3 seed=95 exit=0
+task=D3 seed=98 exit=0
+task=D3 seed=97 exit=0
+task=D3 seed=100 exit=0
+task=D3 seed=99 exit=0

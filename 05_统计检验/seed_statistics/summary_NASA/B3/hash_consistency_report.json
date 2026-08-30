@@ -1,0 +1,18 @@
+{
+  "N1": {
+    "n_distinct_hash_tuples": 1,
+    "consistent": true
+  },
+  "N2": {
+    "n_distinct_hash_tuples": 1,
+    "consistent": true
+  },
+  "N3": {
+    "n_distinct_hash_tuples": 1,
+    "consistent": true
+  },
+  "N4": {
+    "n_distinct_hash_tuples": 1,
+    "consistent": true
+  }
+}
