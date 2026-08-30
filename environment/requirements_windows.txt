@@ -1,0 +1,12 @@
+# Windows: install core deps first (`pip install -r environment/requirements.txt`),
+# then torch from the cu118 wheel index if an NVIDIA GPU + driver is present,
+# otherwise the CPU wheel. scripts/bootstrap_windows.ps1 auto-detects and runs the
+# correct one of these two lines — this file documents both for manual/fallback use.
+
+# --- GPU (CUDA 11.8) --- verified working on the dev machine (RTX 3070 Ti Laptop, 8GB):
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.7.1+cu118
+
+# --- CPU-only fallback (uncomment instead of the above if no compatible NVIDIA GPU) ---
+# --extra-index-url https://download.pytorch.org/whl/cpu
+# torch==2.7.1

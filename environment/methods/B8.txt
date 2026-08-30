@@ -1,0 +1,2 @@
+# B8 (DP2Net-adapted): no extra dependencies beyond environment/requirements.txt + torch.
+# Pinned variant: B-D1 (pooled-source) -- see methods/B8_DP2Net/README.md.

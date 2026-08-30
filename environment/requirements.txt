@@ -1,0 +1,28 @@
+# Core PHM2010 experiment-framework dependencies, unified across the two
+# environments used historically on the development machine (conda envs
+# `dcpsr` and `pub_baselines`, verified 2026-08-30 via `pip freeze` on both;
+# both were Python 3.11.15 + torch 2.7.1+cu118, no exotic packages such as
+# torch_geometric / timm / CLIP were present in either — B6 (MTF-AViTK) and B7
+# (Dynamic GIN + TGP) use hand-rolled ViT / GIN layers in plain torch, not
+# third-party model libraries).
+#
+# torch itself is installed separately per-platform — see requirements_windows.txt
+# / requirements_ubuntu.txt and scripts/bootstrap_{windows,ubuntu}.{ps1,sh} — because
+# its correct wheel depends on OS/CUDA availability, which bootstrap detects.
+#
+# Any method-specific EXTRA dependency lives in environment/methods/Bx.txt and is
+# installed on top of this file when that method is first used.
+
+numpy==2.4.6
+pandas==3.0.5
+scipy==1.17.1
+scikit-learn==1.9.0
+xgboost==3.2.0
+matplotlib==3.11.1
+PyYAML==6.0.3
+PyWavelets==1.9.0   # Markov Transition Field construction (B6 MTF-AViTK)
+h5py==3.16.0
+pyarrow==25.0.1
+tqdm==4.70.0
+tabulate==0.10.0
+joblib==1.5.3

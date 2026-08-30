@@ -1,0 +1,3 @@
+# B7 (Dynamic GIN + TGP): custom hand-rolled GIN implementation in plain
+# torch -- does NOT depend on torch_geometric or any graph library. No extra
+# dependencies beyond environment/requirements.txt + torch.

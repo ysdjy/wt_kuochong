@@ -1,0 +1,18 @@
+# conda environment spec for the unified `wt_kuochong` env (replaces the two
+# historical dev-machine envs `dcpsr` + `pub_baselines`, which turned out to need
+# identical Python/torch versions and no exotic packages once compared directly).
+#
+# Usage:
+#   conda env create -f environment/environment.yml
+#   conda activate wt_kuochong
+#   pip install -r environment/requirements.txt
+#   pip install -r environment/requirements_windows.txt   # or requirements_ubuntu.txt
+#
+# (scripts/bootstrap_windows.ps1 / bootstrap_ubuntu.sh do all of the above in one step.)
+name: wt_kuochong
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11.15
+  - pip

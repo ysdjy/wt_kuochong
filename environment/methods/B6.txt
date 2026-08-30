@@ -1,0 +1,10 @@
+# B6 (MTF-AViTK): needs PyWavelets for MTF construction (already in
+# environment/requirements.txt). The KAN classifier head is a LOCALLY
+# VENDORED file (methods/B6_MTF_AViTK/code/kan.py) -- do NOT `pip install kan`,
+# there is no such package used here; a same-named PyPI package (if any)
+# would be the wrong code.
+#
+# WARNING: 309M-param ViT-L/32. Historically ~30-40 min/seed on an 8GB laptop
+# GPU, checkpoint ~1.2GB (never committed to git). See methods/B6_MTF_AViTK/README.md
+# and MANUAL_RUN.md before running this method for real -- this project's
+# policy is to NOT auto-execute full B6 training, only a smoke test.

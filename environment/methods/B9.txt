@@ -1,0 +1,3 @@
+# B9 (DC-PHSR): no extra dependencies beyond environment/requirements.txt + torch.
+# Shares B3's backbone architecture; this round trains its own copy per cell
+# rather than sharing a checkpoint across adapters -- see methods/B9_DC_PHSR/README.md.

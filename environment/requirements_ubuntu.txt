@@ -1,0 +1,15 @@
+# Ubuntu: install core deps first (`pip install -r environment/requirements.txt`),
+# then torch from the cu118 wheel index if an NVIDIA GPU + driver is present,
+# otherwise the CPU wheel. scripts/bootstrap_ubuntu.sh auto-detects (via `nvidia-smi`)
+# and runs the correct one of these two lines — this file documents both for
+# manual/fallback use. Same torch version pin as Windows (2.7.1+cu118) for
+# cross-platform result parity; NOT verified on physical Ubuntu hardware yet —
+# see MANUAL_RUN.md for status.
+
+# --- GPU (CUDA 11.8) ---
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.7.1+cu118
+
+# --- CPU-only fallback ---
+# --extra-index-url https://download.pytorch.org/whl/cpu
+# torch==2.7.1

@@ -1,0 +1,4 @@
+# B5 (Multi-source Channel-Spatial Attention): needs PyWavelets (CWT) for its
+# raw-signal -> image preprocessing. Already included in
+# environment/requirements.txt (PyWavelets==1.9.0) -- no separate install
+# needed, this file exists for documentation/discoverability.
