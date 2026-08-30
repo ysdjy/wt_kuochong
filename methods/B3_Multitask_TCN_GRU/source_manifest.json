@@ -1,0 +1,24 @@
+{
+  "method": "B3",
+  "method_name": "Multi-task TCN-GRU",
+  "legacy_source_path": [
+    "代码/main_experiment_3_fgds_psi_optimized.py",
+    "final_statistical_evidence/scripts/methods/common_pipeline.py",
+    "final_statistical_evidence/scripts/methods/run_internal_methods_transfer_task.py"
+  ],
+  "legacy_git_commit": "811da096ee47bea4f65db193aa49e793dba6f47d",
+  "legacy_git_branch": "diagnostic/fixed-preprocess-5seed",
+  "copied_files": [
+    {"from": "代码/main_experiment_3_fgds_psi_optimized.py (TCNGRUMultiTask, train_model, predict_model, run_epoch)", "to": "methods/_internal_shared/code/pipeline.py", "note": "shared with B2/B9"}
+  ],
+  "sha256_of_legacy_source_at_vendor_time": {
+    "代码/main_experiment_3_fgds_psi_optimized.py": "0696085eb69de26e003870f1464cfc54f4c030ceb12a162faeca2c45c1ef3f5f",
+    "final_statistical_evidence/scripts/methods/common_pipeline.py": "8e99c766f28b130f5dc1ab5705230b53ee20eee8c385a81549d6c4e9ecac52e8",
+    "final_statistical_evidence/scripts/methods/run_internal_methods_transfer_task.py": "f0420d53831576b035866ac3c0decf17c11ba3c238ab943267c71e48ca0413f2"
+  },
+  "sha256_of_new_repo_files": {
+    "methods/_internal_shared/code/pipeline.py": "2eb8463662649318e229b5278303ba9d2eda3d4373f91b840aefb3864f972426",
+    "methods/B3_Multitask_TCN_GRU/adapter.py": "edf7c1f6a8c7c0d6c22465e59dd62bfba3bbcee46622df7b5cc636271206354c"
+  },
+  "adaptation_notes": "Only task/seed/output routing and cross-platform paths were changed vs. the original -- see methods/_internal_shared/code/pipeline.py's module docstring for the full itemized list (split generalization, feature-file path, preprocess_seed parameterization, build_model()/train() hook split). No architecture, hyperparameter, or optimizer change; LAMBDA_STAGE/FINE/Q/MONO, EPOCHS=120, PATIENCE=18, BEST_ARCH all unchanged. Verified 2026-08-30: (a) pipeline.prepare_task_data(['C1','C4'],'C6')'s 45 selected features match shared/reproducibility/PHM2010_D1_frozen_preprocess/selected_features_seed42.json bit-exact in order; (b) CPU smoke test (prepare+build_model+predict on real D1 data, untrained weights) produces 304 test-window predictions with the expected schema."
+}

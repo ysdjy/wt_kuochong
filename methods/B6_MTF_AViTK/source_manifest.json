@@ -1,0 +1,63 @@
+{
+  "legacy_source_path": [
+    "baselines/mtf_avitk/model.py",
+    "baselines/mtf_avitk/kan.py",
+    "baselines/mtf_avitk/preprocessing.py",
+    "baselines/mtf_avitk/train.py",
+    "baselines/mtf_avitk/data/label_utils.py",
+    "代码/main_experiment_3_fgds_psi_optimized.py",
+    "final_statistical_evidence/scripts/methods/condition_split.py"
+  ],
+  "legacy_git_commit": "811da096ee47bea4f65db193aa49e793dba6f47d",
+  "legacy_git_branch": "diagnostic/fixed-preprocess-5seed",
+  "copied_files": [
+    {
+      "new_path": "code/kan.py",
+      "legacy_path": "baselines/mtf_avitk/kan.py",
+      "modification": "verbatim copy, no changes"
+    },
+    {
+      "new_path": "code/model.py",
+      "legacy_path": "baselines/mtf_avitk/model.py",
+      "modification": "verbatim copy, no changes"
+    },
+    {
+      "new_path": "code/preprocessing.py",
+      "legacy_path": "baselines/mtf_avitk/preprocessing.py",
+      "modification": "path routing only: ARCHIVE_DIR (hardcoded old-project-relative archive/) replaced with RAW_DIR resolved from PHM2010_ROOT env var, default <repo>/data/PHM2010/raw. All signal-processing functions (resultant_force, wavelet_denoise, mtf_encode, mtf_to_rgb_image, signal_to_mtf_image) byte-for-byte unchanged."
+    },
+    {
+      "new_path": "code/label_utils.py",
+      "legacy_path": "baselines/mtf_avitk/data/label_utils.py + 代码/main_experiment_3_fgds_psi_optimized.py (define_condition_relative_stages, STAGE_NAMES/STAGE_TO_ID/ID_TO_STAGE, Q_EARLY/Q_LATE/RATE_LATE_Q/VAL_RATIO_STAGE/MIN_STAGE_VAL_LEN)",
+      "modification": "vendored (no more live 'sys.path.insert + import main_experiment_3_fgds_psi_optimized as dcpsr_base' from the old parent project). split_grouped_lifecycle generalized from hardcoded train={C1,C4}/test={C6} to split_grouped_lifecycle_generic(df, train_cutters, test_cutter), ported from final_statistical_evidence/scripts/methods/condition_split.py::make_split_fn (already-validated generalization for the other 3 raw-signal baselines). fine_state_true / N_FINE_STATES column dropped (only needed by B3/B9's GMM step, unused here). All thresholds/formulas otherwise verbatim."
+    },
+    {
+      "new_path": "code/train_core.py",
+      "legacy_path": "baselines/mtf_avitk/train.py (run_protocol_b's build_model/run_epoch/predict/build_pred_df_subwindow/aggregate_to_run_level only -- Protocol A and the old smoke-test helper were not ported, not needed)",
+      "modification": "seed routing: original hardcoded PROTO_B_CFG['seed']=42 and called its own set_seed() inside run_protocol_b; this version performs NO seeding itself -- shared/utils/seeding.py::seed_everything(self.seed) is called by the adapter base class immediately before build_model(). Also split out of the original's monolithic run_protocol_b() into an adapter (prepare/build_model/train/predict hooks) so the resume/DONE.flag/result-schema logic lives once in shared/runners/method_adapter.py rather than being reimplemented per baseline. Architecture, optimizer (SGD lr=0.0006 wd=2e-4 momentum=0.9), loss (cross-entropy), AMP, grad-checkpoint/grad-accum mechanics unchanged."
+    },
+    {
+      "new_path": "code/data_prep.py",
+      "legacy_path": "baselines/mtf_avitk/data/build_dataset.py + train.py::MTFImageDataset",
+      "modification": "storage strategy only: original pre-built ALL 945 runs x 5 sub-windows once into a 2.0GB data/images/*.npy directory (never committed to any git repo, including the old project). This version builds MTF images on-demand per (condition, run_id) via the byte-for-byte-identical preprocessing.py pipeline, cached under data/PHM2010/derived/mtf_avitk_images/ (configurable via MTF_AVITK_IMAGE_CACHE env var) so repeated seeds over the same task skip the wavelet-transform recomputation."
+    },
+    {
+      "new_path": "adapter.py",
+      "legacy_path": "baselines/mtf_avitk/train.py::run_protocol_b (control flow only)",
+      "modification": "new file: wraps train_core.py/data_prep.py/label_utils.py behind the shared MethodAdapter interface (shared/runners/method_adapter.py). No original logic reimplemented from scratch -- every numeric formula traces to a copied_files entry above."
+    }
+  ],
+  "sha256": {
+    "code/kan.py": "f6d1484aaa2ae5c6b41b8d7e2a53ff00e4ef33a722f2955b5de34987d83d4890",
+    "code/model.py": "5fd0ea098fdb9b97bbceb8763c69de73c5a13895e2aa913255795de0b29898f9",
+    "code/preprocessing.py": "3faf41721f1dc769cb00dee8ff81037ab0fe7f7a7c0183d7c5c197ded62d2c5f",
+    "code/label_utils.py": "065f690dddac93a59bd1dfdba57f665c22c28a96348b1f24cefe461024b47b45",
+    "code/data_prep.py": "852c8931c97bf64ac55021f78f2212d8c986ad1b2e5c3bb0026eb22055b242b2",
+    "code/train_core.py": "0a1cbc326b5a9997a6aac65f186ab903c52cee653777b86b807db88259e7b2a4",
+    "adapter.py": "e657d157168fa970be9eb6189d0240f37ddafd2dcf1003279c9791c3b5c3f9fd",
+    "config.yaml": "f03e4808e259f7ddffb49a72e915def1251ffffb82a9b66933f1f3756406fffb",
+    "_legacy_source_kan.py": "f6d1484aaa2ae5c6b41b8d7e2a53ff00e4ef33a722f2955b5de34987d83d4890",
+    "_legacy_source_model.py": "5fd0ea098fdb9b97bbceb8763c69de73c5a13895e2aa913255795de0b29898f9"
+  },
+  "adaptation_notes": "This method's checkpoint (~1.2GB) and per-seed training time (~30-40min on an 8GB laptop GPU) make it the highest-risk method in the 9-method set. This round only vendored code and ran a CPU-only plumbing smoke test -- NO real training was executed by this build task, matching this project's established policy that MTF-AViTK training is run by the user manually or with explicit authorization, never launched unattended. See README.md 'Compute cost' and 'This round's scope' sections."
+}

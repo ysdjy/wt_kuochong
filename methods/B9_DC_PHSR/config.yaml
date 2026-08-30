@@ -1,0 +1,43 @@
+# B9 (DC-PHSR; legacy code ids DC-PSR / B12 / FGDS-PSI) resolved configuration.
+# Backbone is architecturally identical to B3 (Multi-task TCN-GRU) -- see
+# methods/B3_Multitask_TCN_GRU/config.yaml for those hyperparameters, repeated
+# here for self-containment. B9-specific: the frozen probability-inference
+# parameters (B12_PARAMS), applied deterministically on top of the backbone's
+# raw softmax output -- never retuned in this repo (probability_param_search()
+# in the original code was NOT ported; these values are the frozen result of
+# that search, already validated for every published D1/D2/D3 number).
+method: B9
+method_name: DC-PHSR
+legacy_names: [DC-PSR, B12, FGDS-PSI]
+input_representation: run-level engineered feature, L=12 sliding window (relative-stage)
+backbone_architecture:
+  type: TCN + GRU, three heads (stage classification, fine-state classification, q regression)
+  window_length_L: 12
+  tcn_channels: [32, 64, 64]
+  gru_hidden: 64
+  dropout: 0.20
+  n_fine_states: 5
+backbone_training:
+  optimizer: AdamW
+  lr: 5.0e-4
+  weight_decay: 1.0e-5
+  grad_clip_norm: 1.0
+  batch_size: 32
+  epochs_max: 120
+  patience: 18
+  loss_weights: {lambda_stage: 1.00, lambda_fine: 0.25, lambda_q: 0.30, lambda_mono: 0.03}
+probability_inference:
+  eta: 0.75
+  fine_weight: 0.30
+  temperature: 1.20
+  mid_floor: 0.12
+  late_tau: 0.66
+  early_tau: 0.38
+  order_blend: 0.25
+preprocessing:
+  preprocess_seed: 42
+  n_selected_features: 45
+  feature_selection: mutual_info_classif + mutual_info_regression + spearman, redundancy_threshold=0.92
+  scaler: StandardScaler, fit on train cutters only
+  fine_state_labels: 5-component GaussianMixture(covariance_type=full, n_init=10), fit on train cutters only
+checkpoint_sharing_with_B3: not enabled this round -- B9 trains its own identical backbone copy; see adapter.py docstring

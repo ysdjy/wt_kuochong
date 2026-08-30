@@ -1,0 +1,31 @@
+{
+  "method": "B1_RF",
+  "legacy_source_path": [
+    "代码/main_experiment_3_fgds_psi_optimized.py",
+    "代码/7.7跨工况实验.py",
+    "final_statistical_evidence/scripts/methods/common_pipeline.py",
+    "final_statistical_evidence/scripts/methods/run_internal_methods_transfer_task.py::run_rf"
+  ],
+  "legacy_git_commit": "811da096ee47bea4f65db193aa49e793dba6f47d",
+  "legacy_git_branch": "diagnostic/fixed-preprocess-5seed",
+  "copied_files": [
+    "code/preprocessing.py"
+  ],
+  "sha256_of_legacy_sources_at_vendoring_time": {
+    "代码/main_experiment_3_fgds_psi_optimized.py": "0696085eb69de26e003870f1464cfc54f4c030ceb12a162faeca2c45c1ef3f5f",
+    "代码/7.7跨工况实验.py": "674f724e032a7e6c07a66d436299bfe86ab3b64546efedb1eae4dfa32181c45f",
+    "final_statistical_evidence/scripts/methods/common_pipeline.py": "8e99c766f28b130f5dc1ab5705230b53ee20eee8c385a81549d6c4e9ecac52e8"
+  },
+  "feature_file": {
+    "path": "data/PHM2010/features/run_level_features_all.csv",
+    "sha256": "6e8affeb681d0b386e453421a0df7a66932138199eb236403d27b797c11eeb88",
+    "copied_from": "baselines/htt_net/data/run_level_features_all.csv"
+  },
+  "adaptation_notes": [
+    "preprocessing.py is a line-for-line port of load_feature_table / define_condition_relative_stages / get_raw_numeric_sensor_cols / build_online_features_for_subset / build_online_features_by_split / feature_cols_from / fill_by_train_median / select_features_train_only / fit_train_gmm / assign_fine_states / build_windows from main_experiment_3_fgds_psi_optimized.py, and split_by_conditions from common_pipeline.py (itself a verbatim port of 代码/7.7跨工况实验.py::split_train_val_by_conditions).",
+    "ONLY task/seed/output routing changed, no algorithm change: train_conditions/test_condition/preprocess_seed are now explicit function parameters instead of hardcoded module constants (RANDOM_SEED=42, C1+C4->C6); diagnostic side-file writes (selected_features.csv, threshold summaries, gmm_fine_state_mapping.csv) were removed from these pure data-transform functions -- the adapter/orchestrator decides what to persist per RESULTS_POLICY.md instead.",
+    "FEATURE_FILE now defaults to this repo's own data/PHM2010/features/run_level_features_all.csv (sha256-verified identical copy) instead of the old project's baselines/htt_net/data/ path, overridable via PHM2010_FEATURES env var.",
+    "RF model itself (RandomForestClassifier, n_estimators=400, class_weight=balanced_subsample) is unchanged from final_statistical_evidence/scripts/methods/run_internal_methods_transfer_task.py::run_rf.",
+    "Test evaluation restricted to run_ids present in the L=12 window-feasible set (meta_test['cut_index']), matching the historical run_rf() behavior exactly, so RF's test universe matches the other window-based methods' common evaluation universe (run_id 12-315, n=304)."
+  ]
+}

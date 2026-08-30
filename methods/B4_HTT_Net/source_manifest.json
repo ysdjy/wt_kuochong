@@ -1,0 +1,32 @@
+{
+  "legacy_source_path": [
+    "baselines/htt_net/model.py",
+    "baselines/htt_net/train.py",
+    "代码/main_experiment_3_fgds_psi_optimized.py"
+  ],
+  "legacy_git_commit": "811da096ee47bea4f65db193aa49e793dba6f47d",
+  "legacy_git_branch": "diagnostic/fixed-preprocess-5seed",
+  "copied_files": [
+    {
+      "from": "baselines/htt_net/model.py",
+      "to": "methods/B4_HTT_Net/code/model.py",
+      "modification": "none (verbatim copy, architecture unchanged)"
+    },
+    {
+      "from": "代码/main_experiment_3_fgds_psi_optimized.py",
+      "to": "methods/B4_HTT_Net/code/pipeline.py",
+      "modification": "trimmed to only the functions HTT-Net's pipeline calls (dropped figures/TCNGRUMultiTask/probability-inference/q-metrics sections, none used by HTT-Net); split_grouped_lifecycle() generalized from hardcoded train=[C1,C4]/test=C6 to explicit (train_conditions, test_condition) parameters with an added leakage guard, for D1/D2/D3 support; FEATURE_FILE default changed from a hardcoded C:\\Users\\wangting\\... absolute path to a repo-relative data/PHM2010/features/run_level_features_all.csv path (PHM2010_FEATURES env var override); RUN_DIR default changed from a OneDrive/BaiduSyncdisk-synced folder to a tempdir (matches precedent already set by the old baselines/htt_net/train.py's own FGDS_RUN_DIR handling, avoiding sync-client file-lock PermissionErrors)"
+    },
+    {
+      "from": "baselines/htt_net/train.py",
+      "to": "methods/B4_HTT_Net/adapter.py",
+      "modification": "reimplemented as a MethodAdapter subclass (prepare/build_model/train/predict hooks) calling into code/pipeline.py and code/model.py; training loop, optimizer, scheduler, class-weighting, early-stopping score, grad clipping all unchanged (same values, same order of operations) -- only the surrounding orchestration (seeding, output-file writing, task routing) changed to match the unified interface"
+    }
+  ],
+  "sha256_at_copy_time": {
+    "baselines/htt_net/model.py": "30a2d7b3e1e0d0425df84937181af74e2f9f73fc297b773e10da1b6f3f2ca4ef",
+    "baselines/htt_net/train.py": "b29c297a94eb7abefcbdd96d77f5875ae9ca20f804a6c33d9cf4ac6d2a270de8",
+    "代码/main_experiment_3_fgds_psi_optimized.py": "0696085eb69de26e003870f1464cfc54f4c030ceb12a162faeca2c45c1ef3f5f"
+  },
+  "adaptation_notes": "Architecture (HTTNet in model.py) is byte-identical to the original, verbatim copy -- verified via sha256 match. Training hyperparameters (HTT_ARCH/TRAIN_CFG in adapter.py) are read from the same source constants (BEST_ARCH/WEIGHT_DECAY/EPOCHS/PATIENCE/GRAD_CLIP) as the original train.py, unchanged. Only task/seed/output routing and cross-platform path handling were adapted, per master task spec section 35. No architecture/optimizer/lr/loss changes."
+}

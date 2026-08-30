@@ -1,0 +1,45 @@
+{
+  "method_id": "B8",
+  "method_name": "DP2Net-adapted (pooled source)",
+  "legacy_source_path": "baselines/dp2net/",
+  "legacy_git_commit": "811da096ee47bea4f65db193aa49e793dba6f47d",
+  "legacy_git_branch": "diagnostic/fixed-preprocess-5seed",
+  "pinned_variant": "B-D1 (pooled-source adapted, generalizes the paper's own C1+C4->C6). Explicitly named 'DP2Net-adapted (pooled source)' in the old train.py docstring and stated there as 'what enters the DC-PSR D1 main comparison table' -- NOT 'B-S' (native single-source, preserves DP2Net's own SSDG character) and NOT Protocol A (paper-native sanity check, 4-stage labels, C1-only source). Only B-D1 is ported to this repo.",
+  "copied_files": [
+    {
+      "new_path": "code/model.py",
+      "legacy_path": "baselines/dp2net/model.py",
+      "sha256": "a7efafad9b31e611eea7b26e56e83ab22fa692c4b8e3d1039d9488f7e71608b4",
+      "modification": "none (verbatim copy)"
+    },
+    {
+      "new_path": "code/preprocessing.py",
+      "legacy_path": "baselines/dp2net/preprocessing.py",
+      "legacy_sha256": "949c64aca1b9e23e387c20adb25f199a03750bd041c96c4645f78e0e5c961fbe",
+      "modification": "path-routing only: ARCHIVE_DIR -> PHM2010_ROOT env var; WINDOW_DIR_UNIFIED -> B8_WINDOW_CACHE_DIR env var (default data/PHM2010/cache/dp2net/windows_unified/). Dropped Protocol-A-only functions (assign_paper_native_4stage, build_sample_manifest, build_windows_cache for the 4-class/2000-per-class manifest) since this repo's formal B8 adapter only uses the Protocol B-D1 unified-window cache. build_unified_windows_cache gained a max_runs param for fast smoke tests (default None = full 315-run universe, same behavior as before). No change to filter/window-extraction math or physical constants."
+    },
+    {
+      "new_path": "code/stage_labels.py",
+      "legacy_path": "same vendoring as B7_Dynamic_GIN_TGP/code/stage_labels.py -- see that file's own header. Deliberately duplicated verbatim across methods per task spec section 20 (every method must use identical stage ground truth); sha256 of this file should match B7's copy exactly.",
+      "modification": "See B7_Dynamic_GIN_TGP/source_manifest.json for the full provenance of this vendored module."
+    },
+    {
+      "new_path": "adapter.py",
+      "legacy_path": "baselines/dp2net/train.py (run_protocol_b variant='B-D1', pretrain_s_f, train_g_f, predict_sample_level, aggregate_run_level) + final_statistical_evidence/scripts/methods/run_dp2net_transfer_task.py (task/seed routing pattern)",
+      "modification": "Rewritten to the shared MethodAdapter interface. Algorithm 1's two-stage protocol (pretrain S+F classification, then train G+F with S frozen, MMD-guided) is preserved unchanged, including the exact loss formulas (L_G = L_MSE - alpha*L_MMD, L_task = CE(source)+CE(generated)) and the S+F-only inference path (G is training-time-only per the paper's own Algorithm 1). Removed the old file's resume/checkpoint-per-stage logic (torch.save mid-stage) -- MethodAdapter's base class does not currently support mid-run resume within a single train() call, only whole-cell resume via DONE.flag; flagged as a known limitation below, not silently dropped."
+    }
+  ],
+  "not_copied": [
+    {
+      "legacy_path": "baselines/dp2net/data/windows/, data/windows_unified/, data/sample_manifest.csv, data/unified_manifest.csv",
+      "reason": "362MB + 152MB cached preprocessed window .npy files (+ their manifests), regenerable from raw signal via code/preprocessing.py::build_unified_windows_cache(); excluded per repo-wide policy on regenerable large caches."
+    },
+    {
+      "legacy_path": "baselines/dp2net/train.py Protocol A and Protocol B-S code paths",
+      "reason": "Not the official B8 variant for this repo's formal comparison table (see pinned_variant above). Not ported; see old train.py if ever needed for a future paper-fidelity re-check or for reporting DP2Net's native single-source number as a supplementary ablation."
+    }
+  ],
+  "adaptation_notes": "Architecture (model.py: S/G/F/mmd_loss) and training hyperparameters (config.yaml) are UNCHANGED from the validated published-baseline reproduction. Only task/seed/path routing and variant selection changed, per task spec section 35. Seed handling: old train.py::run_protocol_b already accepted seed as a proper kwarg for variant B-D1 (verified against the live file, not assumed) -- this adapter wires MethodAdapter's self.seed through via shared/utils/seeding.py::seed_everything(), called immediately before build_model().",
+  "known_limitation": "The old train.py supported resuming mid-way through Stage 1 or Stage 2 via per-epoch checkpoint files (stage1_checkpoint.pth / stage2_checkpoint.pth). This adapter's train() does not yet implement that intra-cell resume -- MethodAdapter's --resume only skips a (task,seed) cell that already has DONE.flag; a killed mid-training run restarts Stage 1 from epoch 0 on retry. Given pretrain_epochs=gen_epochs=100 and batch_size=64, a full B8 run is not fast (see README time-planning note) -- if this proves painful during the real 9x3x101 sweep, intra-cell checkpointing should be added to shared/runners/method_adapter.py generically (flagged for the parent, not implemented here per scope).",
+  "checkpoint_note": "Historical combined S+G+F checkpoint size ~264KB. Never committed to git regardless of size -- **/*.pth globally gitignored."
+}

@@ -1,0 +1,33 @@
+# B4: HTT-Net -- resolved hyperparameters, UNCHANGED from baselines/htt_net/config.yaml.
+# Documentation copy only; adapter.py's HTT_ARCH/TRAIN_CFG dicts (sourced from
+# code/pipeline.py's BEST_ARCH/WEIGHT_DECAY/EPOCHS/PATIENCE/GRAD_CLIP) are the
+# single source of truth at runtime, to avoid this file silently drifting.
+
+method_id: B4
+method_name: HTT-Net
+paper: "Xue et al. (2023), Advanced Engineering Informatics 58, 102218"
+
+architecture:
+  num_stages: 4
+  depths: [2, 2, 2, 2]
+  embed_dim: 32
+  num_heads: 4
+  window_size: 3
+  shift_size: "window_size // 2"
+  mlp_ratio: 4
+  dropout: 0.20
+  num_classes: 3
+
+training:
+  optimizer: AdamW
+  lr: 5.0e-4
+  weight_decay: 1.0e-5
+  batch_size: 32
+  epochs: 120
+  patience: 18
+  grad_clip: 1.0
+
+data:
+  input_shape: "[batch, L=12, d≈45 selected condition-relative online features]"
+  stage_labels: "condition-relative quantile thresholds (Q_EARLY=0.30, Q_LATE=0.72)"
+  feature_file: "data/PHM2010/features/run_level_features_all.csv (PHM2010_FEATURES env var override)"

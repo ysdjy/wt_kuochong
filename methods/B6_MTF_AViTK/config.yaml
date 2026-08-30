@@ -1,0 +1,36 @@
+# B6 MTF-AViTK -- resolved hyperparameters, UNCHANGED from the original
+# (baselines/mtf_avitk/train.py::PROTO_B_CFG, PAPER_SPEC.md Table 5).
+# Only grad_checkpoint/batch_size are exposed as OOM-avoidance knobs (already
+# present in the original code as CLI overrides) -- everything else here is
+# the original paper-derived config, not tunable per this project's policy
+# (task spec section 35: no hyperparameter changes without an explicit,
+# CHANGELOG-recorded bug fix).
+
+max_epochs: 50
+patience: 10
+batch_size: 8          # override with a smaller value (e.g. 2-4) if OOM on <8GB VRAM
+lr: 0.0006
+weight_decay: 0.0002
+momentum: 0.9
+
+# Memory/compute trade-offs only (task spec section 35: allowed to change,
+# does not alter the model). grad_checkpoint trades ~30-40% slower training
+# for materially lower peak VRAM (recomputes activations in the backward
+# pass instead of caching all 24 transformer blocks' activations).
+grad_checkpoint: false
+
+# "none" (default, never commits a checkpoint) | "final" (saves
+# checkpoint_best.pth locally -- still .gitignore'd, never committed).
+save_checkpoint: none
+
+# Architecture (fixed, do not edit -- see code/model.py):
+architecture:
+  backbone: "Adapt-ViT-L/32"
+  embed_dim: 1024
+  depth: 24
+  num_heads: 16
+  mlp_hidden: 4096
+  adapter_bottleneck: 64
+  adapter_scale: 0.1
+  classifier: "2-layer KAN (grid_size=5, spline_order=3, SiLU, hidden=64)"
+  num_params_approx: 309_000_000

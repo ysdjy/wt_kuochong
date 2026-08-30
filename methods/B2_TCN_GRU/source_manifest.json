@@ -1,0 +1,26 @@
+{
+  "method": "B2",
+  "method_name": "TCN-GRU",
+  "legacy_source_path": [
+    "代码/main_experiment_3_fgds_psi_optimized.py",
+    "final_statistical_evidence/scripts/methods/common_pipeline.py",
+    "final_statistical_evidence/scripts/methods/run_internal_methods_transfer_task.py"
+  ],
+  "legacy_git_commit": "811da096ee47bea4f65db193aa49e793dba6f47d",
+  "legacy_git_branch": "diagnostic/fixed-preprocess-5seed",
+  "copied_files": [
+    {"from": "代码/main_experiment_3_fgds_psi_optimized.py", "to": "methods/_internal_shared/code/pipeline.py", "note": "shared with B3/B9; data pipeline functions + shared TCN building block"},
+    {"from": "final_statistical_evidence/scripts/methods/run_internal_methods_transfer_task.py (TCNGRUStageOnly, class_weights, predict_stage_model, train_stage_model)", "to": "methods/B2_TCN_GRU/code/model.py", "note": "B2-specific stage-only model"}
+  ],
+  "sha256_of_legacy_source_at_vendor_time": {
+    "代码/main_experiment_3_fgds_psi_optimized.py": "0696085eb69de26e003870f1464cfc54f4c030ceb12a162faeca2c45c1ef3f5f",
+    "final_statistical_evidence/scripts/methods/common_pipeline.py": "8e99c766f28b130f5dc1ab5705230b53ee20eee8c385a81549d6c4e9ecac52e8",
+    "final_statistical_evidence/scripts/methods/run_internal_methods_transfer_task.py": "f0420d53831576b035866ac3c0decf17c11ba3c238ab943267c71e48ca0413f2"
+  },
+  "sha256_of_new_repo_files": {
+    "methods/_internal_shared/code/pipeline.py": "2eb8463662649318e229b5278303ba9d2eda3d4373f91b840aefb3864f972426",
+    "methods/B2_TCN_GRU/code/model.py": "af2b55e07106dbba8a1c78b6c5b5ee29443bcab795de1d2190599aef0738a230",
+    "methods/B2_TCN_GRU/adapter.py": "881a21ff7988b66367be614e9b97d00e19bbd97553f8db189f501b78377ad130"
+  },
+  "adaptation_notes": "Only task/seed/output routing and cross-platform paths were changed vs. the original: (1) split_grouped_lifecycle(df) [hardcoded C1+C4->C6] generalized to split_by_conditions(df, train_conditions, test_condition) -- this generalization was already validated in the old project (final_statistical_evidence), not invented here; (2) FEATURE_FILE now resolves to this repo's data/PHM2010/features/run_level_features_all.csv; (3) RANDOM_SEED usage in feature selection/GMM is now an explicit preprocess_seed parameter (value unchanged, 42) instead of a mutable module global; (4) model construction (build_stage_model) factored out from the training loop (train_stage_model) to fit this repo's MethodAdapter.build_model()/train() hook split -- seed_everything() still runs immediately before model construction with nothing in between, so isolation is preserved exactly. No architecture, hyperparameter, or optimizer change. Verified 2026-08-30: CPU smoke test (prepare+build_model+predict on real D1 data, untrained weights) produces 304 test-window predictions with the expected schema."
+}

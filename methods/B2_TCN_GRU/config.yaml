@@ -1,0 +1,27 @@
+# B2 (TCN-GRU) resolved hyperparameters -- verbatim from BEST_ARCH in
+# 代码/main_experiment_3_fgds_psi_optimized.py, unchanged.
+method: B2
+method_name: TCN-GRU
+input_representation: run-level engineered feature, L=12 sliding window (relative-stage)
+architecture:
+  type: TCN + GRU, stage-classification head only (no fine-state/q auxiliary heads)
+  window_length_L: 12
+  tcn_channels: [32, 64, 64]
+  gru_hidden: 64
+  dropout: 0.20
+training:
+  optimizer: AdamW
+  lr: 5.0e-4
+  weight_decay: 1.0e-5
+  grad_clip_norm: 1.0
+  batch_size: 32
+  epochs_max: 120
+  patience: 18
+  lr_scheduler: ReduceLROnPlateau(mode=min, factor=0.5, patience=5, min_lr=1e-5)
+  class_weighting: balanced (inverse frequency, mean-normalized)
+  early_stopping_score: 0.7*(1-macro_f1) + 1.0*(1-middle_recall) + 0.15*val_nll
+preprocessing:
+  preprocess_seed: 42
+  n_selected_features: 45
+  feature_selection: mutual_info_classif + mutual_info_regression + spearman, redundancy_threshold=0.92
+  scaler: StandardScaler, fit on train cutters only

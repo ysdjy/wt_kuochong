@@ -1,0 +1,37 @@
+# B3 (Multi-task TCN-GRU) resolved hyperparameters -- verbatim from
+# 代码/main_experiment_3_fgds_psi_optimized.py's BEST_ARCH + multi-task loss
+# weights, unchanged. This is also DC-PHSR's (B9's) backbone.
+method: B3
+method_name: Multi-task TCN-GRU
+input_representation: run-level engineered feature, L=12 sliding window (relative-stage)
+architecture:
+  type: TCN + GRU, three heads (stage classification, fine-state classification, q regression)
+  window_length_L: 12
+  tcn_channels: [32, 64, 64]
+  gru_hidden: 64
+  dropout: 0.20
+  n_fine_states: 5
+training:
+  optimizer: AdamW
+  lr: 5.0e-4
+  weight_decay: 1.0e-5
+  grad_clip_norm: 1.0
+  batch_size: 32
+  epochs_max: 120
+  patience: 18
+  lr_scheduler: ReduceLROnPlateau(mode=min, factor=0.5, patience=5, min_lr=1e-5)
+  loss_weights:
+    lambda_stage: 1.00
+    lambda_fine: 0.25
+    lambda_q: 0.30
+    lambda_mono: 0.03
+  class_weighting: balanced (inverse frequency, mean-normalized), separately for stage and fine-state heads
+  early_stopping_score: >
+    1.0*(1-acc) + 1.0*(1-macro_f1) + 1.4*(1-middle_recall)
+    + 0.8*middle_to_late_rate + 0.7*middle_to_early_rate + 0.2*q_RMSE
+preprocessing:
+  preprocess_seed: 42
+  n_selected_features: 45
+  feature_selection: mutual_info_classif + mutual_info_regression + spearman, redundancy_threshold=0.92
+  scaler: StandardScaler, fit on train cutters only
+  fine_state_labels: 5-component GaussianMixture(covariance_type=full, n_init=10), fit on train cutters only

@@ -1,0 +1,21 @@
+# Unified Protocol B hyperparameters for Multi-Attention-CNN, UNCHANGED from
+# baselines/multi_source_attention/train.py::PROTO_B_CFG (legacy_git_commit
+# 811da096ee47bea4f65db193aa49e793dba6f47d). `seed` is intentionally absent
+# here -- it comes from the CLI --seed-start/--seed-end range (self.seed),
+# not a fixed config value, per RESULTS_POLICY.md seed conventions.
+max_epochs: 100
+patience: 15
+batch_size: 64
+lr: 0.001
+weight_decay: 0.0001
+
+model:
+  num_classes: 3
+  reduction_ratio: 16   # SE-Net default; original paper doesn't specify (PAPER_SPEC.md)
+  dropout: 0.5
+  image_size: 224
+
+preprocessing:
+  middle_region_fraction: [0.25, 0.75]
+  cwt_wavelet: cmor1.5-1.0
+  n_scales: 224

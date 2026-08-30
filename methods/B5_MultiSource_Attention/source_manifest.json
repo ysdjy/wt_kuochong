@@ -1,0 +1,38 @@
+{
+  "method_id": "B5",
+  "method_name": "Multi-source Channel-Spatial Attention (Multi-Attention-CNN)",
+  "source_paper": "Wei et al., Robotics and Computer-Integrated Manufacturing (RCIM) 2024, DOI: 10.1016/j.rcim.2024.102741",
+  "legacy_source_path": "baselines/multi_source_attention/",
+  "legacy_git_commit": "811da096ee47bea4f65db193aa49e793dba6f47d",
+  "legacy_git_branch": "diagnostic/fixed-preprocess-5seed",
+  "copied_files": [
+    {
+      "legacy_path": "baselines/multi_source_attention/model.py",
+      "new_path": "methods/B5_MultiSource_Attention/code/model.py",
+      "sha256_legacy": "0fccfa1396f0bf6f5324803dca0ccc7d976c2d53a5aae134e62a417e7bdab566",
+      "modified": false
+    },
+    {
+      "legacy_path": "baselines/multi_source_attention/preprocessing.py",
+      "new_path": "methods/B5_MultiSource_Attention/code/signal_preprocessing.py",
+      "sha256_legacy": "2322974d951f027e870c750935773ba3ff9bd0215c51007e678efef4009b9046",
+      "modified": true,
+      "modification": "ARCHIVE_DIR hardcoded relative to old project root -> PHM2010_RAW_ROOT env var (default <repo>/data/PHM2010/raw/). No CWT/resample/normalization logic changed. Function name load_raw_signal unchanged; module renamed preprocessing.py -> signal_preprocessing.py (avoid clashing with stdlib-adjacent 'preprocessing' import ambiguity across methods)."
+    },
+    {
+      "legacy_path": "baselines/multi_source_attention/data/label_utils.py",
+      "new_path": "methods/B5_MultiSource_Attention/code/dcpsr_labels.py",
+      "sha256_legacy": "01e9b815641f2f69959aa9112f4ca5b5f61de8153855383b9bfd00aaf6089086",
+      "modified": true,
+      "modification": "Replaced live sys.path import of 代码/main_experiment_3_fgds_psi_optimized.py with a vendored, self-contained copy of define_condition_relative_stages/split_grouped_lifecycle (fixes self-containment violation, task spec section 38). split_grouped_lifecycle generalized to take explicit train_conditions/test_condition parameters instead of hardcoded C1+C4->C6, matching the exact logic already validated in the old project's final_statistical_evidence/scripts/methods/condition_split.py::make_split_fn for D2/D3 (task spec section 35: task/seed routing changes are allowed; label-definition/threshold logic is byte-for-byte unchanged)."
+    },
+    {
+      "legacy_path": "baselines/multi_source_attention/train.py",
+      "new_path": "methods/B5_MultiSource_Attention/adapter.py + code/dataset.py",
+      "sha256_legacy": "f8da550ae82f3540f14553ccc820a65be416ee7877fbd9c5eb3a34127b511f9e",
+      "modified": true,
+      "modification": "Protocol B (run_protocol_b) logic re-expressed as MethodAdapter hooks (prepare/build_model/train/predict) instead of a standalone function; PROTO_B_CFG['seed']=42 hardcoded constant replaced with self.seed (CLI-driven TRAIN_SEED, task spec sections 22-23) -- all other hyperparameters (max_epochs=100, patience=15, batch_size=64, lr=0.001, weight_decay=1e-4) unchanged. Metric computation switched from the old dcpsr_base.manuscript_metric_row to shared/metrics/metrics.py (bit-exact verified against the old formula on real D1 RF predictions, see parent session's cross-check). Protocol A (original-paper 70/30 sanity split) and the old pre-built-275MB-npy-cache dependency were NOT ported -- this repo only needs Unified Protocol B (D1/D2/D3), and code/dataset.py now builds+caches CWT images on demand instead of requiring a separate full-dataset pre-build step."
+    }
+  ],
+  "adaptation_notes": "Only task/seed/output routing and cross-platform paths were changed, per task spec section 35. Architecture (model.py), CWT preprocessing math (signal_preprocessing.py), stage-label thresholds/logic (dcpsr_labels.py), and all training hyperparameters (config.yaml) are unchanged from the original published-baseline reproduction. No pretrained weights or external assets used."
+}

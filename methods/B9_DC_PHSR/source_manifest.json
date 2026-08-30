@@ -1,0 +1,25 @@
+{
+  "method": "B9",
+  "method_name": "DC-PHSR",
+  "legacy_names": ["DC-PSR", "B12", "FGDS-PSI"],
+  "legacy_source_path": [
+    "代码/main_experiment_3_fgds_psi_optimized.py",
+    "代码/7.4对比实验.py (B12_PARAMS, historical)",
+    "final_statistical_evidence/scripts/methods/run_internal_methods_transfer_task.py (frozen B12_PARAMS actually used for D1/D2/D3 published numbers)",
+    "扩充实验代码/01_主对比实验/PHM2010/B9_DC_PHSR/code/run_seed_d1.py (this round's Round-1 predecessor, NOT self-contained -- superseded by this adapter)"
+  ],
+  "legacy_git_commit": "811da096ee47bea4f65db193aa49e793dba6f47d",
+  "legacy_git_branch": "diagnostic/fixed-preprocess-5seed",
+  "copied_files": [
+    {"from": "代码/main_experiment_3_fgds_psi_optimized.py (apply_probability_inference, qhat_prior, fine_to_stage_prob, temperature_scale, causal_ordered_filter)", "to": "methods/_internal_shared/code/pipeline.py", "note": "shared with B2/B3; B9-specific inference functions live in the same shared pipeline module since they operate on B3-backbone output"}
+  ],
+  "sha256_of_legacy_source_at_vendor_time": {
+    "代码/main_experiment_3_fgds_psi_optimized.py": "0696085eb69de26e003870f1464cfc54f4c030ceb12a162faeca2c45c1ef3f5f",
+    "final_statistical_evidence/scripts/methods/run_internal_methods_transfer_task.py": "f0420d53831576b035866ac3c0decf17c11ba3c238ab943267c71e48ca0413f2"
+  },
+  "sha256_of_new_repo_files": {
+    "methods/_internal_shared/code/pipeline.py": "2eb8463662649318e229b5278303ba9d2eda3d4373f91b840aefb3864f972426",
+    "methods/B9_DC_PHSR/adapter.py": "a913bcfc43edc6404813b7b139ca31f73ef95d4aba2827b3bab581ee17955cf3"
+  },
+  "adaptation_notes": "B12_PARAMS (eta/fine_weight/temperature/mid_floor/late_tau/early_tau/order_blend) are the FROZEN result of the original code's probability_param_search() -- that search itself was NOT ported (out of scope; this repo never retunes it). Same generalization/path/seed changes as B3 -- see methods/_internal_shared/code/pipeline.py's docstring. DEVIATION FROM the pre-existing (now superseded) 01_主对比实验/PHM2010/B9_DC_PHSR/code/run_seed_d1.py: that script shared B3's exact checkpoint (single combined training run produced both B3-raw and B9-post-processed outputs); THIS adapter trains its own independent copy of the identical backbone per (task,seed) cell instead, by deliberate choice for this round -- see adapter.py's module docstring for why (avoids unsafe checkpoint-reuse plumbing under time pressure; EXPERIMENT_REGISTRY.md section 34's hash-matching requirement is not yet implemented). This means B9 and B3 will NOT produce bit-identical raw-backbone numbers between separate adapter runs even at the same seed, since each trains independently (unless a future cross-adapter checkpoint-sharing feature is added). Verified 2026-08-30: CPU smoke test (prepare+build_model+predict+apply_probability_inference on real D1 data, untrained backbone) produces 304 test-window predictions with valid (sum-to-1) probability columns."
+}

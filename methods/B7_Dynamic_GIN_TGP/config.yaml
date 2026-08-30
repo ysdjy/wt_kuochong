@@ -1,0 +1,16 @@
+# B7: Dynamic GIN + TGP — frozen hyperparameters (Sec 3.4 Scheme 1 of the
+# original paper's own reproduction spec, unchanged from the validated
+# published-baseline reproduction). Only task/seed/output/path routing is
+# adapter-controlled — architecture/optimizer/lr/loss below must not change
+# without a CHANGELOG.md entry (task spec section 35).
+max_epochs: 50
+patience: 15          # early stopping on run-level validation accuracy
+batch_size: 4
+lr: 0.0001
+weight_decay: 0.1
+plateau_patience: 10  # ReduceLROnPlateau
+topk: 144              # graph sparsification top-k (PAPER_SPEC.md Conflict #3)
+
+# debug_max_runs: null in production (full 315-run universe). Set to a small
+# int (e.g. 6) only for fast local smoke tests — never for a formal run.
+debug_max_runs: null

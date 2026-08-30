@@ -1,0 +1,19 @@
+method: B1_RF
+model:
+  n_estimators: 400
+  class_weight: balanced_subsample
+  n_jobs: -1
+  # random_state is set per-run to the CLI --seed, not fixed here.
+preprocessing:
+  # PREPROCESS_SEED is fixed per (dataset, task) -- see RESULTS_POLICY.md.
+  window_L: 12
+  val_ratio_stage: 0.20
+  min_stage_val_len: 8
+  n_fine_states: 5
+  q_early: 0.30
+  q_late: 0.72
+  rate_late_q: 0.78
+  var_threshold: 1.0e-10
+  max_feature_pool: 260
+  n_selected_features: 45
+  redundancy_threshold: 0.92

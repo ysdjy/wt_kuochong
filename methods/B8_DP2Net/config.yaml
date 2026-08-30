@@ -1,0 +1,16 @@
+# B8: DP2Net-adapted (pooled source), Protocol B-D1 only. Frozen hyperparameters
+# from the paper's own Sec 4.3 (unchanged from the validated reproduction).
+# Only task/seed/output/path routing is adapter-controlled.
+pretrain_epochs: 100   # Stage 1: S+F classification pretraining
+gen_epochs: 100         # Stage 2: G+F training, S frozen
+batch_size: 64
+lr_s: 0.001
+lr_f: 0.001
+lr_g: 0.00001
+cosine_period: 20       # CosineAnnealingLR T_max for Stage 1
+alpha: 20.0              # Eq.(10): L_G = L_MSE - alpha * L_MMD
+windows_per_run: 8        # Protocol B unified-window cache
+
+# debug_max_runs: null in production. Set to a small int only for fast local
+# smoke tests.
+debug_max_runs: null

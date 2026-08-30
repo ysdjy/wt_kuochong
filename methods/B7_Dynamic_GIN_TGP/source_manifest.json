@@ -1,0 +1,43 @@
+{
+  "method_id": "B7",
+  "method_name": "Dynamic GIN + TGP",
+  "legacy_source_path": "baselines/dynamic_gin_tgp/",
+  "legacy_git_commit": "811da096ee47bea4f65db193aa49e793dba6f47d",
+  "legacy_git_branch": "diagnostic/fixed-preprocess-5seed",
+  "copied_files": [
+    {
+      "new_path": "code/model.py",
+      "legacy_path": "baselines/dynamic_gin_tgp/model.py",
+      "sha256": "5aa5095bf2ed20c9f8e0a5192e98eb46dc53ec41c259780a1916210781e94b8f",
+      "modification": "none (verbatim copy)"
+    },
+    {
+      "new_path": "code/preprocessing.py",
+      "legacy_path": "baselines/dynamic_gin_tgp/preprocessing.py",
+      "legacy_sha256": "29f08d3d2ff1a6883a029f45b2f2a36a1d6f8ea9a398a014501513e553ae19b4",
+      "modification": "path-routing only: ARCHIVE_DIR -> PHM2010_ROOT env var (default data/PHM2010/raw/); WINDOW_DIR -> B7_WINDOW_CACHE_DIR env var (default data/PHM2010/cache/dynamic_gin_tgp/windows/). Renamed build_all_windows_cache->build_windows_cache, dropped the unused Protocol-A-only manifest helpers (this repo's formal protocol is Protocol B only). No change to trim/portion/window-extraction math."
+    },
+    {
+      "new_path": "code/stage_labels.py",
+      "legacy_path": "代码/main_experiment_3_fgds_psi_optimized.py (define_condition_relative_stages, STAGE_NAMES/STAGE_TO_ID/ID_TO_STAGE, VAL_RATIO_STAGE, MIN_STAGE_VAL_LEN) + final_statistical_evidence/scripts/methods/condition_split.py (make_split_fn)",
+      "modification": "Vendored (previously live-imported via baselines/dynamic_gin_tgp/data/label_utils.py's sys.path insert of 代码/). define_condition_relative_stages: identical formula/thresholds, removed the hardcoded DIR_RESULT diagnostic CSV write (now a pure function). split_grouped_lifecycle's hardcoded train={C1,C4}/test={C6} generalized to any (train_conditions, test_condition) via the already-validated condition_split.py::make_split_fn pattern (used for this project's existing frozen D2/D3 results)."
+    },
+    {
+      "new_path": "adapter.py",
+      "legacy_path": "baselines/dynamic_gin_tgp/train.py (run_protocol_b, ProtocolBSegmentDataset, run_epoch/predict/aggregate_run_level) + final_statistical_evidence/scripts/methods/run_dynamic_gin_tgp_transfer_task.py (task/seed routing pattern)",
+      "modification": "Rewritten to the shared MethodAdapter interface (prepare/build_model/train/predict). Training loop (Adam lr/weight_decay/batch_size, ReduceLROnPlateau, early stopping on run-level val acc) and the batch-shuffle-required-for-static-graph fix are preserved unchanged from the original. Metrics/DONE.flag/run_meta writing now delegated to shared/runners/method_adapter.py's base class instead of this method's own save_outputs()."
+    }
+  ],
+  "not_copied": [
+    {
+      "legacy_path": "baselines/dynamic_gin_tgp/data/windows/",
+      "reason": "64MB cached preprocessed window .npy files, regenerable from raw signal via code/preprocessing.py::build_windows_cache(); excluded per repo-wide policy on regenerable large caches."
+    },
+    {
+      "legacy_path": "baselines/dynamic_gin_tgp/train.py Protocol A code path",
+      "reason": "Paper-native sanity-check protocol, not used by this repo's formal D1/D2/D3 comparison table (which only ever used 'Protocol B'). Not ported; see old train.py if ever needed for a future paper-fidelity re-check."
+    }
+  ],
+  "adaptation_notes": "Architecture (model.py) and training hyperparameters (config.yaml) are UNCHANGED from the validated published-baseline reproduction. Only task/seed/path routing changed, per task spec section 35. Seed handling: old train.py::run_protocol_b already accepted seed as a proper kwarg (verified against the live file, not assumed) -- this adapter just wires MethodAdapter's self.seed through via shared/utils/seeding.py::seed_everything(), called by the base class immediately before build_model(), matching this repo's isolated-RNG-per-model policy.",
+  "checkpoint_note": "Historical checkpoint size ~4.4MB (torch.save of state_dict). Never committed to git regardless of size -- **/*.pt and **/*.pth are globally gitignored."
+}

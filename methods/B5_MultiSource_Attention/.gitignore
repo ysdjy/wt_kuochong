@@ -1,0 +1,2 @@
+# On-demand CWT image cache (regenerable from raw signal via code/signal_preprocessing.py)
+_cache/
