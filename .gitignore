@@ -44,7 +44,7 @@
 # Re-exclude local-only driver logs / machine-specific scratch task lists
 # even though _shared_code/** above is un-ignored -- these are per-machine
 # run artifacts, not portable pipeline code.
-/05_统计检验/seed_statistics/_shared_code/*_batch_driver*.log
+/05_统计检验/seed_statistics/_shared_code/*driver*.log
 /05_统计检验/seed_statistics/_shared_code/mtw_d1m_only_seed_list.txt
 # The new B1/B2 seed-task scripts + their vendored_legacy/ dependency copy
 # (this task's own work, git-clone-portable) also live under _shared_code/,
