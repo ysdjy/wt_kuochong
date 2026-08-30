@@ -16,6 +16,13 @@
 
 > **命名对照**：论文正文一律使用 `DC-PHSR`；本目录及旧代码中出现的 `DC-PSR`、`B12`、`FGDS-PSI` 均指同一方法，历史遗留标识符，本轮不重命名底层代码。
 
+> **新框架入口**（Round 2，本轮）：以上"旧代码位置"仅为溯源信息（只读来源，已 vendor 到各方法自己的
+> `code/` 中）。实际运行统一通过 `methods/Bx_xxx/adapter.py`（`run_phm2010.py --method Bx` 调度），
+> 完整清单：`methods/B1_RF/`、`methods/B2_TCN_GRU/`、`methods/B3_Multitask_TCN_GRU/`、
+> `methods/B4_HTT_Net/`、`methods/B5_MultiSource_Attention/`、`methods/B6_MTF_AViTK/`、
+> `methods/B7_Dynamic_GIN_TGP/`、`methods/B8_DP2Net/`、`methods/B9_DC_PHSR/`。B2/B3/B9 共享
+> `methods/_internal_shared/code/pipeline.py`（避免重复约 900 行预处理逻辑）。
+
 ## 数据集
 
 | 数据集 | 状态 |
@@ -32,8 +39,19 @@
 | D2 | C1 + C6 | C4 | 跨工况迁移（NOT_STARTED，本轮不跑） |
 | D3 | C4 + C6 | C1 | 跨工况迁移（NOT_STARTED，本轮不跑） |
 
-## 本轮（Round 1）范围
+## Round 1 范围（历史，已完成）
 
 **仅**运行：B9 / PHM2010 / D1 / TRAIN_SEEDS=[42,52,62,72,82] / PREPROCESS_SEED=42（固定复用冻结 preprocessing）。
+结果见 `01_主对比实验/PHM2010/B9_DC_PHSR/`，保留不动。
 
-其余全部方法 × 数据集 × 任务组合状态为 `NOT_STARTED`，未经用户明确重新授权不得启动。
+## Round 2 范围（2026-08-30，本轮）：可移植 PHM2010 实验框架
+
+把 B1–B9 全部 9 个方法在 PHM2010 上运行所需的代码、配置、预处理、环境、运行脚本整理进
+`methods/`、`shared/`、`environment/`、`scripts/`、`run_phm2010.py`（详见根 `README.md` 目录导航
+与 `MANUAL_RUN.md`）。9 个方法均已构建 adapter 并通过同进程 CPU-only smoke test（`--smoke-test`）；
+B1 额外做了一次小规模真实验证（D1/D2/D3 × seed 0，非 smoke，验证完整 pipeline）。
+
+**本轮明确不启动** B1–B9 × D1/D2/D3 × seed 0–100 的全量正式训练（9×3×101 = 2727 个 run）——
+smoke test 之外的任何真实训练需用户重新明确授权。
+
+其余数据集（NASA_Milling / MTW_CM）、消融实验、统计检验状态仍为 `NOT_STARTED`。
