@@ -1,0 +1,40 @@
+{
+  "preprocess_seed": 42,
+  "task": "N2",
+  "train_cases": [
+    1,
+    3,
+    4,
+    5,
+    6,
+    7,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "test_cases": [
+    2,
+    8,
+    9,
+    10
+  ],
+  "raw_mat_sha256": "71486a857939d1416c86c7cf0c469d5e69c7c30495e01ec8a0e13aafd2a313cb",
+  "n_test_windows": 19,
+  "window_length_L": 6,
+  "files": {
+    "raw_mat_sha256.txt": "51a692632718bd29fd392d712ec223890505d7f4b9cd1017944d64b1ffdf146f",
+    "all_cases_labeled.csv": "c634f0e4a3bbd42861ffe88cbf7ec8990fbc6ff78b531e7998f5131e4ff81767",
+    "split_manifest.csv": "2caa7f7766d572cde37b3918bb24c112a2a02bc666a9ab9deaf2af8d975b766b",
+    "selected_features_seed42.json": "ba0bee521301cfaec5c2d47cbd2a5c83352b98d5a46279b0448b2c07ebc37730",
+    "gmm_seed42.pkl": "a7231d944a9d6d351a0b3add85178cc277ae26d8b87e8a5a0ac5621680b66bf0",
+    "scaler_mean.npy": "7e9355733b990bb3aa442712543c0754b99fa9c384b75d5ebd8bf5dc972606f9",
+    "scaler_scale.npy": "68bb825064f34b302c8d4a1447e5092fa79ba3b31958ab1ab7066a137dbbe548",
+    "feat_train_frozen.csv": "158060be4eb2b374f22bd943a50b7794604753c5c88a7ffb297e07e70a1563d1",
+    "feat_val_frozen.csv": "5e442d22d6da72509a90482b5aedffe94d65f7d2c455cff43f20ae7b798e5593",
+    "feat_test_frozen.csv": "c37630373f22608b3b419364806fddcb2ff9f23e4ec25a95b7b6225d827426d7",
+    "window_manifest.csv": "90f0225b1ca5a84380f05330b5dd8636e66508fe58da91d7950147422689d1aa"
+  }
+}

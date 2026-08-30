@@ -1,0 +1,27 @@
+{
+  "preprocess_seed": 42,
+  "task": "D2",
+  "train_conditions": [
+    "C1",
+    "C6"
+  ],
+  "test_condition": "C4",
+  "raw_feature_file_sha256": "6e8affeb681d0b386e453421a0df7a66932138199eb236403d27b797c11eeb88",
+  "n_test_windows": 304,
+  "files": {
+    "raw_feature_sha256.txt": "0dce819097b013eea593f1d96c9db781a12941bf31bedee2997aebd2f41528d3",
+    "stage_labels.csv": "0e7890491df431153f413e7ca5568418b836086ab8939a157afbd679f95b040e",
+    "stage_thresholds.csv": "6540095cba0734f094d77e29898f07bc8b96b5a5ecc7e081fd33784789292ec2",
+    "split_manifest.csv": "804bcb31586b947f85dace9976f0db5f4c3e317c680adc5d258da37bd2d54075",
+    "selected_features_seed42.json": "be19222eb8bae5025a28c4cd7c31e8f9ddf948d262e4c6f142b3365183152021",
+    "selected_features_scored_seed42.csv": "dd3d3b839b162ac0ebde90a16089a10f760c13b675b0534627eec9ed71deb3cf",
+    "gmm_seed42.pkl": "3eb31e9be73b5de695aaeaf23b34638d7a607beb9712f89be9643dca2b5c6e9f",
+    "fine_state_labels_seed42.csv": "cba7a7f2e0e1b9afe319bf6e85e720370224ef3f36293c3d8594aa4ef078883d",
+    "scaler_mean.npy": "ac9f67931cf9e9a9522b087cc0835c8cfcf5517b092166ba16ed8335151220f0",
+    "scaler_scale.npy": "4a425173f5a0a5d169c670531011f353d3c401a937330202ab81e902397b94cc",
+    "feat_train_frozen.csv": "aef82923fbb816b45698c991059eb1e6fb9d38b80248a16b7c23834c06f2b96c",
+    "feat_val_frozen.csv": "1406a05a9a9fb84f465a9484c0eadd36450229fb7bac0405cda62c5375d6265c",
+    "feat_test_frozen.csv": "f5fcd497354e2e11339eadc5003389a73c5cb212e6ed4fd3968bd5f0efb42b6b",
+    "window_manifest.csv": "3b155c91bbe3f3f03f4c7bbdc3a080e81e8828f75c73e269942144e043b8f72e"
+  }
+}

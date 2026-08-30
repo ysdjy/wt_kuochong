@@ -1,0 +1,19 @@
+{
+  "task": "D3",
+  "train_conditions": [
+    "C4",
+    "C6"
+  ],
+  "test_condition": "C1",
+  "test_condition_in_train_split": false,
+  "test_condition_in_val_split": false,
+  "feature_selection_fit_on": "train only (base.select_features_train_only(feat_train))",
+  "gmm_fit_on": "train only (base.fit_train_gmm(feat_train))",
+  "scaler_fit_on": "train only (base.StandardScaler().fit(feat_train[selected]))",
+  "n_test_windows": 304,
+  "test_run_id_end_range": [
+    12,
+    315
+  ],
+  "leakage_detected": false
+}

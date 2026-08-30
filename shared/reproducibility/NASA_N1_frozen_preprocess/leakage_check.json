@@ -1,0 +1,30 @@
+{
+  "task": "N1",
+  "train_cases": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14
+  ],
+  "test_cases": [
+    3,
+    12,
+    15,
+    16
+  ],
+  "test_case_in_train_split": false,
+  "test_case_in_val_split": false,
+  "feature_selection_fit_on": "train only (select_features_train_only(train_on, ...))",
+  "gmm_fit_on": "train only (fit_gmm_fine_states(train_on))",
+  "scaler_fit_on": "train only (StandardScaler().fit(train_on[selected]))",
+  "n_test_windows": 22,
+  "leakage_detected": false
+}

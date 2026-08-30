@@ -1,0 +1,35 @@
+{
+  "preprocess_seed": 42,
+  "task": "D1-M",
+  "train_sequences": [
+    "T2",
+    "T3",
+    "T4",
+    "T5"
+  ],
+  "validation_sequences": [
+    "T1",
+    "T6"
+  ],
+  "test_sequences": [
+    "T7",
+    "T8",
+    "T9"
+  ],
+  "features_table_sha256": "1410a4abf906acd24dacdcf162df9b31c33df5ed338f18252b0accb738168882",
+  "window_length_L": 12,
+  "n_test_windows": 1745,
+  "files": {
+    "stage_summary.csv": "6b9dd1d1545529d96c8ea55b4aafb5ade0a88eba4172f62c6fe73299f4153841",
+    "selected_features_seed42.json": "74e860d6ee6d99d2259dde8b38738e05078813bf30d939d314b46ead836ff03a",
+    "selected_features_scored_seed42.csv": "d94082a20b32918a075964c5e067668db52f70013dda8af665faba9420173ae4",
+    "gmm_seed42.pkl": "115b68792b392fa888b3ded0c953e004ab742670a24f96c7d3cb68ccf9d4d984",
+    "gmm_fine_state_mapping.csv": "8b76aff76b24506db6496ca8b1c0862119759f5edd4ab8fab64623f010a5182e",
+    "scaler_mean.npy": "e6355f67b0cd3c3858603bb6f8a2da858d9dd57a5cfdb5bccee31bbde53aa122",
+    "scaler_scale.npy": "f43f1719f5df3732b95ed69330e59a349f027720f215dc19c58ef0f637c50a39",
+    "feat_train_frozen.csv": "d3da5e16630734885e9ec36a4b3c70a27bdd926197cd9f30bc4ac590aeae01a6",
+    "feat_val_frozen.csv": "8718d5048080a17d30afbeb6da2bd2c1577eb69921b035dda2443de902bb1bd5",
+    "feat_test_frozen.csv": "b0ce31fcac78a4c4130b832b8b472bb10604a51bb426665166b994502c6df8ac",
+    "split_info.json": "f3bb3dfd02cdc231164ac38b7f601206c04a47bd7c1b4feb9f41df3ab2128ebd"
+  }
+}

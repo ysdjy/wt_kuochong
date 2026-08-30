@@ -1,20 +1,15 @@
 # ===== Separate concurrent session's work: not part of this commit =====
 # A different, concurrent Claude Code session (see OVERNIGHT_B9_EXTERNAL_STATUS.md
 # at repo root, written by that session) is running/has run a large B9/B3
-# seed-landscape sweep (PHM2010 D1/D2/D3 + NASA N1-N4, 700+ runs, still growing
-# as of this .gitignore edit) inside this Chinese-named diagnostic tree, under
-# its own separate user instructions -- deliberately kept out of this English-
-# named methods/ framework. That status doc itself asks for user confirmation
-# before committing/pushing. Whole directory excluded wholesale (rather than
-# per-subdirectory) since it is still actively being extended; the user should
-# review and decide what (if anything) to commit from it separately from this
-# task's own work.
+# seed-landscape sweep (PHM2010 D1/D2/D3 + NASA N1-N4 + MTW-CM, 700+ runs,
+# still growing as of this .gitignore edit) inside this Chinese-named
+# diagnostic tree, under its own separate user instructions -- deliberately
+# kept out of this English-named methods/ framework. That status doc itself
+# asks for user confirmation before committing/pushing. Whole directory
+# excluded wholesale (rather than per-subdirectory) since it is still
+# actively being extended; the user should review and decide what (if
+# anything) to commit from THAT work separately from this task's own work.
 /05_统计检验/seed_statistics/
-/shared/reproducibility/build_phm_task_frozen_preprocess.py
-/shared/reproducibility/PHM2010_D2_frozen_preprocess/
-/shared/reproducibility/PHM2010_D3_frozen_preprocess/
-/shared/reproducibility/NASA_N*_frozen_preprocess/
-/shared/reproducibility/build_nasa_task_frozen_preprocess.py
 /OVERNIGHT_B9_EXTERNAL_STATUS.md
 /MTW_TASK_AUDIT.md
 /NASA_TASK_AUDIT.md
@@ -44,6 +39,30 @@
 !/05_统计检验/seed_statistics/summary_MTW/**
 !/05_统计检验/seed_statistics/_shared_code/
 !/05_统计检验/seed_statistics/_shared_code/**
+# The new B1/B2 seed-task scripts + their vendored_legacy/ dependency copy
+# (this task's own work, git-clone-portable) also live under _shared_code/,
+# already covered by the recursive un-ignore above -- listed here only for
+# clarity: run_b1_seed_task.py, run_b1_nasa_seed_task.py, run_b1_mtw_seed_task.py,
+# run_b2_seed_task.py, run_b2_nasa_seed_task.py, run_b2_mtw_seed_task.py,
+# vendored_legacy/**.
+
+# ===== Frozen-preprocess artifacts needed by B1/B2 (this task) on all 3 datasets =====
+# PHM2010_D1 was already committed before this round. D2/D3 (PHM2010),
+# NASA_N1-4, and MTW_D1-M/D2-M/D3-M were built by the other concurrent
+# session but are needed by this task's own B1/B2 scripts to be git-clone
+# portable -- committing them is this task's own scope, not a judgment call
+# about the other session's separate seed-landscape RESULTS trees above.
+!/shared/reproducibility/build_phm_task_frozen_preprocess.py
+!/shared/reproducibility/PHM2010_D2_frozen_preprocess/
+!/shared/reproducibility/PHM2010_D2_frozen_preprocess/**
+!/shared/reproducibility/PHM2010_D3_frozen_preprocess/
+!/shared/reproducibility/PHM2010_D3_frozen_preprocess/**
+!/shared/reproducibility/NASA_N*_frozen_preprocess/
+!/shared/reproducibility/NASA_N*_frozen_preprocess/**
+!/shared/reproducibility/build_nasa_task_frozen_preprocess.py
+!/shared/reproducibility/MTW_*_frozen_preprocess/
+!/shared/reproducibility/MTW_*_frozen_preprocess/**
+!/shared/reproducibility/build_mtw_task_frozen_preprocess.py
 
 # ===== Python / OS cruft =====
 __pycache__/
@@ -89,3 +108,20 @@ kaggle.json
 **/cache/
 **/*.npy
 **/*.npz
+
+# ===== Re-un-ignore: frozen-preprocess .pkl/.npy artifacts =====
+# gitignore is order-sensitive -- the **/*.pkl / **/*.npy blanket rules above
+# (for regenerable checkpoints/caches) would otherwise re-hide the GMM model
+# and scaler files inside the frozen-preprocess directories un-ignored
+# earlier in this file (PHM2010_D1's equivalents were already committed
+# before these blanket rules existed, so they were unaffected -- D2/D3/NASA/MTW
+# need this explicit override). These are small (<2KB each), fitted,
+# hash-manifested artifacts -- not caches, not checkpoints.
+!/shared/reproducibility/PHM2010_D2_frozen_preprocess/*.pkl
+!/shared/reproducibility/PHM2010_D2_frozen_preprocess/*.npy
+!/shared/reproducibility/PHM2010_D3_frozen_preprocess/*.pkl
+!/shared/reproducibility/PHM2010_D3_frozen_preprocess/*.npy
+!/shared/reproducibility/NASA_N*_frozen_preprocess/*.pkl
+!/shared/reproducibility/NASA_N*_frozen_preprocess/*.npy
+!/shared/reproducibility/MTW_*_frozen_preprocess/*.pkl
+!/shared/reproducibility/MTW_*_frozen_preprocess/*.npy

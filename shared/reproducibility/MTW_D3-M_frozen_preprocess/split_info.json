@@ -1,0 +1,30 @@
+{
+  "task": "D3-M",
+  "group": "cross_machine_dual",
+  "train_domains": [
+    "M2",
+    "M3"
+  ],
+  "test_domains": [
+    "M1"
+  ],
+  "train_sequences": [
+    "T5",
+    "T6",
+    "T7",
+    "T8"
+  ],
+  "validation_sequences": [
+    "T4",
+    "T9"
+  ],
+  "test_sequences": [
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "validation_mode": "tool_holdout",
+  "n_train": 3025,
+  "n_val": 1537,
+  "n_test": 1856
+}
