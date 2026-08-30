@@ -29,6 +29,15 @@ import pandas as pd
 
 SEED_STATS_DIR = Path(__file__).resolve().parent.parent
 
+METHOD_FULL_NAMES = {
+    "B1": "B1_RF",
+    "B2": "B2_TCN_GRU",
+    "B3": "B3_Multitask_TCN_GRU",
+    "B4": "B4_HTT_Net",
+    "B5": "B5_MultiSource_Attention",
+    "B9": "B9_DC_PHSR",
+}
+
 CORE_COLS = ["Acc", "Macro-F1", "E-F1", "M-F1", "L-F1", "M-Precision", "M-Recall",
              "M_to_E", "M_to_L", "Rev", "Jump", "Smooth", "q-MAE", "q-RMSE", "q-R2", "Spearman"]
 ID_COLS = ["Method", "Dataset", "Task", "Seed"]
@@ -90,14 +99,14 @@ def mean_std_table(df: pd.DataFrame) -> pd.DataFrame:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", required=True)
-    ap.add_argument("--method", required=True, choices=["B9", "B3"])
+    ap.add_argument("--method", required=True, choices=sorted(METHOD_FULL_NAMES))
     ap.add_argument("--tasks", required=True, help="comma list, e.g. D1,D2,D3")
     ap.add_argument("--landscape_prefix", required=True, help="e.g. B9_PHM2010 or B3_NASA")
     ap.add_argument("--out_dir", required=True, type=Path)
     args = ap.parse_args()
 
     tasks = args.tasks.split(",")
-    method_full = "B9_DC_PHSR" if args.method == "B9" else "B3_Multitask_TCN_GRU"
+    method_full = METHOD_FULL_NAMES[args.method]
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
     all_task_dfs = []
