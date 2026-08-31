@@ -1,0 +1,17 @@
+﻿Metric,Mean,Std,Min,Max,N
+Acc,,,,,0
+Macro-F1,,,,,0
+E-F1,,,,,0
+M-F1,,,,,0
+L-F1,,,,,0
+M-Precision,,,,,0
+M-Recall,,,,,0
+M_to_E,,,,,0
+M_to_L,,,,,0
+Rev,,,,,0
+Jump,,,,,0
+Smooth,,,,,0
+q-MAE,,,,,0
+q-RMSE,,,,,0
+q-R2,,,,,0
+Spearman,,,,,0

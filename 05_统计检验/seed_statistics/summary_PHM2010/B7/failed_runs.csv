@@ -1,0 +1,29 @@
+﻿Task,Seed,reason
+D1,23,FAILED.flag present
+D1,33,FAILED.flag present
+D1,43,FAILED.flag present
+D1,53,FAILED.flag present
+D1,63,FAILED.flag present
+D1,73,FAILED.flag present
+D1,83,FAILED.flag present
+D1,93,FAILED.flag present
+D2,3,FAILED.flag present
+D2,13,FAILED.flag present
+D2,23,FAILED.flag present
+D2,33,FAILED.flag present
+D2,43,"no DONE.flag, no FAILED.flag (never ran)"
+D2,53,"no DONE.flag, no FAILED.flag (never ran)"
+D2,63,"no DONE.flag, no FAILED.flag (never ran)"
+D2,73,"no DONE.flag, no FAILED.flag (never ran)"
+D2,83,"no DONE.flag, no FAILED.flag (never ran)"
+D2,93,"no DONE.flag, no FAILED.flag (never ran)"
+D3,3,"no DONE.flag, no FAILED.flag (never ran)"
+D3,13,"no DONE.flag, no FAILED.flag (never ran)"
+D3,23,"no DONE.flag, no FAILED.flag (never ran)"
+D3,33,"no DONE.flag, no FAILED.flag (never ran)"
+D3,43,"no DONE.flag, no FAILED.flag (never ran)"
+D3,53,"no DONE.flag, no FAILED.flag (never ran)"
+D3,63,"no DONE.flag, no FAILED.flag (never ran)"
+D3,73,"no DONE.flag, no FAILED.flag (never ran)"
+D3,83,"no DONE.flag, no FAILED.flag (never ran)"
+D3,93,"no DONE.flag, no FAILED.flag (never ran)"

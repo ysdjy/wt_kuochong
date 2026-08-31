@@ -35,6 +35,9 @@ METHOD_FULL_NAMES = {
     "B3": "B3_Multitask_TCN_GRU",
     "B4": "B4_HTT_Net",
     "B5": "B5_MultiSource_Attention",
+    "B6": "B6_MTF_AViTK",
+    "B7": "B7_Dynamic_GIN_TGP",
+    "B8": "B8_DP2Net",
     "B9": "B9_DC_PHSR",
 }
 
@@ -43,17 +46,18 @@ CORE_COLS = ["Acc", "Macro-F1", "E-F1", "M-F1", "L-F1", "M-Precision", "M-Recall
 ID_COLS = ["Method", "Dataset", "Task", "Seed"]
 ALL_COLS = ID_COLS + CORE_COLS
 
-N_SEEDS_EXPECTED = 101  # 0..100 inclusive
+N_SEEDS_EXPECTED = 101  # 0..100 inclusive, default full sweep
 
 
-def load_task(landscape_prefix: str, task: str, expect_method: str, expect_dataset: str):
+def load_task(landscape_prefix: str, task: str, expect_method: str, expect_dataset: str, seeds: list[int]):
+    n_expected = len(seeds)
     task_dir = SEED_STATS_DIR / f"{landscape_prefix}_{task}_seed_landscape"
     results_dir = task_dir / "results"
     rows = []
     status_rows = []
     failed_rows = []
     seeds_seen = set()
-    for seed in range(N_SEEDS_EXPECTED):
+    for seed in seeds:
         sd = results_dir / f"seed{seed}"
         done = (sd / "DONE.flag").exists()
         failed = (sd / "FAILED.flag").exists()
@@ -77,9 +81,12 @@ def load_task(landscape_prefix: str, task: str, expect_method: str, expect_datas
             status_rows.append({"Task": task, "Seed": seed, "status": "MISSING"})
             failed_rows.append({"Task": task, "Seed": seed, "reason": "no DONE.flag, no FAILED.flag (never ran)"})
 
-    missing = set(range(N_SEEDS_EXPECTED)) - seeds_seen
+    missing = set(seeds) - seeds_seen
     dup = len(seeds_seen) != len(rows)
-    return pd.DataFrame(rows), pd.DataFrame(status_rows), pd.DataFrame(failed_rows), sorted(missing), dup
+    # Explicit columns=ALL_COLS: an empty `rows` list (e.g. a task with 0/N done)
+    # would otherwise produce a DataFrame with NO columns at all, breaking every
+    # downstream df[col] access (mean_std_table, the dataset-level pivot, ...).
+    return pd.DataFrame(rows, columns=ALL_COLS), pd.DataFrame(status_rows), pd.DataFrame(failed_rows), sorted(missing), dup, n_expected
 
 
 def mean_std_table(df: pd.DataFrame) -> pd.DataFrame:
@@ -103,24 +110,30 @@ def main():
     ap.add_argument("--tasks", required=True, help="comma list, e.g. D1,D2,D3")
     ap.add_argument("--landscape_prefix", required=True, help="e.g. B9_PHM2010 or B3_NASA")
     ap.add_argument("--out_dir", required=True, type=Path)
+    ap.add_argument("--seeds", default=None,
+                     help="Comma list of exact seeds to aggregate (e.g. 3,13,23,33,43,53,63,73,83,93) "
+                          "for a reduced diagnostic sample instead of the full 0-100 sweep. "
+                          "Default: 0..100 inclusive (101 seeds).")
     args = ap.parse_args()
 
     tasks = args.tasks.split(",")
     method_full = METHOD_FULL_NAMES[args.method]
+    seeds = [int(s) for s in args.seeds.split(",")] if args.seeds else list(range(N_SEEDS_EXPECTED))
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
     all_task_dfs = []
     all_status = []
     all_failed = []
     hash_report = {}
+    n_expected = len(seeds)
     for task in tasks:
-        df, status_df, failed_df, missing, dup = load_task(args.landscape_prefix, task, method_full, args.dataset)
+        df, status_df, failed_df, missing, dup, n_expected = load_task(args.landscape_prefix, task, method_full, args.dataset, seeds)
         df.to_csv(args.out_dir / f"{task}_seed_level_results.csv", index=False, encoding="utf-8-sig")
         mean_std_table(df).to_csv(args.out_dir / f"{task}_mean_std.csv", index=False, encoding="utf-8-sig")
         all_task_dfs.append(df)
         all_status.append(status_df.assign(Task=task))
         all_failed.append(failed_df)
-        print(f"[{args.method}] {task}: {len(df)}/{N_SEEDS_EXPECTED} done, missing={missing}, duplicate_seed_rows={dup}")
+        print(f"[{args.method}] {task}: {len(df)}/{n_expected} done, missing={missing}, duplicate_seed_rows={dup}")
 
         # hash consistency check across this task's seeds (feature/split/gmm/window hashes must be identical)
         rd = SEED_STATS_DIR / f"{args.landscape_prefix}_{task}_seed_landscape" / "results"
@@ -156,14 +169,14 @@ def main():
             vals = [v for v in vals if pd.notna(v)]
             row[m] = float(np.mean(vals)) if vals else np.nan
         dataset_rows.append(row)
-    dataset_seed_level = pd.DataFrame(dataset_rows)
+    dataset_seed_level = pd.DataFrame(dataset_rows, columns=["Dataset", "Method", "Seed"] + CORE_COLS)
     dataset_seed_level.to_csv(args.out_dir / "dataset_seed_level.csv", index=False, encoding="utf-8-sig")
     mean_std_table(dataset_seed_level).to_csv(args.out_dir / "dataset_mean_std.csv", index=False, encoding="utf-8-sig")
 
     with open(args.out_dir / "hash_consistency_report.json", "w", encoding="utf-8") as f:
         json.dump(hash_report, f, indent=2)
 
-    print(f"\n[{args.method}] dataset-level ({args.dataset}): {len(common_seeds)}/{N_SEEDS_EXPECTED} seeds common to all tasks")
+    print(f"\n[{args.method}] dataset-level ({args.dataset}): {len(common_seeds)}/{n_expected} seeds common to all tasks")
     print(f"hash consistency: {hash_report}")
     print(f"Wrote outputs to {args.out_dir}")
 
