@@ -1,16 +1,8 @@
 ﻿Task,Seed,reason
-D1,23,FAILED.flag present
-D1,33,FAILED.flag present
-D1,43,FAILED.flag present
-D1,53,FAILED.flag present
-D1,63,FAILED.flag present
-D1,73,FAILED.flag present
-D1,83,FAILED.flag present
-D1,93,FAILED.flag present
-D2,3,FAILED.flag present
-D2,13,FAILED.flag present
-D2,23,FAILED.flag present
-D2,33,FAILED.flag present
+D2,3,"no DONE.flag, no FAILED.flag (never ran)"
+D2,13,"no DONE.flag, no FAILED.flag (never ran)"
+D2,23,"no DONE.flag, no FAILED.flag (never ran)"
+D2,33,"no DONE.flag, no FAILED.flag (never ran)"
 D2,43,"no DONE.flag, no FAILED.flag (never ran)"
 D2,53,"no DONE.flag, no FAILED.flag (never ran)"
 D2,63,"no DONE.flag, no FAILED.flag (never ran)"

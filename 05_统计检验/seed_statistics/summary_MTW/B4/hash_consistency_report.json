@@ -1,14 +1,14 @@
 {
   "D1M": {
-    "n_distinct_hash_tuples": 1,
+    "n_distinct_hash_tuples": 0,
     "consistent": true
   },
   "D2M": {
-    "n_distinct_hash_tuples": 1,
+    "n_distinct_hash_tuples": 0,
     "consistent": true
   },
   "D3M": {
-    "n_distinct_hash_tuples": 1,
+    "n_distinct_hash_tuples": 0,
     "consistent": true
   }
 }

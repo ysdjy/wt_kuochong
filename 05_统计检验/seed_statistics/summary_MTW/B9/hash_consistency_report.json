@@ -2,5 +2,13 @@
   "D1M": {
     "n_distinct_hash_tuples": 1,
     "consistent": true
+  },
+  "D2M": {
+    "n_distinct_hash_tuples": 1,
+    "consistent": true
+  },
+  "D3M": {
+    "n_distinct_hash_tuples": 1,
+    "consistent": true
   }
 }

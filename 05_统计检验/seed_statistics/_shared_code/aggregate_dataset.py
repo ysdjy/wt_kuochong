@@ -49,9 +49,10 @@ ALL_COLS = ID_COLS + CORE_COLS
 N_SEEDS_EXPECTED = 101  # 0..100 inclusive, default full sweep
 
 
-def load_task(landscape_prefix: str, task: str, expect_method: str, expect_dataset: str, seeds: list[int]):
+def load_task(landscape_prefix: str, task: str, expect_method: str, expect_dataset: str, seeds: list[int],
+              data_root: Path = SEED_STATS_DIR):
     n_expected = len(seeds)
-    task_dir = SEED_STATS_DIR / f"{landscape_prefix}_{task}_seed_landscape"
+    task_dir = data_root / f"{landscape_prefix}_{task}_seed_landscape"
     results_dir = task_dir / "results"
     rows = []
     status_rows = []
@@ -114,11 +115,16 @@ def main():
                      help="Comma list of exact seeds to aggregate (e.g. 3,13,23,33,43,53,63,73,83,93) "
                           "for a reduced diagnostic sample instead of the full 0-100 sweep. "
                           "Default: 0..100 inclusive (101 seeds).")
+    ap.add_argument("--data_root", default=None, type=Path,
+                     help="Override the directory containing <landscape_prefix>_<task>_seed_landscape/ "
+                          "(default: this script's own seed_statistics/ parent dir). Use this to aggregate "
+                          "a differently-located merged/combined copy of the results.")
     args = ap.parse_args()
 
     tasks = args.tasks.split(",")
     method_full = METHOD_FULL_NAMES[args.method]
     seeds = [int(s) for s in args.seeds.split(",")] if args.seeds else list(range(N_SEEDS_EXPECTED))
+    data_root = args.data_root if args.data_root is not None else SEED_STATS_DIR
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
     all_task_dfs = []
@@ -127,7 +133,7 @@ def main():
     hash_report = {}
     n_expected = len(seeds)
     for task in tasks:
-        df, status_df, failed_df, missing, dup, n_expected = load_task(args.landscape_prefix, task, method_full, args.dataset, seeds)
+        df, status_df, failed_df, missing, dup, n_expected = load_task(args.landscape_prefix, task, method_full, args.dataset, seeds, data_root)
         df.to_csv(args.out_dir / f"{task}_seed_level_results.csv", index=False, encoding="utf-8-sig")
         mean_std_table(df).to_csv(args.out_dir / f"{task}_mean_std.csv", index=False, encoding="utf-8-sig")
         all_task_dfs.append(df)
@@ -136,7 +142,7 @@ def main():
         print(f"[{args.method}] {task}: {len(df)}/{n_expected} done, missing={missing}, duplicate_seed_rows={dup}")
 
         # hash consistency check across this task's seeds (feature/split/gmm/window hashes must be identical)
-        rd = SEED_STATS_DIR / f"{args.landscape_prefix}_{task}_seed_landscape" / "results"
+        rd = data_root / f"{args.landscape_prefix}_{task}_seed_landscape" / "results"
         hashes_seen = set()
         for seed_dir in sorted(rd.glob("seed*")):
             rm = seed_dir / "run_meta.json"
